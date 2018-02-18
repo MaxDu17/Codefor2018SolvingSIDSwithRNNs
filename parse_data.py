@@ -11,7 +11,7 @@ import random
 class Source:
     class Native:
         INHALE_DIR = "dataSPLIT/inhale/"
-        EXHALE_DIR = "C:/Users/wedu/Desktop/Working Repository/finalcode/dataSPLIT/exhale/"
+        EXHALE_DIR = "datasplit/exhale/"
         UNKNOWN_DIR= "dataSPLIT/unknown/"
     class Server:
         INHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
@@ -33,6 +33,6 @@ def load_wav_file(name):
     chunk.extend(np.zeros(CHUNK*2-len(chunk)))
     return chunk
 
-file_name = Source.Server.EXHALE_DIR + "0"
+file_name = Source.Native.INHALE_DIR + "0.wav"
 test = load_wav_file(file_name)
 print(test)

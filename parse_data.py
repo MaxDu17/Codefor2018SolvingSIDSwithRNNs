@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 
-import pyaudio
+
 import wave
 CHUNK = 4096
 test_fraction = 0.1

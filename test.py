@@ -22,9 +22,9 @@ if __name__ == '__main__':
     freq = freqs[idx]
     freq_in_hertz = abs(freq * frate)
     print(freq_in_hertz)
-    w = np.abs(w[:20000])
-    freq_span = np.linspace(0,11025/2,20000)
+    w = np.abs(w[:4096])
+    freq_span = np.linspace(0,4096/2,4096)#20000 datapoints.
     #plt.plot(freqs*frate,np.abs(w) )
-    plt.plot(freq_span[:5000],w[:5000])
+    plt.plot(freq_span,w)
     plt.show()
     # 439.8975

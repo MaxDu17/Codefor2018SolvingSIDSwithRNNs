@@ -46,7 +46,7 @@ class Setmaker:
         for i in range(TOTALPOINTS):
             big_set.append(i)
         leftover_set = [k for k in big_set if k not in train_set and k not in exempt_set]
-
+        exempt_set = leftover_set
         return leftover_set
 
     def pick_test(self):

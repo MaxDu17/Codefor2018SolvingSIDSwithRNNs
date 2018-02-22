@@ -6,7 +6,7 @@ import random
 
 TESTFRACTION = 0.1
 VALIDFRACTION = 0.1
-TRAINFRACTION = 0.9
+TRAINFRACTION = 0.8
 TOTALPOINTS = 300
 
 file_maker = dp()
@@ -46,10 +46,11 @@ class Setmaker:
         for i in range(TOTALPOINTS):
             big_set.append(i)
         leftover_set = [k for k in big_set if k not in train_set and k not in exempt_set]
-        exempt_set = leftover_set
         return leftover_set
 
+
     def pick_test(self):
+        global exempt_set
         big_set = list()
         real_set = list()
         for i in range(TOTALPOINTS):
@@ -64,16 +65,34 @@ class Setmaker:
         validation = self.pick_valid(train)
         return train, validation
 
+
     def load_next_epoch(self): #more or less a wrapper function
         global train_list
         global validation_list
         train_list, validation_list = self.get_batch_arrays()
+
 
     def get_test_set(self): #call this before everything! It's a wrapper function!
         global test_list
         test_list = self.pick_test()
         print("creating test set!!")
         return test_list
+
+
+    def one_hot_from_label(self,label):
+        scratch_vector = np.zeros(3)
+        if label == 'inhale':
+            scratch_vector[0] = 1
+            return scratch_vector
+        elif label == 'unknown':
+            scratch_vector[1] = 1
+            return scratch_vector
+        elif label == 'exhale':
+            scratch_vector[2] = 1
+            return scratch_vector
+        else:
+            print("not recognized! Traceback: raised from one_hot_from_label from make_sets.py")
+
 
     def next_test(self,batch_number):
         if batch_number > 239:
@@ -120,6 +139,20 @@ class Setmaker:
             file_name = Source.Native.UNKNOWN_DIR + str(batch_index - 200) + ".wav"
             data_list = file_maker.prepare_data(file_name)
             return data_list, label
+
+    def set_validator(self,train,valid,test): #checks if everything is there
+        for i in range(300):
+            try:
+                traintest = train.index(i)
+            except:
+                try:
+                    validtest = valid.index(i)
+                except:
+                    try:
+                        testtest = test.index(i)
+                    except:
+                        print("Oops we have an error")
+        print("all good!")
 
 maker = Setmaker()
 print(maker.get_test_set())

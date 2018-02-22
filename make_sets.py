@@ -70,7 +70,7 @@ class Setmaker:
         global train_list
         global validation_list
         train_list, validation_list = self.get_batch_arrays()
-        self.set_validator(train=train_list,test=exempt_set,valid=validation_list)
+        #self.set_validator(train=train_list,test=exempt_set,valid=validation_list) #this is to check the set
 
 
     def get_test_set(self): #call this before everything! It's a wrapper function!
@@ -158,15 +158,17 @@ class Setmaker:
                         print("Oops we have an error")
         print("all good!")
 
-maker = Setmaker()
-print(maker.get_test_set())
-maker.load_next_epoch()
-test,label_test= maker.load_next_train_batch(10)
-print(len(test))
-print(len(test[0]))
-print(label_test)
-print(test)
+def test_library():
+    maker = Setmaker()
+    print(maker.get_test_set())
+    maker.load_next_epoch()
+    test,label_test= maker.load_next_train_batch(10)
+    print(len(test))
+    print(len(test[0]))
+    print(label_test)
+    print(test)
 
-print(len(exempt_set))
-print(len(train_list))
-print(len(validation_list))
+    print(len(exempt_set))
+    print(len(train_list))
+    print(len(validation_list))
+

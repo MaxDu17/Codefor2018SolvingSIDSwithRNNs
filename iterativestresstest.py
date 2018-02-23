@@ -31,3 +31,4 @@ for i in range(100):
     except:
         print("oops... check file: ", name)
 
+print("all good!")

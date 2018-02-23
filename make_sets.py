@@ -190,4 +190,4 @@ def test_library():
     print("This is how long the validation set is: ", len(maker.validation_list))
     print("This is what the validation label is: ",label_valid)
 
-test_library()
+#test_library()

@@ -50,7 +50,7 @@ output_logit = tf.add(output_logit, B_Out)
 
 output_prediction = tf.nn.softmax(output_logit)
 
-loss = tf.nn.sparse_softmax_cross_entropy_with_logits(logits = output_logit,labels=Y,name = "sparse_softmax_loss_function")
+loss = tf.nn.softmax_cross_entropy_with_logits(logits = tf.transpose(output_logit),labels=tf.transpose(Y),name = "sparse_softmax_loss_function")
 total_loss = tf.reduce_mean(loss)
 optimizer = tf.train.AdagradOptimizer(learning_rate=HYP.LEARNING_RATE).minimize(loss)
 
@@ -69,6 +69,9 @@ with tf.Session() as sess:
             first = True
             for slice in input_array:
                 print("x")
+
+                slice = np.reshape(slice,[1,43])
+
                 if counter == 15:
 
                     next_hidd_layer_,output_logit_,output_prediction_,loss_,total_loss_,_ = sess.run([next_hidd_layer,
@@ -84,7 +87,8 @@ with tf.Session() as sess:
                     })
                 else:
                     if(first):
-                        prev_hidd_layer_ = np.zeros(shape = [1,HYP.HIDDEN_LAYER])
+                        prev_hidd_layer_ = np.zeros(shape = HYP.HIDDEN_LAYER)
+                        prev_hidd_layer_ = np.reshape(prev_hidd_layer_,[1,100])
                         first = False
 
                     next_hidd_layer_ = sess.run(next_hidd_layer,feed_dict =

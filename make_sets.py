@@ -3,18 +3,6 @@ import numpy as np
 from parse_data import DataParse as dp
 
 import random
-'''
-TESTFRACTION = 0.1
-VALIDFRACTION = 0.1
-TRAINFRACTION = 0.8
-TOTALPOINTS = 300
-
-file_maker = dp()
-exempt_set = list() #this is for the test
-train_list = list()
-test_list = list()
-validation_list = list()
-'''
 
 class Source:
     class Native:

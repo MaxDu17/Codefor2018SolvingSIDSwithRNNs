@@ -31,9 +31,9 @@ B_Hidd = tf.Variable(tf.zeros(HYP.HIDDEN_LAYER))
 B_Out = tf.Variable(tf.zeros(HYP.OUTPUT_LAYER))
 
 
-X = tf.placeholder(shape=[1,HYP.INPUT_LAYER],name = "input")
-Y = tf.placeholder(shape=[1,HYP.OUTPUT_LAYER],name = "one-hot labels")
-last_hidd = tf.placeholder(shape=[1,HYP.HIDDEN_LAYER],name = "previous hidden layer")
+X = tf.placeholder(shape=[1,HYP.INPUT_LAYER],name = "input",dtype = tf.float32)
+Y = tf.placeholder(shape=[1,HYP.OUTPUT_LAYER],name = "one_hot_labels",dtype = tf.int8)
+last_hidd = tf.placeholder(shape=[1,HYP.HIDDEN_LAYER],name = "previous_hidden_layer", dtype = tf.float32)
 
 hidd_layer = tf.matmul(X,W_In)
 hidd_layer = tf.add(hidd_layer,B_In)
@@ -50,10 +50,12 @@ output_logit = tf.add(output_logit, B_Out)
 
 output_prediction = tf.nn.softmax(output_logit)
 
-loss = tf.nn.sparse_softmax_cross_entropy_with_logits(logits = output_logit,labels=Y,name = "sparse softmax loss function")
+loss = tf.nn.sparse_softmax_cross_entropy_with_logits(logits = output_logit,labels=Y,name = "sparse_softmax_loss_function")
+total_loss = tf.reduce_mean(loss)
 optimizer = tf.train.AdagradOptimizer(learning_rate=HYP.LEARNING_RATE).minimize(loss)
 
 with tf.Session() as sess:
+
     sess.run(tf.global_variables_initializer())
     set_maker.get_test_set()
 
@@ -63,6 +65,33 @@ with tf.Session() as sess:
         for batch_number in range(HYP.BATCH_NUMBER):
             input_array,label = set_maker.load_next_train_sample(batch_number = batch_number)
             one_hot_label = set_maker.one_hot_from_label(label=label)
-
+            counter = 0
+            first = True
             for slice in input_array:
+                print("x")
+                if counter == 15:
 
+                    next_hidd_layer_,output_logit_,output_prediction_,loss_,total_loss_,_ = sess.run([next_hidd_layer,
+                                                                                    output_logit,
+                                                                                    output_prediction,
+                                                                                    loss,
+                                                                                    total_loss,
+                                                                                    optimizer], feed_dict=
+                    {
+                        X: slice,
+                        Y: one_hot_label,
+                        last_hidd: prev_hidd_layer_
+                    })
+                else:
+                    if(first):
+                        prev_hidd_layer_ = np.zeros(shape = [1,HYP.HIDDEN_LAYER])
+                        first = False
+
+                    next_hidd_layer_ = sess.run(next_hidd_layer,feed_dict =
+                    {
+                        X: slice,
+                        last_hidd: prev_hidd_layer_
+                    })
+                    prev_hidd_layer_ = next_hidd_layer_
+
+            print(total_loss_)

@@ -11,6 +11,7 @@ RECORDTIME = 2
 class DataParse:
 
     def load_wav_file(self,name):
+        print(name)
         wav_file = wave.open(name, 'r')
         data = wav_file.readframes(RECORDTIME*CHUNK)
         wav_file.close()

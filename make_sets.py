@@ -108,7 +108,7 @@ class Setmaker:
     def next_test(self,batch_number):
         if batch_number > 239:
             print("you have exceeded the batch! Try again! This is the test round")
-        batch_index = self.train_list[batch_number]
+        batch_index = self.test_list[batch_number]
         if batch_index < 100:
             label = 'inhale'
             file_name = Source.Native.INHALE_DIR + str(batch_index) + ".wav"
@@ -126,6 +126,26 @@ class Setmaker:
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
+    def next_validation(self,batch_number):
+        if batch_number > 239:
+            print("you have exceeded the batch! Try again! This is the test round")
+        batch_index = self.validation_list[batch_number]
+        if batch_index < 100:
+            label = 'inhale'
+            file_name = Source.Native.INHALE_DIR + str(batch_index) + ".wav"
+            data_list = self.file_maker.prepare_data(file_name)
+            return data_list, label
+
+        elif batch_index >= 100 and batch_index < 200:
+            label = 'exhale'
+            file_name = Source.Native.EXHALE_DIR + str(batch_index - 100) + ".wav"
+            data_list = self.file_maker.prepare_data(file_name)
+            return data_list, label
+        else:
+            label = 'unknown'
+            file_name = Source.Native.UNKNOWN_DIR + str(batch_index - 200) + ".wav"
+            data_list = self.file_maker.prepare_data(file_name)
+            return data_list, label
 
     def load_next_train_sample(self, batch_number):
 
@@ -169,16 +189,17 @@ class Setmaker:
 
 def test_library():
     maker = Setmaker()
-    print(maker.get_test_set())
+    print("this is the test set assignment: " ,maker.get_test_set())
     maker.load_next_epoch()
     test,label_test= maker.load_next_train_sample(10)
-    print(len(test))
-    print(len(test[0]))
-    print(label_test)
-    print(test)
-
-    print(len(maker.exempt_set))
-    print(len(maker.train_list))
-    print(len(maker.validation_list))
+    print("this is how many time frames: ",len(test))
+    print("This is how many frequency bins: ",len(test[0]))
+    print("this is the label for this set: ", label_test)
+    print("and this is the raw data: ", test)
+    valid, label_valid = maker.next_validation(10)
+    print("This is how long the test set is: ",len(maker.exempt_set))
+    print("This is how long the train set is: ",len(maker.train_list))
+    print("This is how long the validation set is: ", len(maker.validation_list))
+    print("This is what the validation label is: ",label_valid)
 
 test_library()

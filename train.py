@@ -16,7 +16,7 @@ class Information:
     INPUT_SECTORS = 8
     SAMPLE_RATE = 4096
 
-    
+
 
 
 HYP = Hyperparameters()
@@ -28,3 +28,22 @@ W_Out =tf.Variable(tf.random_normal(shape = [HYP.HIDDEN_LAYER,HYP.OUTPUT_LAYER],
 B_In = tf.Variable(tf.zeros(HYP.HIDDEN_LAYER))
 B_Hidd = tf.Variable(tf.zeros(HYP.HIDDEN_LAYER))
 B_Out = tf.Variable(tf.zeros(HYP.OUTPUT_LAYER))
+
+
+X = tf.placeholder(shape=[1,HYP.INPUT_LAYER],name = "input")
+Y = tf.placeholder(shape=[1,HYP.OUTPUT_LAYER],name = "one-hot labels")
+last_hidd = tf.placeholder(shape=[1,HYP.HIDDEN_LAYER],name = "previous hidden layer")
+
+hidd_layer = tf.matmul(X,W_In)
+hidd_layer = tf.add(hidd_layer,B_In)
+
+propagated_prev_hidd_layer = tf.matmul(last_hidd,W_Hidd)
+propagated_prev_hidd_layer = tf.add(propagated_prev_hidd_layer,B_Hidd)
+
+concat_hidd_layer = tf.add(hidd_layer,propagated_prev_hidd_layer)
+next_hidd_layer = concat_hidd_layer
+
+output_logit = tf.matmul(concat_hidd_layer,W_Out)
+output_logit = tf.add(output_logit, B_Out)
+
+output_prediction = tf.nn.softmax(output_logit)

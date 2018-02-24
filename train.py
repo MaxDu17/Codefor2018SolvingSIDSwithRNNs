@@ -116,8 +116,9 @@ with tf.Session() as sess:
                     prev_hidd_layer_ = next_hidd_layer_
                     counter+= 1
         print("end epoch")
+        print(total_loss_)
         writer.add_summary(summary,global_step=epoch)
         if epoch%500 ==0:
             saver.save(sess, "GRAPHCHECKPOINTS/rough_run",global_step = epoch)
-            print(total_loss_)
+
     writer.close()

@@ -34,26 +34,26 @@ with tf.name_scope("placeholders"):
     X = tf.placeholder(shape=[1,HYP.INPUT_LAYER],name = "input",dtype = tf.float32)
     Y = tf.placeholder(shape=[1,HYP.OUTPUT_LAYER],name = "one_hot_labels",dtype = tf.int8)
     last_hidd = tf.placeholder(shape=[1,HYP.HIDDEN_LAYER],name = "previous_hidden_layer", dtype = tf.float32)
-with tf.device("/device:GPU:0"):
-    with tf.name_scope("input_propagation"):
-        hidd_layer = tf.matmul(X,W_In)
-        hidd_layer = tf.add(hidd_layer,B_In)
+#with tf.device("/device:GPU:0"):
+with tf.name_scope("input_propagation"):
+    hidd_layer = tf.matmul(X,W_In)
+    hidd_layer = tf.add(hidd_layer,B_In)
 
-    with tf.name_scope("hidden_propagation"):
-        propagated_prev_hidd_layer = tf.matmul(last_hidd,W_Hidd)
-        propagated_prev_hidd_layer = tf.add(propagated_prev_hidd_layer,B_Hidd)
-        concat_hidd_layer = tf.add(hidd_layer,propagated_prev_hidd_layer)
-        concat_hidd_layer = tf.sigmoid(concat_hidd_layer)
-        next_hidd_layer = concat_hidd_layer
-    with tf.name_scope("logit_output"):
-        output_logit = tf.matmul(concat_hidd_layer,W_Out)
-        output_logit = tf.add(output_logit, B_Out)
-    with tf.name_scope("prediction_and_loss"):
-        output_prediction = tf.nn.softmax(output_logit)
-        loss = tf.nn.softmax_cross_entropy_with_logits(logits = output_logit,labels=Y,name = "sparse_softmax_loss_function")
-        total_loss = tf.reduce_mean(loss)
-    with tf.name_scope("train"):
-        optimizer = tf.train.AdagradOptimizer(learning_rate=HYP.LEARNING_RATE).minimize(total_loss)
+with tf.name_scope("hidden_propagation"):
+    propagated_prev_hidd_layer = tf.matmul(last_hidd,W_Hidd)
+    propagated_prev_hidd_layer = tf.add(propagated_prev_hidd_layer,B_Hidd)
+    concat_hidd_layer = tf.add(hidd_layer,propagated_prev_hidd_layer)
+    concat_hidd_layer = tf.sigmoid(concat_hidd_layer)
+    next_hidd_layer = concat_hidd_layer
+with tf.name_scope("logit_output"):
+    output_logit = tf.matmul(concat_hidd_layer,W_Out)
+    output_logit = tf.add(output_logit, B_Out)
+with tf.name_scope("prediction_and_loss"):
+    output_prediction = tf.nn.softmax(output_logit)
+    loss = tf.nn.softmax_cross_entropy_with_logits(logits = output_logit,labels=Y,name = "sparse_softmax_loss_function")
+    total_loss = tf.reduce_mean(loss)
+with tf.name_scope("train"):
+    optimizer = tf.train.AdagradOptimizer(learning_rate=HYP.LEARNING_RATE).minimize(total_loss)
 
 with tf.name_scope("summaries_and_saver"):
     tf.summary.histogram("W_Hidd", W_Hidd)

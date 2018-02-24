@@ -7,7 +7,7 @@ class Hyperparameters:
     INPUT_LAYER = 43
     HIDDEN_LAYER = 100 #Modify??
     OUTPUT_LAYER = 3
-    NUM_EPOCHS = 5000
+    NUM_EPOCHS = 10000
     BATCH_NUMBER = 240
     LEARNING_RATE = 0.1
 
@@ -30,43 +30,48 @@ B_In = tf.Variable(tf.zeros(HYP.HIDDEN_LAYER))
 B_Hidd = tf.Variable(tf.zeros(HYP.HIDDEN_LAYER))
 B_Out = tf.Variable(tf.zeros(HYP.OUTPUT_LAYER))
 
+with tf.name_scope("placeholders"):
+    X = tf.placeholder(shape=[1,HYP.INPUT_LAYER],name = "input",dtype = tf.float32)
+    Y = tf.placeholder(shape=[1,HYP.OUTPUT_LAYER],name = "one_hot_labels",dtype = tf.int8)
+    last_hidd = tf.placeholder(shape=[1,HYP.HIDDEN_LAYER],name = "previous_hidden_layer", dtype = tf.float32)
 
-X = tf.placeholder(shape=[1,HYP.INPUT_LAYER],name = "input",dtype = tf.float32)
-Y = tf.placeholder(shape=[1,HYP.OUTPUT_LAYER],name = "one_hot_labels",dtype = tf.int8)
-last_hidd = tf.placeholder(shape=[1,HYP.HIDDEN_LAYER],name = "previous_hidden_layer", dtype = tf.float32)
+with tf.name_scope("input_propagation"):
+    hidd_layer = tf.matmul(X,W_In)
+    hidd_layer = tf.add(hidd_layer,B_In)
 
-hidd_layer = tf.matmul(X,W_In)
-hidd_layer = tf.add(hidd_layer,B_In)
+with tf.name_scope("hidden_propagation"):
+    propagated_prev_hidd_layer = tf.matmul(last_hidd,W_Hidd)
+    propagated_prev_hidd_layer = tf.add(propagated_prev_hidd_layer,B_Hidd)
+    concat_hidd_layer = tf.add(hidd_layer,propagated_prev_hidd_layer)
+    concat_hidd_layer = tf.sigmoid(concat_hidd_layer)
+    next_hidd_layer = concat_hidd_layer
+with tf.name_scope("logit_output"):
+    output_logit = tf.matmul(concat_hidd_layer,W_Out)
+    output_logit = tf.add(output_logit, B_Out)
+with tf.name_scope("prediction_and_loss"):
+    output_prediction = tf.nn.softmax(output_logit)
+    loss = tf.nn.softmax_cross_entropy_with_logits(logits = output_logit,labels=Y,name = "sparse_softmax_loss_function")
+    total_loss = tf.reduce_mean(loss)
+with tf.name_scope("train"):
+    optimizer = tf.train.AdagradOptimizer(learning_rate=HYP.LEARNING_RATE).minimize(total_loss)
 
-propagated_prev_hidd_layer = tf.matmul(last_hidd,W_Hidd)
-propagated_prev_hidd_layer = tf.add(propagated_prev_hidd_layer,B_Hidd)
+with tf.name_scope("summaries_and_saver"):
+    tf.summary.histogram("W_Hidd", W_Hidd)
+    tf.summary.histogram("W_In", W_In)
+    tf.summary.histogram("W_Out", W_Out)
 
-concat_hidd_layer = tf.add(hidd_layer,propagated_prev_hidd_layer)
-concat_hidd_layer = tf.sigmoid(concat_hidd_layer)
-next_hidd_layer = concat_hidd_layer
+    tf.summary.histogram("B_Hidd", B_Hidd)
+    tf.summary.histogram("B_In", B_In)
+    tf.summary.histogram("B_Out", B_Out)
 
-output_logit = tf.matmul(concat_hidd_layer,W_Out)
-output_logit = tf.add(output_logit, B_Out)
+    tf.summary.scalar("Loss",total_loss)
 
-output_prediction = tf.nn.softmax(output_logit)
-
-loss = tf.nn.softmax_cross_entropy_with_logits(logits = output_logit,labels=Y,name = "sparse_softmax_loss_function")
-total_loss = tf.reduce_mean(loss)
-optimizer = tf.train.AdagradOptimizer(learning_rate=HYP.LEARNING_RATE).minimize(loss)
-
-tf.summary.histogram("W_Hidd", W_Hidd)
-tf.summary.histogram("W_In", W_In)
-tf.summary.histogram("W_Out", W_Out)
-
-tf.summary.histogram("B_Hidd", B_Hidd)
-tf.summary.histogram("B_In", B_In)
-tf.summary.histogram("B_Out", B_Out)
-
-tf.summary.scalar("Loss",total_loss)
-
-summary_op = tf.summary.merge_all()
-
+    summary_op = tf.summary.merge_all()
+    saver = tf.train.Saver()
 with tf.Session() as sess:
+    ckpt = tf.train.get_checkpoint_state(os.path.dirname('GRAPHCHECKPOINTS/checkpoint'))
+    if ckpt and ckpt.model_checkpoint_path:
+        saver.restore(sess, ckpt.model_checkpoint_path)
     sess.run(tf.global_variables_initializer())
     writer = tf.summary.FileWriter("GRAPHS/",sess.graph)
     set_maker.get_test_set()
@@ -85,11 +90,12 @@ with tf.Session() as sess:
 
                 if counter == 15:
 
-                    next_hidd_layer_,output_logit_,output_prediction_,loss_,total_loss_,_ = sess.run([next_hidd_layer,
+                    next_hidd_layer_,output_logit_,output_prediction_,loss_,total_loss_,summary,_ = sess.run([next_hidd_layer,
                                                                                     output_logit,
                                                                                     output_prediction,
                                                                                     loss,
                                                                                     total_loss,
+                                                                                    summary_op,
                                                                                     optimizer], feed_dict=
                     {
                         X: slice,
@@ -109,8 +115,9 @@ with tf.Session() as sess:
                     })
                     prev_hidd_layer_ = next_hidd_layer_
                     counter+= 1
-                    
-        summary = sess.run(summary_op)
+
         writer.add_summary(summary,global_step=epoch)
+        if epoch%500 ==0:
+            saver.save(sess, "GRAPHCHECKPOINTS/rough_run",global_step = epoch)
             print(total_loss_)
     writer.close()

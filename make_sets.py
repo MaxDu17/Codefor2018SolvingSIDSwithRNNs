@@ -5,6 +5,10 @@ from parse_data import DataParse as dp
 import random
 
 class Source:
+    class Current:
+        INHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
+        EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
+        UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
     class Native:
         INHALE_DIR = "dataSPLIT/inhale/"
         EXHALE_DIR = "datasplit/exhale/"
@@ -99,18 +103,18 @@ class Setmaker:
         batch_index = self.test_list[batch_number]
         if batch_index < 100:
             label = 'inhale'
-            file_name = Source.Native.INHALE_DIR + str(batch_index) + ".wav"
+            file_name = Source.Current.INHALE_DIR + str(batch_index) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
         elif batch_index >= 100 and batch_index < 200:
             label = 'exhale'
-            file_name = Source.Native.EXHALE_DIR + str(batch_index - 100) + ".wav"
+            file_name = Source.Current.EXHALE_DIR + str(batch_index - 100) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
         else:
             label = 'unknown'
-            file_name = Source.Native.UNKNOWN_DIR + str(batch_index - 200) + ".wav"
+            file_name = Source.Current.UNKNOWN_DIR + str(batch_index - 200) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
@@ -120,41 +124,41 @@ class Setmaker:
         batch_index = self.validation_list[batch_number]
         if batch_index < 100:
             label = 'inhale'
-            file_name = Source.Native.INHALE_DIR + str(batch_index) + ".wav"
+            file_name = Source.Current.INHALE_DIR + str(batch_index) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
         elif batch_index >= 100 and batch_index < 200:
             label = 'exhale'
-            file_name = Source.Native.EXHALE_DIR + str(batch_index - 100) + ".wav"
+            file_name = Source.Current.EXHALE_DIR + str(batch_index - 100) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
         else:
             label = 'unknown'
-            file_name = Source.Native.UNKNOWN_DIR + str(batch_index - 200) + ".wav"
+            file_name = Source.Current.UNKNOWN_DIR + str(batch_index - 200) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
     def load_next_train_sample(self, batch_number):
 
-        print("you are on batch" , batch_number)
+       # print("you are on batch" , batch_number)
         if batch_number >239:
             print("you have exceeded the batch! Try again!")
         batch_index = self.train_list[batch_number]
         if batch_index <100:
             label = 'inhale'
-            file_name = Source.Native.INHALE_DIR + str(batch_index) + ".wav"
+            file_name = Source.Current.INHALE_DIR + str(batch_index) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
         elif batch_index >=100 and batch_index < 200:
             label = 'exhale'
-            file_name = Source.Native.EXHALE_DIR + str(batch_index-100) + ".wav"
+            file_name = Source.Current.EXHALE_DIR + str(batch_index-100) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
         else:
             label = 'unknown'
-            file_name = Source.Native.UNKNOWN_DIR + str(batch_index - 200) + ".wav"
+            file_name = Source.Current.UNKNOWN_DIR + str(batch_index - 200) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 

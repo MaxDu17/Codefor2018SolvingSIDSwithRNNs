@@ -50,26 +50,37 @@ output_logit = tf.add(output_logit, B_Out)
 
 output_prediction = tf.nn.softmax(output_logit)
 
-loss = tf.nn.softmax_cross_entropy_with_logits(logits = tf.transpose(output_logit),labels=tf.transpose(Y),name = "sparse_softmax_loss_function")
+loss = tf.nn.softmax_cross_entropy_with_logits(logits = output_logit,labels=Y,name = "sparse_softmax_loss_function")
 total_loss = tf.reduce_mean(loss)
 optimizer = tf.train.AdagradOptimizer(learning_rate=HYP.LEARNING_RATE).minimize(loss)
 
+tf.summary.histogram("W_Hidd", W_Hidd)
+tf.summary.histogram("W_In", W_In)
+tf.summary.histogram("W_Out", W_Out)
+
+tf.summary.histogram("B_Hidd", B_Hidd)
+tf.summary.histogram("B_In", B_In)
+tf.summary.histogram("B_Out", B_Out)
+
+tf.summary.scalar("Loss",total_loss)
+
+summary_op = tf.summary.merge_all()
+
 with tf.Session() as sess:
-
     sess.run(tf.global_variables_initializer())
+    writer = tf.summary.FileWriter("GRAPHS/",sess.graph)
     set_maker.get_test_set()
-
+    total_loss_ = 0
     for epoch in range(HYP.NUM_EPOCHS):
         set_maker.load_next_epoch()
 
         for batch_number in range(HYP.BATCH_NUMBER):
             input_array,label = set_maker.load_next_train_sample(batch_number = batch_number)
             one_hot_label = set_maker.one_hot_from_label(label=label)
+            one_hot_label = np.reshape(one_hot_label,[1,3])
             counter = 0
             first = True
             for slice in input_array:
-                print("x")
-
                 slice = np.reshape(slice,[1,43])
 
                 if counter == 15:
@@ -97,5 +108,9 @@ with tf.Session() as sess:
                         last_hidd: prev_hidd_layer_
                     })
                     prev_hidd_layer_ = next_hidd_layer_
-
+                    counter+= 1
+                    
+        summary = sess.run(summary_op)
+        writer.add_summary(summary,global_step=epoch)
             print(total_loss_)
+    writer.close()

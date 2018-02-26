@@ -87,10 +87,10 @@ class Setmaker:
         if label == 'inhale':
             scratch_vector[0] = 1
             return scratch_vector
-        elif label == 'unknown':
+        elif label == 'exhale':
             scratch_vector[1] = 1
             return scratch_vector
-        elif label == 'exhale':
+        elif label == 'unknown':
             scratch_vector[2] = 1
             return scratch_vector
         else:

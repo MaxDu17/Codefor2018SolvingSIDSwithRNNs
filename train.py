@@ -24,7 +24,7 @@ class Information:
 
 set_maker = SM()
 HYP = Hyperparameters()
-prediction_dictionary = {"inhale":0, "exhale":1, "unknown":2}
+prediction_dictionary = {0:"inhale", 1:"exhale", 2:"unknown"}
 
 W_In = tf.Variable(tf.random_normal(shape = [HYP.INPUT_LAYER,HYP.HIDDEN_LAYER], stddev = 0.1, mean = 0 ),name = "W_In")#note: this used to have a mean of zero, so check that
 W_Hidd =tf.Variable(tf.random_normal(shape = [HYP.HIDDEN_LAYER,HYP.HIDDEN_LAYER], stddev = 0.1, mean =0  ),name = "W_Hidd")
@@ -93,7 +93,7 @@ with tf.Session() as sess:
         #for batch_number in range(1):
             input_array,label = set_maker.load_next_train_sample(batch_number = batch_number)
             one_hot_label = set_maker.one_hot_from_label(label=label)
-     
+
 
             one_hot_label = np.reshape(one_hot_label,[1,3])
 
@@ -139,7 +139,7 @@ with tf.Session() as sess:
             prediction_index = np.argmax(output_prediction_)
             print("checkpoint time!!!!")
             print("here is the softmaxed result: ", output_prediction_)
-            result = prediction_dictionary[prediction_index]
+            result = prediction_dictionary{prediction_index}
             print("predicted class: ", result)
             print("real class: ", label)
 

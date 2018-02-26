@@ -148,7 +148,7 @@ with tf.Session() as sess:
 
         if epoch%50 == 0:
             one_hot_label = []
-            confusion_matrix = np.matrix(np.zeros([3,3]))
+            confusion_matrix = np.zeros([3,3])
             print(confusion_matrix)
             for validation in range(HYP.VALIDATION_NUMBER):
                 input_array, label = set_maker.next_validation(batch_number=validation)
@@ -189,12 +189,12 @@ with tf.Session() as sess:
                         counter += 1
                 prediction_index = np.argmax(output_prediction_)
                 label_index = np.argmax(one_hot_label)
-                confusion_matrix[prediction_index][label_index] = confusion_matrix[prediction_index][label_index] + 1
+                confusion_matrix[prediction_index][label_index] +=1
             print(confusion_matrix)
 
 
     one_hot_label = []
-    confusion_matrix = np.matrix(np.zeros([3, 3]))
+    confusion_matrix = np.zeros([3, 3])
     for test in range(HYP.TEST_NUMBER):
         input_array, label = set_maker.next_validation(batch_number=test)
         one_hot_label = set_maker.one_hot_from_label(label=label)

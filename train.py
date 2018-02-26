@@ -78,7 +78,7 @@ with tf.name_scope("summaries_and_saver"):
     saver = tf.train.Saver()
 
 with tf.Session() as sess:
-    ckpt = tf.train.get_checkpoint_state(os.path.dirname('GRAPHCHECKPOINTS/checkpoint'))
+    ckpt = tf.train.get_checkpoint_state(os.path.dirname('GRAPHCHECKPOINTS/'))
     if ckpt and ckpt.model_checkpoint_path:
         saver.restore(sess, ckpt.model_checkpoint_path)
     sess.run(tf.global_variables_initializer())
@@ -149,7 +149,7 @@ with tf.Session() as sess:
         if epoch%50 == 0:
             one_hot_label = []
             confusion_matrix = np.zeros([3,3])
-            print(confusion_matrix)
+
             for validation in range(HYP.VALIDATION_NUMBER):
                 input_array, label = set_maker.next_validation(batch_number=validation)
                 one_hot_label = set_maker.one_hot_from_label(label=label)

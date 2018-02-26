@@ -149,6 +149,7 @@ with tf.Session() as sess:
         if epoch%50 == 0:
             one_hot_label = []
             confusion_matrix = np.matrix([3,3])
+            print(confusion_matrix)
             for validation in range(HYP.VALIDATION_NUMBER):
                 input_array, label = set_maker.next_validation(batch_number=validation)
                 one_hot_label = set_maker.one_hot_from_label(label=label)

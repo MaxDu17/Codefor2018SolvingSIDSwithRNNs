@@ -139,7 +139,7 @@ with tf.Session() as sess:
             prediction_index = np.argmax(output_prediction_)
             print("checkpoint time!!!!")
             print("here is the softmaxed result: ", output_prediction_)
-            result = prediction_dictionary{prediction_index}
+            result = prediction_dictionary[prediction_index]
             print("predicted class: ", result)
             print("real class: ", label)
 

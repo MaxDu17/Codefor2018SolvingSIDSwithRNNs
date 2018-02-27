@@ -1,0 +1,6 @@
+model_checkpoint_path: "rough_run-19500"
+all_model_checkpoint_paths: "rough_run-17500"
+all_model_checkpoint_paths: "rough_run-18000"
+all_model_checkpoint_paths: "rough_run-18500"
+all_model_checkpoint_paths: "rough_run-19000"
+all_model_checkpoint_paths: "rough_run-19500"

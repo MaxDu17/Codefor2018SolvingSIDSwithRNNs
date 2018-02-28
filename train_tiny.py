@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 import random
 import os
-from make_sets import Setmaker as SM
+from make_sets_tiny import Setmaker as SM
 class Hyperparameters:
     INPUT_LAYER = 43
     HIDDEN_LAYER = 100 #Modify??

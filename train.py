@@ -21,7 +21,8 @@ class Information:
     SAMPLE_RATE = 4096
 
 
-summed_loss = 0
+summed_loss =0
+reported_sum_loss = 0
 set_maker = SM()
 HYP = Hyperparameters()
 prediction_dictionary = {0:"inhale", 1:"exhale", 2:"unknown"}
@@ -64,6 +65,7 @@ with tf.name_scope("train"):
     optimizer = tf.train.AdagradOptimizer(learning_rate=HYP.LEARNING_RATE).minimize(total_loss)
 
 with tf.name_scope("summaries_and_saver"):
+    global reported_sum_loss
     tf.summary.histogram("W_Hidd", W_Hidd)
     tf.summary.histogram("W_In", W_In)
     tf.summary.histogram("W_Out", W_Out)
@@ -72,7 +74,7 @@ with tf.name_scope("summaries_and_saver"):
     tf.summary.histogram("B_In", B_In)
     tf.summary.histogram("B_Out", B_Out)
 
-    tf.summary.scalar("Summed_Loss",summed_loss)
+    tf.summary.scalar("Summed_Loss",reported_sum_loss)
 
     summary_op = tf.summary.merge_all()
     saver = tf.train.Saver()
@@ -86,12 +88,13 @@ with tf.Session() as sess:
     set_maker.get_test_set()
     total_loss_ = 0
     global summed_loss
+    global reported_sum_loss
     label = ""
     for epoch in range(HYP.NUM_EPOCHS):
         set_maker.load_next_epoch()
         summed_loss = 0
         for batch_number in range(HYP.BATCH_NUMBER):
-        #for batch_number in range(1):
+
             input_array,label = set_maker.load_next_train_sample(batch_number = batch_number)
             one_hot_label = set_maker.one_hot_from_label(label=label)
 
@@ -136,6 +139,7 @@ with tf.Session() as sess:
         print("I have finished epoch ",epoch, " out of ", HYP.NUM_EPOCHS)
         print("the total loss of the last sample in this batch is ", total_loss_)
         print("here is the large sum of losses through the entire epoch: ", summed_loss)
+        reported_sum_loss = summed_loss
         writer.add_summary(summary,global_step=epoch)
 
         if epoch % 10 == 0:

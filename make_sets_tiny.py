@@ -119,7 +119,7 @@ class Setmaker:
     def load_next_train_sample(self, batch_number):
 
        # print("you are on batch" , batch_number)
-        if batch_number >8:
+        if batch_number >8 or batch_number < 0:
             print("you have exceeded the batch! Try again!")
         batch_index = self.train_list[batch_number]
         if batch_index <3:

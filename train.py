@@ -7,7 +7,7 @@ class Hyperparameters:
     INPUT_LAYER = 43
     HIDDEN_LAYER = 100 #Modify??
     OUTPUT_LAYER = 3
-    NUM_EPOCHS = 32000
+    NUM_EPOCHS = 10000
     #NUM_EPOCHS = 1
     BATCH_NUMBER = 240
     LEARNING_RATE = 0.1
@@ -78,9 +78,9 @@ with tf.name_scope("summaries_and_saver"):
     saver = tf.train.Saver()
 
 with tf.Session() as sess:
-    ckpt = tf.train.get_checkpoint_state(os.path.dirname('GRAPHCHECKPOINTS/'))
+    '''ckpt = tf.train.get_checkpoint_state(os.path.dirname('GRAPHCHECKPOINTS/'))
     if ckpt and ckpt.model_checkpoint_path:
-        saver.restore(sess, ckpt.model_checkpoint_path)
+        saver.restore(sess, ckpt.model_checkpoint_path)'''
     sess.run(tf.global_variables_initializer())
     writer = tf.summary.FileWriter("GRAPHS/",sess.graph)
     set_maker.get_test_set()

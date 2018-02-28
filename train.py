@@ -60,12 +60,11 @@ with tf.name_scope("prediction_and_loss"):
     output_prediction = tf.nn.softmax(output_logit)
     loss = tf.nn.softmax_cross_entropy_with_logits(logits = output_logit,labels=Y,name = "sparse_softmax_loss_function")
     total_loss = tf.reduce_mean(loss)
-
 with tf.name_scope("train"):
     optimizer = tf.train.AdagradOptimizer(learning_rate=HYP.LEARNING_RATE).minimize(total_loss)
 
 with tf.name_scope("summaries_and_saver"):
-    global reported_sum_loss
+
     tf.summary.histogram("W_Hidd", W_Hidd)
     tf.summary.histogram("W_In", W_In)
     tf.summary.histogram("W_Out", W_Out)
@@ -74,7 +73,7 @@ with tf.name_scope("summaries_and_saver"):
     tf.summary.histogram("B_In", B_In)
     tf.summary.histogram("B_Out", B_Out)
 
-    tf.summary.scalar("Summed_Loss",reported_sum_loss)
+    tf.summary.scalar("Loss_at_sample",total_loss)
 
     summary_op = tf.summary.merge_all()
     saver = tf.train.Saver()
@@ -88,7 +87,7 @@ with tf.Session() as sess:
     set_maker.get_test_set()
     total_loss_ = 0
     global summed_loss
-    global reported_sum_loss
+
     label = ""
     for epoch in range(HYP.NUM_EPOCHS):
         set_maker.load_next_epoch()
@@ -139,7 +138,7 @@ with tf.Session() as sess:
         print("I have finished epoch ",epoch, " out of ", HYP.NUM_EPOCHS)
         print("the total loss of the last sample in this batch is ", total_loss_)
         print("here is the large sum of losses through the entire epoch: ", summed_loss)
-        reported_sum_loss = summed_loss
+
         writer.add_summary(summary,global_step=epoch)
 
         if epoch % 10 == 0:

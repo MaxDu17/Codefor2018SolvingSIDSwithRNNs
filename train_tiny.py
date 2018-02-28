@@ -81,7 +81,7 @@ with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
     total_loss_ = 0
     label = ""
-    writer = tf.summary.FileWriter("GRAPHS/", sess.graph)
+    writer = tf.summary.FileWriter("GRAPHS_tiny/", sess.graph)
     for epoch in range(HYP.NUM_EPOCHS):
         set_maker.load_next_epoch()
 

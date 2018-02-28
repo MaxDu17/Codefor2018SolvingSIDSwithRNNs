@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d071f3fc-a3dc-4aeb-87b8-28511cfdae02" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/make_sets_tiny.py" afterPath="$PROJECT_DIR$/make_sets_tiny.py" />
       <change beforePath="$PROJECT_DIR$/train_tiny.py" afterPath="$PROJECT_DIR$/train_tiny.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="make_sets_tiny.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="make_sets_tiny.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/make_sets_tiny.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
+            <state relative-caret-position="-1832">
               <caret line="10" column="52" lean-forward="true" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
               <folding>
                 <element signature="e#1#19#0" expanded="true" />
@@ -76,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="train_tiny.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="train_tiny.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/train_tiny.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+            <state relative-caret-position="945">
+              <caret line="84" column="39" lean-forward="true" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#361#454#0" expanded="false" />
@@ -90,7 +89,7 @@
                 <element signature="e#2067#2163#0" expanded="false" />
                 <element signature="e#2212#2418#0" expanded="false" />
                 <element signature="e#2593#2947#0" expanded="false" />
-                <element signature="e#5693#9435#1" expanded="false" />
+                <element signature="e#5698#9440#1" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -179,8 +178,8 @@
         <option value="$PROJECT_DIR$/confusionmatrix test.py" />
         <option value="$PROJECT_DIR$/train.py" />
         <option value="$PROJECT_DIR$/make_sets.py" />
-        <option value="$PROJECT_DIR$/train_tiny.py" />
         <option value="$PROJECT_DIR$/make_sets_tiny.py" />
+        <option value="$PROJECT_DIR$/train_tiny.py" />
       </list>
     </option>
   </component>
@@ -598,10 +597,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/make_sets_tiny.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1832">
+          <caret line="10" column="52" lean-forward="true" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+          <folding>
+            <element signature="e#1#19#0" expanded="true" />
+            <element signature="e#1623#1723#0" expanded="false" />
+            <element signature="e#2261#3153#0" expanded="false" />
+            <element signature="e#3207#4105#0" expanded="false" />
+            <element signature="e#5162#5654#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/train_tiny.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        <state relative-caret-position="945">
+          <caret line="84" column="39" lean-forward="true" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#361#454#0" expanded="false" />
@@ -611,21 +624,7 @@
             <element signature="e#2067#2163#0" expanded="false" />
             <element signature="e#2212#2418#0" expanded="false" />
             <element signature="e#2593#2947#0" expanded="false" />
-            <element signature="e#5693#9435#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/make_sets_tiny.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="52" lean-forward="true" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-          <folding>
-            <element signature="e#1#19#0" expanded="true" />
-            <element signature="e#1623#1723#0" expanded="false" />
-            <element signature="e#2261#3153#0" expanded="false" />
-            <element signature="e#3207#4105#0" expanded="false" />
-            <element signature="e#5162#5654#0" expanded="false" />
+            <element signature="e#5698#9440#1" expanded="false" />
           </folding>
         </state>
       </provider>

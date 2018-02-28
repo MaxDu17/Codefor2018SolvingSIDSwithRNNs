@@ -84,9 +84,8 @@ with tf.Session() as sess:
     writer = tf.summary.FileWriter("GRAPHS_tiny/", sess.graph)
     for epoch in range(HYP.NUM_EPOCHS):
         set_maker.load_next_epoch()
-
         for batch_number in range(HYP.BATCH_NUMBER):
-        #for batch_number in range(1):
+
             input_array,label = set_maker.load_next_train_sample(batch_number = batch_number)
             one_hot_label = set_maker.one_hot_from_label(label=label)
 

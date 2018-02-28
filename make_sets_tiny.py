@@ -47,7 +47,6 @@ class Setmaker:
 
     def load_next_epoch(self): #more or less a wrapper function
 
-
         self.train_list=  self.get_batch_arrays()
         #self.set_validator(train=self.train_list,test=self.exempt_set,valid=self.validation_list) #this is to check the set
 
@@ -117,7 +116,6 @@ class Setmaker:
             return data_list, label
 
     def load_next_train_sample(self, batch_number):
-        print(batch_number)
        # print("you are on batch" , batch_number)
         if batch_number >8 or batch_number < 0:
             print("you have exceeded the batch! Try again!")
@@ -130,12 +128,12 @@ class Setmaker:
 
         elif batch_index >=3 and batch_index < 6:
             label = 'exhale'
-            file_name = Source.Current.EXHALE_DIR + str(batch_index-100) + ".wav"
+            file_name = Source.Current.EXHALE_DIR + str(batch_index-3) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
         else:
             label = 'unknown'
-            file_name = Source.Current.UNKNOWN_DIR + str(batch_index - 200) + ".wav"
+            file_name = Source.Current.UNKNOWN_DIR + str(batch_index - 6) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 

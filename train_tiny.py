@@ -7,10 +7,10 @@ class Hyperparameters:
     INPUT_LAYER = 43
     HIDDEN_LAYER = 100 #Modify??
     OUTPUT_LAYER = 3
-    NUM_EPOCHS = 32000
+    NUM_EPOCHS = 1000
     #NUM_EPOCHS = 1
-    BATCH_NUMBER = 240
-    LEARNING_RATE = 0.5
+    BATCH_NUMBER = 9
+    LEARNING_RATE = 0.1
     VALIDATION_NUMBER = 30
     TEST_NUMBER = 30
 
@@ -142,7 +142,7 @@ with tf.Session() as sess:
             result = prediction_dictionary[prediction_index]
             print("predicted class: ", result)
             print("real class: ", label)
-
+        '''
         if epoch%500 ==0:
             saver.save(sess, "GRAPHCHECKPOINTS/rough_run",global_step = epoch)
 
@@ -236,4 +236,5 @@ with tf.Session() as sess:
         label_index = np.argmax(one_hot_label)
         confusion_matrix[prediction_index][label_index] += 1
     print(confusion_matrix)
+    '''
     writer.close()

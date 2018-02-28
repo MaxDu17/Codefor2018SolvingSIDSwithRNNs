@@ -10,7 +10,7 @@ class Hyperparameters:
     NUM_EPOCHS = 32000
     #NUM_EPOCHS = 1
     BATCH_NUMBER = 240
-    LEARNING_RATE = 0.5
+    LEARNING_RATE = 0.1
     VALIDATION_NUMBER = 30
     TEST_NUMBER = 30
 

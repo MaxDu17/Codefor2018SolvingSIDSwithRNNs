@@ -1,4 +1,4 @@
-import tensorflow as tf
+
 import numpy as np
 from parse_data import DataParse as dp
 
@@ -7,16 +7,16 @@ import random
 class Source:
     class Current:
         INHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
-        EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
-        UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
+        EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/exhale/"
+        UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/unknown/"
     class Native:
-        INHALE_DIR = "dataSPLIT/inhale/"
-        EXHALE_DIR = "datasplit/exhale/"
-        UNKNOWN_DIR= "dataSPLIT/unknown/"
+        INHALE_DIR = "data_tiny/inhale/"
+        EXHALE_DIR = "data_tiny/exhale/"
+        UNKNOWN_DIR= "data_tiny/unknown/"
     class Server:
         INHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
-        EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
-        UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
+        EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/exhale/"
+        UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/unknown/"
 class Setmaker:
 
     TESTFRACTION = 0.1

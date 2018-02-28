@@ -85,10 +85,11 @@ with tf.Session() as sess:
     writer = tf.summary.FileWriter("GRAPHS/",sess.graph)
     set_maker.get_test_set()
     total_loss_ = 0
+
     label = ""
     for epoch in range(HYP.NUM_EPOCHS):
         set_maker.load_next_epoch()
-
+        summed_loss = 0
         for batch_number in range(HYP.BATCH_NUMBER):
         #for batch_number in range(1):
             input_array,label = set_maker.load_next_train_sample(batch_number = batch_number)
@@ -117,6 +118,7 @@ with tf.Session() as sess:
                         Y: one_hot_label,
                         last_hidd: prev_hidd_layer_
                     })
+                    summed_loss += total_loss_
                 else:
                     if(first):
                         prev_hidd_layer_ = np.zeros(shape = HYP.HIDDEN_LAYER)
@@ -130,9 +132,10 @@ with tf.Session() as sess:
                     })
                     prev_hidd_layer_ = next_hidd_layer_
                     counter+= 1
+
         print("I have finished epoch ",epoch, " out of ", HYP.NUM_EPOCHS)
         print("the total loss of the last sample in this batch is ", total_loss_)
-
+        print("here is the large sum of losses through the entire epoch: ", summed_loss)
         writer.add_summary(summary,global_step=epoch)
 
         if epoch % 10 == 0:

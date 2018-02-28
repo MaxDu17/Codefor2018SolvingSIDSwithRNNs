@@ -6,17 +6,17 @@ import random
 
 class Source:
     class Current:
-        INHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/data_tiny/inhale/"
-        EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/data_tiny/exhale/"
-        UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/data_tiny/unknown/"
+        INHALE_DIR = "/home/wedu/Desktop/VolatileRepos/finalcode/data_tiny/inhale/"
+        EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/finalcode/data_tiny/exhale/"
+        UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/finalcode/data_tiny/unknown/"
     class Native:
         INHALE_DIR = "data_tiny/inhale/"
         EXHALE_DIR = "data_tiny/exhale/"
         UNKNOWN_DIR= "data_tiny/unknown/"
     class Server:
-        INHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
-        EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/exhale/"
-        UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/unknown/"
+        INHALE_DIR = "/home/wedu/Desktop/VolatileRepos/finalcode/data_tiny/inhale/"
+        EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/finalcode/data_tiny/exhale/"
+        UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/finalcode/data_tiny/unknown/"
 class Setmaker:
 
     TESTFRACTION = 0.1

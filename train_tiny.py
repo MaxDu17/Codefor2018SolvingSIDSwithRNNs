@@ -78,14 +78,10 @@ with tf.name_scope("summaries_and_saver"):
     saver = tf.train.Saver()
 
 with tf.Session() as sess:
-    ckpt = tf.train.get_checkpoint_state(os.path.dirname('GRAPHCHECKPOINTS/'))
-    if ckpt and ckpt.model_checkpoint_path:
-        saver.restore(sess, ckpt.model_checkpoint_path)
     sess.run(tf.global_variables_initializer())
-    writer = tf.summary.FileWriter("GRAPHS/",sess.graph)
-    set_maker.get_test_set()
     total_loss_ = 0
     label = ""
+    writer = tf.summary.FileWriter("GRAPHS/", sess.graph)
     for epoch in range(HYP.NUM_EPOCHS):
         set_maker.load_next_epoch()
 
@@ -132,8 +128,8 @@ with tf.Session() as sess:
                     counter+= 1
         print("I have finished epoch ",epoch, " out of ", HYP.NUM_EPOCHS)
         print("the total loss of the last sample in this batch is ", total_loss_)
+        writer.add_summary(summary, global_step=epoch)
 
-        writer.add_summary(summary,global_step=epoch)
 
         if epoch % 10 == 0:
             prediction_index = np.argmax(output_prediction_)
@@ -143,8 +139,7 @@ with tf.Session() as sess:
             print("predicted class: ", result)
             print("real class: ", label)
         '''
-        if epoch%500 ==0:
-            saver.save(sess, "GRAPHCHECKPOINTS/rough_run",global_step = epoch)
+
 
         if epoch%50 == 0:
             one_hot_label = []

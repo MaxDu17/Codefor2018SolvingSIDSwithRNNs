@@ -21,7 +21,7 @@ class Information:
     SAMPLE_RATE = 4096
 
 
-
+summed_loss = 0
 set_maker = SM()
 HYP = Hyperparameters()
 prediction_dictionary = {0:"inhale", 1:"exhale", 2:"unknown"}
@@ -72,7 +72,7 @@ with tf.name_scope("summaries_and_saver"):
     tf.summary.histogram("B_In", B_In)
     tf.summary.histogram("B_Out", B_Out)
 
-    tf.summary.scalar("Loss",total_loss)
+    tf.summary.scalar("Summed_Loss",summed_loss)
 
     summary_op = tf.summary.merge_all()
     saver = tf.train.Saver()
@@ -85,7 +85,7 @@ with tf.Session() as sess:
     writer = tf.summary.FileWriter("GRAPHS/",sess.graph)
     set_maker.get_test_set()
     total_loss_ = 0
-
+    global summed_loss
     label = ""
     for epoch in range(HYP.NUM_EPOCHS):
         set_maker.load_next_epoch()

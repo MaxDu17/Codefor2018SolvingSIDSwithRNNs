@@ -179,6 +179,10 @@ class Setmaker:
                         print("Oops we have an error")
         print("all good!")
 
+    def load_blind(self,name): #wrapper func of file maker
+        data_list = self.file_maker.prepare_data(name)
+        return data_list
+
 def test_library():
     maker = Setmaker()
     print("this is the test set assignment: " ,maker.get_test_set())

@@ -13,7 +13,7 @@ RATE = 4096
 
 TOTALPOINTS = 300
 TOTALINCLUSION = 50
-SKIP = 16384
+SKIP = 24576
 CHUNK = 4096
 RECORDTIME = 2
 total_list = list()
@@ -39,6 +39,7 @@ for i in range(TOTALPOINTS):
     total_list.append(i)
 
 audio_select_list = random.sample(total_list, TOTALINCLUSION)
+print(audio_select_list)
 f = open('streamtest/ground_truth.csv','w')
 writer = csv.writer(f,lineterminator="\n")
 

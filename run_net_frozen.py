@@ -41,7 +41,7 @@ with tf.Session(graph=graph) as sess:
     for slice in input_array:
         slice = np.reshape(slice, [1, 43])
         if counter == 15:
-            next_hidd_layer_, output_prediction_ = sess.run(output, feed_dict=
+             output_prediction_ = sess.run(output, feed_dict=
             {
                 input: slice,
                 last_hidd: prev_hidd_layer_

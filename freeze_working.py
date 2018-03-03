@@ -14,7 +14,7 @@ class Hyperparameters:
 HYP = Hyperparameters()
 def create_inference_graph():
     W_In = tf.Variable(tf.random_normal(shape=[HYP.INPUT_LAYER, HYP.HIDDEN_LAYER], stddev=0.1, mean=0),
-                       name="W_In")  # note: this used to have a mean of zero, so check that
+                       name="W_In")  
     W_Hidd = tf.Variable(tf.random_normal(shape=[HYP.HIDDEN_LAYER, HYP.HIDDEN_LAYER], stddev=0.1, mean=0),
                          name="W_Hidd")
     W_Out = tf.Variable(tf.random_normal(shape=[HYP.HIDDEN_LAYER, HYP.OUTPUT_LAYER], stddev=0.1, mean=0), name="W_Out")
@@ -29,7 +29,7 @@ def create_inference_graph():
     hidd_layer = tf.add(hidd_layer, B_In)
     propagated_prev_hidd_layer = tf.matmul(last_hidd, W_Hidd)
     propagated_prev_hidd_layer = tf.add(propagated_prev_hidd_layer, B_Hidd)
-    concat_hidd_layer = tf.add(hidd_layer, propagated_prev_hidd_layer)
+    concat_hidd_layer = tf.add(hidd_layer, propagated_prev_hidd_layer, name = "next_hidd_layer")
     concat_hidd_layer = tf.sigmoid(concat_hidd_layer)
     next_hidd_layer = concat_hidd_layer
     output_logit = tf.matmul(concat_hidd_layer, W_Out)

@@ -17,8 +17,8 @@ SKIP = 16384
 CHUNK = 4096
 RECORDTIME = 2
 total_list = list()
-#big_list = [0]*819200
-big_list = []
+big_list = [0]*819200
+
 class Source:
     class Current:
         INHALE_DIR = "dataSPLIT/inhale/"
@@ -44,7 +44,7 @@ writer = csv.writer(f,lineterminator="\n")
 
 
 
-for k in range(1):
+for k in range(TOTALINCLUSION):
     if audio_select_list[k] >299:
         raise Exception("Out of bounds! Sorry!")
     if audio_select_list[k] <100:
@@ -63,13 +63,13 @@ for k in range(1):
     wav_file = wave.open(open_name, 'r')
     data = wav_file.readframes(RECORDTIME * CHUNK)
     wav_file.close()
-    print(data)
+
     data = struct.unpack('{n}h'.format(n=RECORDTIME * CHUNK), data)
     data = np.array(data)
     big_list[k*SKIP:k*SKIP] = data
 print(len(big_list))
 
-wf = wave.open("streamtest/testa.wav", 'wb')
+wf = wave.open("streamtest/5minsampl.wav", 'wb')
 
 wf.setparams(wav_file.getparams())
 for sample in big_list:

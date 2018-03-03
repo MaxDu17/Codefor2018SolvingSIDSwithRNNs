@@ -21,7 +21,7 @@ class Information:
     SAMPLE_RATE = 4096
 
 
-file_name = "dataTEST/inhale/1.wav"
+file_name = "dataTEST/exhale/1.wav"
 set_maker = SM()
 HYP = Hyperparameters()
 prediction_dictionary = {0:"inhale", 1:"exhale", 2:"unknown"}

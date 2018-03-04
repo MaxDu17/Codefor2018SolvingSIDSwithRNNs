@@ -15,7 +15,7 @@ class Hyperparameters:
 HYP = Hyperparameters()
 set_maker = SM()
 pbfilename = "Best/modelv1.pb"
-file_name = "dataTEST/exhale/1.wav"
+file_name = "dataTEST/inhale/0.wav"
 prediction_dictionary = {0:"inhale", 1:"exhale", 2:"unknown"}
 
 with tf.gfile.GFile(pbfilename, "rb") as f:
@@ -27,10 +27,10 @@ with tf.Graph().as_default() as graph:
                         input_map = None,
                         return_elements = None,
                         name = "")
-input = graph.get_tensor_by_name("input_placeholder:0")
-output = graph.get_tensor_by_name("labels_softmax:0")
-last_hidd = graph.get_tensor_by_name("previous_hidden_layer_placeholder:0")
-next_hidd_layer = graph.get_tensor_by_name("next_hidd_layer:0")
+    input = graph.get_tensor_by_name("input_placeholder:0")
+    output = graph.get_tensor_by_name("labels_softmax:0")
+    last_hidd = graph.get_tensor_by_name("previous_hidden_layer_placeholder:0")
+    next_hidd_layer = graph.get_tensor_by_name("next_hidd_layer:0")
 
 with tf.Session(graph=graph) as sess:
 

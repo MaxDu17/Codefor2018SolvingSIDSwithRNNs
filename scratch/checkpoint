@@ -1,2 +1,2 @@
-model_checkpoint_path: "test-1"
-all_model_checkpoint_paths: "test-1"
+model_checkpoint_path: "tfdroid"
+all_model_checkpoint_paths: "tfdroid"

@@ -38,7 +38,7 @@ def create_inference_graph():
 
 create_inference_graph()
 with tf.Session() as sess:
-
+    #saver = tf.train.Saver()
     sess.run(tf.global_variables_initializer())
     saver = tf.train.import_meta_graph('Best/rough_run-9500.meta', clear_devices=True)
     saver.restore(sess, "Best/rough_run-9500")

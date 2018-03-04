@@ -14,7 +14,7 @@ class Hyperparameters:
 HYP = Hyperparameters()
 def create_inference_graph():
     W_In = tf.Variable(tf.random_normal(shape=[HYP.INPUT_LAYER, HYP.HIDDEN_LAYER], stddev=0.1, mean=0),
-                       name="W_In")  
+                       name="W_In")
     W_Hidd = tf.Variable(tf.random_normal(shape=[HYP.HIDDEN_LAYER, HYP.HIDDEN_LAYER], stddev=0.1, mean=0),
                          name="W_Hidd")
     W_Out = tf.Variable(tf.random_normal(shape=[HYP.HIDDEN_LAYER, HYP.OUTPUT_LAYER], stddev=0.1, mean=0), name="W_Out")

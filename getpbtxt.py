@@ -57,7 +57,7 @@ with tf.name_scope("logit_output"):
     output_logit = tf.add(output_logit, B_Out)
 
 with tf.name_scope("prediction_and_loss"):
-    output_prediction = tf.nn.softmax(output_logit,name = "output")
+    output_prediction = tf.nn.softmax(output_logit, name = "output")
     loss = tf.nn.softmax_cross_entropy_with_logits(logits = output_logit,labels=Y,name = "sparse_softmax_loss_function")
     total_loss = tf.reduce_mean(loss)
 with tf.name_scope("train"):

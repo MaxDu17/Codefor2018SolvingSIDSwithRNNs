@@ -1,18 +1,18 @@
 import tensorflow as tf
 from tensorflow.python.tools import freeze_graph
-MODEL_NAME = 'modelv1'
+MODEL_NAME = 'frozenmodel3418'
 
 # Freeze the graph
 
-input_graph_path = "scratch/tfdroid.pbtxt"
-checkpoint_path = "scratch/tfdroid.ckpt"
+input_graph_path = "Best/graph.pbtxt"
+checkpoint_path = "Best/rough_run-9500"
 input_saver_def_path = ""
 input_binary = False
-output_node_names = "O"
+output_node_names = "output"
 restore_op_name = "save/restore_all"
 filename_tensor_name = "save/Const:0"
-output_frozen_graph_name = 'scratch/frozen_'+MODEL_NAME+'.pb'
-output_optimized_graph_name = 'optimized_'+MODEL_NAME+'.pb'
+output_frozen_graph_name = 'Best/'+MODEL_NAME+'.pb'
+
 clear_devices = True
 
 

@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d071f3fc-a3dc-4aeb-87b8-28511cfdae02" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/checkfreeze.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/getpbtxt.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/otherfreeze.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/scratch.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/scratch_frozen_fun.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Best/checkpoint" afterPath="$PROJECT_DIR$/Best/checkpoint" />
-      <change beforePath="$PROJECT_DIR$/Best/modelv1.pb" afterPath="$PROJECT_DIR$/Best/modelv1.pb" />
-      <change beforePath="$PROJECT_DIR$/freeze_working.py" afterPath="$PROJECT_DIR$/freeze_working.py" />
-      <change beforePath="$PROJECT_DIR$/run_net_frozen.py" afterPath="$PROJECT_DIR$/run_net_frozen.py" />
-      <change beforePath="$PROJECT_DIR$/scratch/checkpoint" afterPath="$PROJECT_DIR$/scratch/checkpoint" />
-      <change beforePath="$PROJECT_DIR$/scratch/test-1.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/scratch/test-1.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/scratch/test-1.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Best/modelv1.pb" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/getpbtxt.py" afterPath="$PROJECT_DIR$/getpbtxt.py" />
+      <change beforePath="$PROJECT_DIR$/otherfreeze.py" afterPath="$PROJECT_DIR$/otherfreeze.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,42 +16,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="getpbtxt.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/getpbtxt.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="60" column="83" lean-forward="false" selection-start-line="60" selection-start-column="83" selection-end-line="60" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-              <folding>
-                <element signature="e#8357#9899#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="checkfreeze.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/checkfreeze.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="run_net_frozen.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_net_frozen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
+            <state relative-caret-position="425">
               <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -70,35 +28,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scratch_frozen_fun.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scratch_frozen_fun.py">
+      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+            <state relative-caret-position="433">
+              <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#8357#9899#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scratch.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scratch.py">
+      <file leaf-file-name="run_net.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run_net.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="14" column="66" lean-forward="false" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1124">
+              <caret line="61" column="26" lean-forward="false" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="otherfreeze.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="getpbtxt.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/getpbtxt.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-152">
+              <caret line="55" column="53" lean-forward="true" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="otherfreeze.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/otherfreeze.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="6" column="37" lean-forward="true" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="freeze_better.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../RNNscratch/freeze_better.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -109,31 +87,9 @@
       <file leaf-file-name="RNNadd.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../RNNscratch/RNNadd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="65" column="26" lean-forward="true" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
+            <state relative-caret-position="298">
+              <caret line="54" column="75" lean-forward="true" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="runfrozenadd.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../RNNscratch/runfrozenadd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="52" column="26" lean-forward="true" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="freeze_better.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../RNNscratch/freeze_better.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -159,6 +115,7 @@
       <find>wav_data</find>
       <find>output_layer_name</find>
       <find>current_states</find>
+      <find>outpu</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -190,15 +147,16 @@
         <option value="$PROJECT_DIR$/../RNNscratch/freeze_addrnn.py" />
         <option value="$PROJECT_DIR$/checkfreeze.py" />
         <option value="$PROJECT_DIR$/../RNNscratch/prebuiltfreeze.py" />
-        <option value="$PROJECT_DIR$/getpbtxt.py" />
         <option value="$PROJECT_DIR$/run_net_frozen.py" />
         <option value="$PROJECT_DIR$/freeze_working.py" />
         <option value="$PROJECT_DIR$/scratch_frozen_fun.py" />
         <option value="$PROJECT_DIR$/scratch.py" />
-        <option value="$PROJECT_DIR$/otherfreeze.py" />
-        <option value="$PROJECT_DIR$/../RNNscratch/RNNadd.py" />
         <option value="$PROJECT_DIR$/../RNNscratch/freeze_better.py" />
         <option value="$PROJECT_DIR$/../RNNscratch/runfrozenadd.py" />
+        <option value="$PROJECT_DIR$/../RNNscratch/RNNrestore.py" />
+        <option value="$PROJECT_DIR$/../RNNscratch/RNNadd.py" />
+        <option value="$PROJECT_DIR$/getpbtxt.py" />
+        <option value="$PROJECT_DIR$/otherfreeze.py" />
       </list>
     </option>
   </component>
@@ -256,12 +214,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RNNscratch/RNNadd.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/run_net.py" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\wedu\Desktop\Working Repository\finalcode" />
       <recent name="C:\Users\wedu\Desktop\Working Repository\RNNscratch" />
+      <recent name="C:\Users\wedu\Desktop\Working Repository\finalcode" />
       <recent name="C:\Users\wedu\Desktop\Working Repository\DatasetMaker" />
     </key>
   </component>
@@ -277,7 +235,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.runfrozenadd">
+  <component name="RunManager" selected="Python.otherfreeze">
+    <configuration name="RNNrestore" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../RNNscratch" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="finalcode" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../RNNscratch/RNNrestore.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="freeze_better" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -296,7 +272,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="run_net_frozen" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="getpbtxt" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -308,7 +284,25 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="finalcode" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_net_frozen.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/getpbtxt.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="otherfreeze" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="finalcode" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/otherfreeze.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -332,56 +326,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="finalcode" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scratch.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="scratch_frozen_fun" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="finalcode" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scratch_frozen_fun.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.scratch" />
-      <item index="1" class="java.lang.String" itemvalue="Python.run_net_frozen" />
-      <item index="2" class="java.lang.String" itemvalue="Python.scratch_frozen_fun" />
-      <item index="3" class="java.lang.String" itemvalue="Python.runfrozenadd" />
-      <item index="4" class="java.lang.String" itemvalue="Python.freeze_better" />
+      <item index="0" class="java.lang.String" itemvalue="Python.runfrozenadd" />
+      <item index="1" class="java.lang.String" itemvalue="Python.freeze_better" />
+      <item index="2" class="java.lang.String" itemvalue="Python.RNNrestore" />
+      <item index="3" class="java.lang.String" itemvalue="Python.otherfreeze" />
+      <item index="4" class="java.lang.String" itemvalue="Python.getpbtxt" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.runfrozenadd" />
-        <item index="1" class="java.lang.String" itemvalue="Python.freeze_better" />
-        <item index="2" class="java.lang.String" itemvalue="Python.scratch" />
-        <item index="3" class="java.lang.String" itemvalue="Python.scratch_frozen_fun" />
-        <item index="4" class="java.lang.String" itemvalue="Python.run_net_frozen" />
+        <item index="0" class="java.lang.String" itemvalue="Python.otherfreeze" />
+        <item index="1" class="java.lang.String" itemvalue="Python.getpbtxt" />
+        <item index="2" class="java.lang.String" itemvalue="Python.RNNrestore" />
+        <item index="3" class="java.lang.String" itemvalue="Python.runfrozenadd" />
+        <item index="4" class="java.lang.String" itemvalue="Python.freeze_better" />
       </list>
     </recent_temporary>
   </component>
@@ -723,16 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="80" column="46" lean-forward="false" selection-start-line="80" selection-start-column="46" selection-end-line="80" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#23#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../RNNscratch/freeze_addrnn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
@@ -759,16 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_net_frozen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../RNNscratch/prebuiltfreeze.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
@@ -779,10 +717,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getpbtxt.py">
+    <entry file="file://$PROJECT_DIR$/../RNNscratch/RNNrestore.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="60" column="83" lean-forward="false" selection-start-line="60" selection-start-column="83" selection-end-line="60" selection-end-column="83" />
+        <state relative-caret-position="502">
+          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../RNNscratch/runfrozenadd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="34" column="60" lean-forward="false" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
           <folding />
         </state>
       </provider>
@@ -797,19 +743,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding>
-            <element signature="e#8357#9899#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scratch_frozen_fun.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
+        <state relative-caret-position="464">
           <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -817,39 +753,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/otherfreeze.py">
+    <entry file="file://$PROJECT_DIR$/run_net_frozen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="425">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding>
+            <element signature="e#8357#9899#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1124">
+          <caret line="61" column="26" lean-forward="false" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../RNNscratch/RNNadd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="65" column="26" lean-forward="true" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
+        <state relative-caret-position="298">
+          <caret line="54" column="75" lean-forward="true" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../RNNscratch/freeze_better.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="200">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../RNNscratch/runfrozenadd.py">
+    <entry file="file://$PROJECT_DIR$/getpbtxt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="52" column="26" lean-forward="true" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+        <state relative-caret-position="-152">
+          <caret line="55" column="53" lean-forward="true" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/otherfreeze.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="37" lean-forward="true" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

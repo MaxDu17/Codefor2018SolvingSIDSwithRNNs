@@ -1088,7 +1088,7 @@ node {
   }
 }
 node {
-  name: "hidden_propagation/Sigmoid"
+  name: "hidden_propagation/hidden_layer_propagation"
   op: "Sigmoid"
   input: "hidden_propagation/Add_1"
   attr {
@@ -1101,7 +1101,7 @@ node {
 node {
   name: "logit_output/MatMul"
   op: "MatMul"
-  input: "hidden_propagation/Sigmoid"
+  input: "hidden_propagation/hidden_layer_propagation"
   input: "W_Out/read"
   attr {
     key: "T"
@@ -2622,7 +2622,7 @@ node {
 node {
   name: "train/gradients/logit_output/MatMul_grad/MatMul_1"
   op: "MatMul"
-  input: "hidden_propagation/Sigmoid"
+  input: "hidden_propagation/hidden_layer_propagation"
   input: "train/gradients/logit_output/Add_grad/tuple/control_dependency"
   attr {
     key: "T"
@@ -2690,9 +2690,9 @@ node {
   }
 }
 node {
-  name: "train/gradients/hidden_propagation/Sigmoid_grad/SigmoidGrad"
+  name: "train/gradients/hidden_propagation/hidden_layer_propagation_grad/SigmoidGrad"
   op: "SigmoidGrad"
-  input: "hidden_propagation/Sigmoid"
+  input: "hidden_propagation/hidden_layer_propagation"
   input: "train/gradients/logit_output/MatMul_grad/tuple/control_dependency"
   attr {
     key: "T"
@@ -2764,7 +2764,7 @@ node {
 node {
   name: "train/gradients/hidden_propagation/Add_1_grad/Sum"
   op: "Sum"
-  input: "train/gradients/hidden_propagation/Sigmoid_grad/SigmoidGrad"
+  input: "train/gradients/hidden_propagation/hidden_layer_propagation_grad/SigmoidGrad"
   input: "train/gradients/hidden_propagation/Add_1_grad/BroadcastGradientArgs"
   attr {
     key: "T"
@@ -2806,7 +2806,7 @@ node {
 node {
   name: "train/gradients/hidden_propagation/Add_1_grad/Sum_1"
   op: "Sum"
-  input: "train/gradients/hidden_propagation/Sigmoid_grad/SigmoidGrad"
+  input: "train/gradients/hidden_propagation/hidden_layer_propagation_grad/SigmoidGrad"
   input: "train/gradients/hidden_propagation/Add_1_grad/BroadcastGradientArgs:1"
   attr {
     key: "T"

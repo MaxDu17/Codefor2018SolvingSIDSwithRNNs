@@ -54,15 +54,15 @@ for k in range(TOTALINCLUSION):
         raise Exception("Out of bounds! Sorry!")
     if audio_select_list[k] <100:
         open_name = Source.Current.INHALE_DIR + str(k) + ".wav"
-        parse_iter = ['inhale',((k+1)*SKIP)-8192]
+        parse_iter = ['inhale',((k+1)*SKIP)-8192,(((k+1)*SKIP)-8192)/4096]
         writer.writerow(parse_iter)
     elif audio_select_list[k] >=100 and audio_select_list[k] <200:
         open_name = Source.Current.EXHALE_DIR + str(k) + ".wav"
-        parse_iter = ['exhale',((k+1)*SKIP)-8192]
+        parse_iter = ['exhale',((k+1)*SKIP)-8192,(((k+1)*SKIP)-8192)/4096]
         writer.writerow(parse_iter)
     else:
         open_name = Source.Current.UNKNOWN_DIR + str(k) + ".wav"
-        parse_iter = ['unknown',((k+1)*SKIP)-8192]
+        parse_iter = ['unknown',((k+1)*SKIP)-8192,(((k+1)*SKIP)-8192)/4096]
         writer.writerow(parse_iter)
 
     wav_file = wave.open(open_name, 'r')

@@ -27,7 +27,6 @@ class DataParse:
             current_block_start = i*512
             current_block_end = current_block_start + 512
             time_split.append(data[current_block_start:current_block_end])
-
         return time_split
 
 
@@ -35,7 +34,10 @@ class DataParse:
 
         fourier_output = np.abs(np.fft.fft(data))
         fourier_output = fourier_output[1:int(CHUNK/16)]#truncates according to nyquist limit
-        fourier_output_norm = (fourier_output - np.min(fourier_output)) / (np.max(fourier_output) - np.min(fourier_output))
+        if np.max(fourier_output) == 0:
+            fourier_output_norm = fourier_output
+        else:
+            fourier_output_norm = (fourier_output - np.min(fourier_output)) / (np.max(fourier_output) - np.min(fourier_output))
         frequency_division = np.linspace(1,CHUNK/2, int((CHUNK/16)-1))
         return fourier_output_norm, frequency_division
 
@@ -52,6 +54,15 @@ class DataParse:
     def prepare_data(self,name):
         data_list = list()
         data = self.load_wav_file(name)
+        time_split = self.split_file(data)
+        for time_slice in time_split:
+            output, frq_div = self.load_fourier(time_slice)
+            output_bins = self.bin(output)
+            data_list.append(output_bins)
+        return data_list
+
+    def bins_from_stream(self,data):
+        data_list = list()
         time_split = self.split_file(data)
         for time_slice in time_split:
             output, frq_div = self.load_fourier(time_slice)

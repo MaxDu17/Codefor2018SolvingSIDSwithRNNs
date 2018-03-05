@@ -4,7 +4,7 @@ import random
 import csv
 import struct
 import pyaudio
-
+import sys
 
 
 FORMAT = pyaudio.paInt16
@@ -39,8 +39,12 @@ for i in range(TOTALPOINTS):
     total_list.append(i)
 
 audio_select_list = random.sample(total_list, TOTALINCLUSION)
-print(audio_select_list)
-f = open('streamtest/ground_truth.csv','w')
+
+try:
+    f = open('streamtest/ground_truth.csv','w')
+except:
+    print("pls close files")
+    sys.exit()
 writer = csv.writer(f,lineterminator="\n")
 
 
@@ -50,15 +54,15 @@ for k in range(TOTALINCLUSION):
         raise Exception("Out of bounds! Sorry!")
     if audio_select_list[k] <100:
         open_name = Source.Current.INHALE_DIR + str(k) + ".wav"
-        parse_iter = ['inhale',k*SKIP]
+        parse_iter = ['inhale',((k+1)*SKIP)-8192]
         writer.writerow(parse_iter)
     elif audio_select_list[k] >=100 and audio_select_list[k] <200:
         open_name = Source.Current.EXHALE_DIR + str(k) + ".wav"
-        parse_iter = ['exhale',k*SKIP]
+        parse_iter = ['exhale',((k+1)*SKIP)-8192]
         writer.writerow(parse_iter)
     else:
         open_name = Source.Current.UNKNOWN_DIR + str(k) + ".wav"
-        parse_iter = ['unknown',k*SKIP]
+        parse_iter = ['unknown',((k+1)*SKIP)-8192]
         writer.writerow(parse_iter)
 
     wav_file = wave.open(open_name, 'r')
@@ -67,7 +71,9 @@ for k in range(TOTALINCLUSION):
 
     data = struct.unpack('{n}h'.format(n=RECORDTIME * CHUNK), data)
     data = np.array(data)
-    big_list[k*SKIP:k*SKIP] = data
+    big_list[(k+1)*SKIP:(k+1)*SKIP] = data
+
+
 print(len(big_list))
 
 wf = wave.open("streamtest/5minsampl.wav", 'wb')

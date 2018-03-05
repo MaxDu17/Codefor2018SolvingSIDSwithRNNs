@@ -71,8 +71,7 @@ def feed_and_output(data):
     global x
     timex = time.clock()
     global time_last
-    parsed_data = ParseData.bins_from_stream(data)
-    prediction = RunGraph.make_prediction(parsed_data)
+    prediction = RunGraph.make_prediction(data)
     x = np.argmax(prediction[0])
 
     if x != 2:
@@ -89,25 +88,28 @@ def feed_and_output(data):
             pass
 def real_time_now():
     recorder = pyaudio.PyAudio()
-    stream = recorder.open(format = FORMAT, channels = 1, rate = FRAMERATE,input = True)
+    stream = recorder.open(format = FORMAT, channels = 1, rate = FRAMERATE,input = True, frames_per_buffer = FRAMERATE)
     frames = []
     first = True
     data = []
-    if first:
-        data = stream.read(CHUNK)
-        frames.append(data)
-        print(len(data))
-        print(data)
-        parsed_data = ParseData.raw_bins_from_stream(data)
+    while True:
+        if first:
+            data = stream.read(CHUNK)
+            data = struct.unpack('{n}h'.format(n=CHUNK), data)
+            data=np.array(data)
+            frames.extend(data)
 
-        feed_and_output(parsed_data)
-        first=False
-    else:
-        data = stream.read(OFFSET)
-        frames.append(data)
-        for i in range(OFFSET):
-            del(frames[0])
-        parsed_data = ParseData.raw_bins_from_stream(data)
-        feed_and_output(parsed_data)
+            parsed_data = ParseData.bins_from_stream(frames)
+            feed_and_output(parsed_data)
+            first=False
+        else:
+            data = stream.read(OFFSET)
+            data = struct.unpack('{n}h'.format(n=OFFSET), data)
+            data = np.array(data)
+            frames.extend(data)
+            for i in range(OFFSET):
+                del(frames[0])
+            parsed_data = ParseData.bins_from_stream(frames)
+            feed_and_output(parsed_data)
 
 real_time_now()

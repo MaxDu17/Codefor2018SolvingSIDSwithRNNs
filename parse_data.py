@@ -69,3 +69,14 @@ class DataParse:
             output_bins = self.bin(output)
             data_list.append(output_bins)
         return data_list
+
+    def raw_bins_from_stream(self,data):
+        data = struct.unpack('{n}h'.format(n=CHUNK), data)
+        data = np.array(data)
+        data_list = list()
+        time_split = self.split_file(data)
+        for time_slice in time_split:
+            output, frq_div = self.load_fourier(time_slice)
+            output_bins = self.bin(output)
+            data_list.append(output_bins)
+        return data_list

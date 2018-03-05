@@ -1,6 +1,6 @@
 import tensorflow as tf
 import sys
-import os
+import time
 import numpy as np
 import wave
 import struct
@@ -8,6 +8,7 @@ from stable_graph_feeder import WholeGraph as WG
 from make_sets import Setmaker as SM
 from parse_data import DataParse as DP
 import csv
+import pyaudio
 
 ParseData = DP()
 RunGraph = WG()
@@ -17,8 +18,14 @@ FRAMERATE = 4096
 CHUNK = 8192
 OFFSET = 512
 TIMEOUT = 2048
+TIMEOUTSECS = TIMEOUT/FRAMERATE
 ALPHALEVEL = 0.995
+FORMAT = pyaudio.paInt16
+timex = time.clock()
 prediction_dictionary = {0:"inhale", 1:"exhale", 2:"unknown"}
+x = -1
+last_x = -1
+time_last = time.clock()
 def test_implementation():
     file = "dataTEST/inhale/1.wav"
     data = SetMaker.load_blind(file)
@@ -59,4 +66,48 @@ def test_from_file():
                 last_x = x
                 pass
     wav_file.close()
+def feed_and_output(data):
+    global last_x
+    global x
+    timex = time.clock()
+    global time_last
+    parsed_data = ParseData.bins_from_stream(data)
+    prediction = RunGraph.make_prediction(parsed_data)
+    x = np.argmax(prediction[0])
 
+    if x != 2:
+        if prediction[0][x] > ALPHALEVEL:
+            last_x = x
+            time_last = time.clock()
+    elif x == 2:
+        if last_x != 2 and last_x != -1:
+            if timex - time_last > TIMEOUTSECS:
+                print(prediction_dictionary[last_x])
+                last_x = x
+        else:
+            last_x = x
+            pass
+def real_time_now():
+    recorder = pyaudio.PyAudio()
+    stream = recorder.open(format = FORMAT, channels = 1, rate = FRAMERATE,input = True)
+    frames = []
+    first = True
+    data = []
+    if first:
+        data = stream.read(CHUNK)
+        frames.append(data)
+        print(len(data))
+        print(data)
+        parsed_data = ParseData.raw_bins_from_stream(data)
+
+        feed_and_output(parsed_data)
+        first=False
+    else:
+        data = stream.read(OFFSET)
+        frames.append(data)
+        for i in range(OFFSET):
+            del(frames[0])
+        parsed_data = ParseData.raw_bins_from_stream(data)
+        feed_and_output(parsed_data)
+
+real_time_now()

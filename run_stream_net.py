@@ -10,6 +10,11 @@ from parse_data import DataParse as DP
 import csv
 import pyaudio
 
+k = open("streamtest/real_time.csv", "w")
+writer_log = csv.writer(k, lineterminator="\n")
+p = open("streamtest/real_time_report_silent.csv", "w")
+writer_log_raw = csv.writer(p, lineterminator="\n")
+
 ParseData = DP()
 RunGraph = WG()
 SetMaker = SM()
@@ -22,6 +27,7 @@ TIMEOUTSECS = TIMEOUT/FRAMERATE
 ALPHALEVEL = 0.995
 FORMAT = pyaudio.paInt16
 timex = time.clock()
+time_zero =time.clock()
 prediction_dictionary = {0:"inhale", 1:"exhale", 2:"unknown"}
 x = -1
 last_x = -1
@@ -67,13 +73,16 @@ def test_from_file():
                 pass
     wav_file.close()
 def feed_and_output(data):
+    global writer_log
+    global writer_log_raw
     global last_x
     global x
     timex = time.clock()
     global time_last
+    global time_zero
     prediction = RunGraph.make_prediction(data)
     x = np.argmax(prediction[0])
-
+    writer_log_raw.writerow(prediction[0])
     if x != 2:
         if prediction[0][x] > ALPHALEVEL:
             last_x = x
@@ -81,6 +90,8 @@ def feed_and_output(data):
     elif x == 2:
         if last_x != 2 and last_x != -1:
             if timex - time_last > TIMEOUTSECS:
+                carrier = [prediction_dictionary[last_x], timex-time_zero]
+                writer_log.writerow(carrier)
                 print(prediction_dictionary[last_x])
                 last_x = x
         else:
@@ -104,6 +115,33 @@ def real_time_now():
             first=False
         else:
             data = stream.read(OFFSET)
+            data = struct.unpack('{n}h'.format(n=OFFSET), data)
+            data = np.array(data)
+            frames.extend(data)
+            for i in range(OFFSET):
+                del(frames[0])
+            parsed_data = ParseData.bins_from_stream(frames)
+            feed_and_output(parsed_data)
+
+def emulate_stream():
+
+    file = "streamtest/5minsampl.wav"
+    stream = wave.open(file, 'r')
+    frames = []
+    first = True
+    data = []
+    while True:
+        if first:
+            data = stream.readframes(CHUNK)
+            data = struct.unpack('{n}h'.format(n=CHUNK), data)
+            data=np.array(data)
+            frames.extend(data)
+
+            parsed_data = ParseData.bins_from_stream(frames)
+            feed_and_output(parsed_data)
+            first=False
+        else:
+            data = stream.readframes(OFFSET)
             data = struct.unpack('{n}h'.format(n=OFFSET), data)
             data = np.array(data)
             frames.extend(data)

@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d071f3fc-a3dc-4aeb-87b8-28511cfdae02" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/fromstreamwriteaudio.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/parsefileraw.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/run_stream_net.py" afterPath="$PROJECT_DIR$/run_stream_net.py" />
-      <change beforePath="$PROJECT_DIR$/streaming_data_maker.py" afterPath="$PROJECT_DIR$/streaming_data_maker.py" />
+      <change beforePath="$PROJECT_DIR$/streamtest/real_time.csv" afterPath="$PROJECT_DIR$/streamtest/real_time.csv" />
+      <change beforePath="$PROJECT_DIR$/streamtest/real_time_report_silent.csv" afterPath="$PROJECT_DIR$/streamtest/real_time_report_silent.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,18 +54,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-              <folding>
-                <element signature="e#8438#9980#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="getpbtxt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getpbtxt.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -86,13 +77,24 @@
       <file leaf-file-name="run_stream_net.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_stream_net.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+            <state relative-caret-position="476">
+              <caret line="135" column="61" lean-forward="false" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#821#958#0" expanded="false" />
                 <element signature="e#986#2173#0" expanded="false" />
-                <element signature="e#3875#4679#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parsefileraw.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/parsefileraw.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,17 +103,27 @@
       <file leaf-file-name="FinalUI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../DatasetMaker/FinalUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-153">
-              <caret line="25" column="26" lean-forward="false" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+            <state relative-caret-position="-77">
+              <caret line="37" column="36" lean-forward="true" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="streaming_data_maker.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fromstreamwriteaudio.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fromstreamwriteaudio.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="143">
+              <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="streaming_data_maker.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/streaming_data_maker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
+            <state relative-caret-position="500">
               <caret line="88" column="28" lean-forward="false" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -185,14 +197,16 @@
         <option value="$PROJECT_DIR$/stable_graph_feeder.py" />
         <option value="$PROJECT_DIR$/run_frozen_net.py" />
         <option value="$PROJECT_DIR$/parse_data.py" />
-        <option value="$PROJECT_DIR$/run_stream_net.py" />
         <option value="$PROJECT_DIR$/streaming_data_maker.py" />
+        <option value="$PROJECT_DIR$/fromstreamwriteaudio.py" />
+        <option value="$PROJECT_DIR$/run_stream_net.py" />
+        <option value="$PROJECT_DIR$/parsefileraw.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-7" />
+    <option name="y" value="1" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -251,8 +265,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.streaming_data_maker">
-    <configuration name="otherfreeze" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.parsefileraw">
+    <configuration name="fromstreamwriteaudio" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -264,7 +278,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="finalcode" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/otherfreeze.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fromstreamwriteaudio.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -288,7 +302,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="run_net_frozen" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="parsefileraw" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -300,7 +314,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="finalcode" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_net_frozen.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/parsefileraw.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -343,19 +357,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.otherfreeze" />
-      <item index="1" class="java.lang.String" itemvalue="Python.run_net_frozen" />
-      <item index="2" class="java.lang.String" itemvalue="Python.streaming_data_maker" />
-      <item index="3" class="java.lang.String" itemvalue="Python.run_stream_net" />
-      <item index="4" class="java.lang.String" itemvalue="Python.parse_data" />
+      <item index="0" class="java.lang.String" itemvalue="Python.streaming_data_maker" />
+      <item index="1" class="java.lang.String" itemvalue="Python.run_stream_net" />
+      <item index="2" class="java.lang.String" itemvalue="Python.parse_data" />
+      <item index="3" class="java.lang.String" itemvalue="Python.fromstreamwriteaudio" />
+      <item index="4" class="java.lang.String" itemvalue="Python.parsefileraw" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.streaming_data_maker" />
-        <item index="1" class="java.lang.String" itemvalue="Python.run_stream_net" />
-        <item index="2" class="java.lang.String" itemvalue="Python.parse_data" />
-        <item index="3" class="java.lang.String" itemvalue="Python.run_net_frozen" />
-        <item index="4" class="java.lang.String" itemvalue="Python.otherfreeze" />
+        <item index="0" class="java.lang.String" itemvalue="Python.parsefileraw" />
+        <item index="1" class="java.lang.String" itemvalue="Python.fromstreamwriteaudio" />
+        <item index="2" class="java.lang.String" itemvalue="Python.run_stream_net" />
+        <item index="3" class="java.lang.String" itemvalue="Python.streaming_data_maker" />
+        <item index="4" class="java.lang.String" itemvalue="Python.parse_data" />
       </list>
     </recent_temporary>
   </component>
@@ -377,13 +391,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27380952" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.54761904" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -426,22 +441,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/run_net_frozen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/otherfreeze.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/parse_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -746,33 +745,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/streaming_data_maker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="88" column="28" lean-forward="false" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../DatasetMaker/FinalUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="25" column="26" lean-forward="false" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+        <state relative-caret-position="-77">
+          <caret line="37" column="36" lean-forward="true" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fromstreamwriteaudio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run_stream_net.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+        <state relative-caret-position="476">
+          <caret line="135" column="61" lean-forward="false" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#821#958#0" expanded="false" />
             <element signature="e#986#2173#0" expanded="false" />
-            <element signature="e#3875#4679#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/streaming_data_maker.py">
+    <entry file="file://$PROJECT_DIR$/parsefileraw.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="88" column="28" lean-forward="false" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
+        <state relative-caret-position="174">
+          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

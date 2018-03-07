@@ -125,7 +125,7 @@ def real_time_now():
 
 def emulate_stream():
 
-    file = "streamtest/5minsampl.wav"
+    file = "streamtest/justalongthing.wav"
     stream = wave.open(file, 'r')
     frames = []
     first = True
@@ -150,4 +150,5 @@ def emulate_stream():
             parsed_data = ParseData.bins_from_stream(frames)
             feed_and_output(parsed_data)
 
-real_time_now()
+
+emulate_stream()

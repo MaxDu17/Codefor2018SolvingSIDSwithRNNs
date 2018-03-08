@@ -29,24 +29,17 @@ class DataParse:
             time_split.append(data[current_block_start:current_block_end])
         return time_split
 
-    def normalize(self,data):
-        if np.max(data) == 0:
-            data_out = data
-        else:
-            data_out = (data-np.min(data))/(np.max(data)-np.min(data))
-        return data_out
+
     def load_fourier(self,data):
 
         fourier_output = np.abs(np.fft.fft(data))
         fourier_output = fourier_output[1:int(CHUNK/16)]#truncates according to nyquist limit
-        '''
         if np.max(fourier_output) == 0:
             fourier_output_norm = fourier_output
         else:
             fourier_output_norm = (fourier_output - np.min(fourier_output)) / (np.max(fourier_output) - np.min(fourier_output))
-            '''
         frequency_division = np.linspace(1,CHUNK/2, int((CHUNK/16)-1))
-        return fourier_output, frequency_division
+        return fourier_output_norm, frequency_division
 
     def bin(self,output):
         output_bins = [None]*43
@@ -66,7 +59,6 @@ class DataParse:
             output, frq_div = self.load_fourier(time_slice)
             output_bins = self.bin(output)
             data_list.append(output_bins)
-            self.normalize(data_list)
         return data_list
 
     def bins_from_stream(self,data):
@@ -77,7 +69,6 @@ class DataParse:
             output, frq_div = self.load_fourier(time_slice)
             output_bins = self.bin(output)
             data_list.append(output_bins)
-            self.normalize(data_list)
         return data_list
 
 

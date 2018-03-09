@@ -17,7 +17,7 @@ for i in range(100):
     except:
         print("oops... check file: ", name)
 
-for i in range(100):
+for i in range(200):
     name = Source.Native.UNKNOWN_DIR + str(i) + ".wav"
     try:
         dataprocess.load_wav_file(name)
@@ -30,5 +30,7 @@ for i in range(100):
         dataprocess.load_wav_file(name)
     except:
         print("oops... check file: ", name)
+
+
 
 print("all good!")

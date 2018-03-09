@@ -5,7 +5,7 @@ import wave
 
 CHUNK = 4096
 RECORDTIME = 2
-
+THRESHOLDVALUE = 500
 
 
 class DataParse:
@@ -30,8 +30,13 @@ class DataParse:
         return time_split
 
     def normalize(self,data):
+        print(np.max(data))
         if np.max(data) == 0:
             data_out = data
+            '''
+        elif np.max(data) < THRESHOLDVALUE:
+            data_out = np.zeros([16,43])
+            print("truncation happening")''' #we remove this for training
         else:
             data_out = (data-np.min(data))/(np.max(data)-np.min(data))
         return data_out
@@ -66,7 +71,7 @@ class DataParse:
             output, frq_div = self.load_fourier(time_slice)
             output_bins = self.bin(output)
             data_list.append(output_bins)
-            self.normalize(data_list)
+        data_list = self.normalize(data_list)
         return data_list
 
     def bins_from_stream(self,data):
@@ -77,7 +82,7 @@ class DataParse:
             output, frq_div = self.load_fourier(time_slice)
             output_bins = self.bin(output)
             data_list.append(output_bins)
-            self.normalize(data_list)
+        data_list = self.normalize(data_list)
         return data_list
 
 

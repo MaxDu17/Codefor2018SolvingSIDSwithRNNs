@@ -77,7 +77,7 @@ with tf.name_scope("summaries_and_saver"):
     saver = tf.train.Saver()
 
 with tf.Session() as sess:
-    log_loss = open("Graphv2/GRAPHS/LOSS.csv", "w")
+    log_loss = open("GraphV2/GRAPHS/LOSS.csv", "w")
     logger = csv.writer(log_loss, lineterminator="\n")
     '''ckpt = tf.train.get_checkpoint_state(os.path.dirname('GRAPHCHECKPOINTS/'))
     if ckpt and ckpt.model_checkpoint_path:

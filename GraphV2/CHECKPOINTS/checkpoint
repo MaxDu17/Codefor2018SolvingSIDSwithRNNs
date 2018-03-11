@@ -1,0 +1,2 @@
+model_checkpoint_path: "GraphV2-0"
+all_model_checkpoint_paths: "GraphV2-0"

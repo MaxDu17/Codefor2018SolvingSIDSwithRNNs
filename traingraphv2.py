@@ -83,8 +83,8 @@ with tf.Session() as sess:
     if ckpt and ckpt.model_checkpoint_path:
         saver.restore(sess, ckpt.model_checkpoint_path)'''
     sess.run(tf.global_variables_initializer())
-    tf.train.write_graph(sess.graph_def, '.', 'Graphv2/GRAPHS/graph.pbtxt')
-    writer = tf.summary.FileWriter("Graphv2/GRAPHS/",sess.graph)
+    tf.train.write_graph(sess.graph_def, 'GraphV2/GRAPHS/', 'graph.pbtxt')
+    writer = tf.summary.FileWriter("GraphV2/GRAPHS/",sess.graph)
     set_maker.get_test_set()
     total_loss_ = 0
 
@@ -134,7 +134,8 @@ with tf.Session() as sess:
                     })
                     prev_hidd_layer_ = next_hidd_layer_
                     counter+= 1
-        logger.writerow(summed_loss)
+        carrier = [summed_loss]
+        logger.writerow(carrier)
         print("I have finished epoch ",epoch, " out of ", HYP.NUM_EPOCHS)
         print("the total loss of the last sample in this batch is ", total_loss_)
         print("here is the large sum of losses through the entire epoch: ", summed_loss)
@@ -150,7 +151,7 @@ with tf.Session() as sess:
             print("real class: ", label)
 
         if epoch%500 ==0:
-            saver.save(sess, "Graphv2/CHECKPOINTS/GraphV2",global_step = epoch)
+            saver.save(sess, "GraphV2/CHECKPOINTS/GraphV2",global_step = epoch)
 
         if epoch%50 == 0:
             one_hot_label = []

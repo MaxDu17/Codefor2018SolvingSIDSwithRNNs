@@ -30,7 +30,6 @@ class DataParse:
         return time_split
 
     def normalize(self,data):
-        print(np.max(data))
         if np.max(data) == 0:
             data_out = data
             '''

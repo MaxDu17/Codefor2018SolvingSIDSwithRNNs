@@ -8,9 +8,9 @@ class Hyperparameters:
     INPUT_LAYER = 43
     HIDDEN_LAYER = 100 #Modify??
     OUTPUT_LAYER = 3
-    NUM_EPOCHS = 10000
+    NUM_EPOCHS = 10001
     #NUM_EPOCHS = 1
-    BATCH_NUMBER = 240
+    BATCH_NUMBER = 340
     LEARNING_RATE = 0.1
     VALIDATION_NUMBER = 30
     TEST_NUMBER = 30
@@ -21,10 +21,6 @@ class Information:
     INPUT_SECTORS = 8
     SAMPLE_RATE = 4096
 
-#todo: make pbtxt, csv, new setmaker
-
-summed_loss =0
-reported_sum_loss = 0
 set_maker = SM()
 HYP = Hyperparameters()
 prediction_dictionary = {0:"inhale", 1:"exhale", 2:"unknown"}
@@ -91,7 +87,6 @@ with tf.Session() as sess:
     writer = tf.summary.FileWriter("Graphv2/GRAPHS/",sess.graph)
     set_maker.get_test_set()
     total_loss_ = 0
-    global summed_loss
 
     label = ""
     for epoch in range(HYP.NUM_EPOCHS):
@@ -148,14 +143,14 @@ with tf.Session() as sess:
 
         if epoch % 10 == 0:
             prediction_index = np.argmax(output_prediction_)
-            print("checkpoint time!!!!")
+            print("Blind Sample Here:")
             print("here is the softmaxed result: ", output_prediction_)
             result = prediction_dictionary[prediction_index]
             print("predicted class: ", result)
             print("real class: ", label)
 
         if epoch%500 ==0:
-            saver.save(sess, "GRAPHCHECKPOINTS/rough_run",global_step = epoch)
+            saver.save(sess, "Graphv2/CHECKPOINTS/GraphV2",global_step = epoch)
 
         if epoch%50 == 0:
             one_hot_label = []

@@ -18,11 +18,10 @@ class Source:
         EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/exhale/"
         UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/unknown/"
 class Setmaker:
-
-    TESTFRACTION = 0.1
-    VALIDFRACTION = 0.1
-    TRAINFRACTION = 0.8
-    TOTALPOINTS = 300
+    TOTAL = 400
+    TEST = 30
+    VALID = 30
+    TRAIN = 340
 
     file_maker = dp()
     exempt_set = list()  # this is for the test
@@ -34,10 +33,10 @@ class Setmaker:
         big_set = list()
         real_set = list()
 
-        for i in range(self.TOTALPOINTS):
+        for i in range(self.TOTAL):
             big_set.append(i)
         leftover_set = [k for k in big_set if k not in self.exempt_set]
-        real_set = random.sample(leftover_set,int(self.TOTALPOINTS*self.TRAINFRACTION))
+        real_set = random.sample(leftover_set,self.TRAIN)
         return real_set
 
 
@@ -46,7 +45,7 @@ class Setmaker:
         real_set = list()
 
 
-        for i in range(self.TOTALPOINTS):
+        for i in range(self.TOTAL):
             big_set.append(i)
         leftover_set = [k for k in big_set if k not in train_set and k not in self.exempt_set]
         return leftover_set
@@ -55,9 +54,9 @@ class Setmaker:
     def pick_test(self):
         big_set = list()
         real_set = list()
-        for i in range(self.TOTALPOINTS):
+        for i in range(self.TOTAL):
             big_set.append(i)
-        test_set = random.sample(big_set,int(self.TOTALPOINTS*self.TESTFRACTION))
+        test_set = random.sample(big_set,self.TEST)
         self.exempt_set = test_set
         return test_set #returns test set
 
@@ -78,7 +77,7 @@ class Setmaker:
     def get_test_set(self): #call this before everything! It's a wrapper function!
 
         self.test_list = self.pick_test()
-        print("creating test set!!")
+        print("Creating Test Set!")
         return self.test_list
 
 
@@ -98,7 +97,7 @@ class Setmaker:
 
 
     def next_test(self,batch_number):
-        if batch_number > 239:
+        if batch_number > self.TEST-1:
             print("you have exceeded the batch! Try again! This is the test round")
         batch_index = self.test_list[batch_number]
         if batch_index < 100:
@@ -119,8 +118,8 @@ class Setmaker:
             return data_list, label
 
     def next_validation(self,batch_number):
-        if batch_number > 239:
-            print("you have exceeded the batch! Try again! This is the test round")
+        if batch_number > self.VALID-1:
+            print("you have exceeded the batch! Try again! This is the validation round")
         batch_index = self.validation_list[batch_number]
         if batch_index < 100:
             label = 'inhale'
@@ -142,7 +141,7 @@ class Setmaker:
     def load_next_train_sample(self, batch_number):
 
        # print("you are on batch" , batch_number)
-        if batch_number >239:
+        if batch_number >self.TRAIN-1:
             print("you have exceeded the batch! Try again!")
         batch_index = self.train_list[batch_number]
         if batch_index <100:
@@ -191,7 +190,7 @@ def test_library():
     print("this is how many time frames: ",len(test))
     print("This is how many frequency bins: ",len(test[0]))
     print("this is the label for this set: ", label_test)
-    print("and this is the raw data: ", test)
+    #print("and this is the raw data: ", test)
     valid, label_valid = maker.next_validation(10)
     print("This is how long the test set is: ",len(maker.exempt_set))
     print("This is how long the train set is: ",len(maker.train_list))

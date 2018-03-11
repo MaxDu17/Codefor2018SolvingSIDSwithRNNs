@@ -139,7 +139,6 @@ with tf.Session() as sess:
         print("I have finished epoch ",epoch, " out of ", HYP.NUM_EPOCHS)
         print("the total loss of the last sample in this batch is ", total_loss_)
         print("here is the large sum of losses through the entire epoch: ", summed_loss)
-
         writer.add_summary(summary,global_step=epoch)
 
         if epoch % 10 == 0:

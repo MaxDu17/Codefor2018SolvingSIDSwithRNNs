@@ -14,8 +14,8 @@ class Hyperparameters:
     TEST_NUMBER = 30
 HYP = Hyperparameters()
 set_maker = SM()
-pbfilename = "Best/frozenmodel3418.pb"
-file_name = "dataTEST/inhale/1.wav"
+pbfilename = "GraphV2/GRAPHS/GraphV2_frozen.pb"
+file_name = "dataTEST/exhale/1.wav"
 prediction_dictionary = {0:"inhale", 1:"exhale", 2:"unknown"}
 
 with tf.gfile.GFile(pbfilename, "rb") as f:

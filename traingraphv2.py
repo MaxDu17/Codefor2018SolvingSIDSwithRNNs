@@ -47,7 +47,7 @@ with tf.name_scope("hidden_propagation"):
     propagated_prev_hidd_layer = tf.matmul(last_hidd,W_Hidd)
     propagated_prev_hidd_layer = tf.add(propagated_prev_hidd_layer,B_Hidd)
     concat_hidd_layer = tf.add(hidd_layer,propagated_prev_hidd_layer)
-    concat_hidd_layer = tf.sigmoid(concat_hidd_layer)
+    concat_hidd_layer = tf.sigmoid(concat_hidd_layer, name="hidden_layer_propagation")
     next_hidd_layer = concat_hidd_layer
 
 with tf.name_scope("logit_output"):

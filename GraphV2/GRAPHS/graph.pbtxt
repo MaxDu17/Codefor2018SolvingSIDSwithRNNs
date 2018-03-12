@@ -1088,7 +1088,7 @@ node {
   }
 }
 node {
-  name: "hidden_propagation/Sigmoid"
+  name: "hidden_propagation/hidden_layer_propagation"
   op: "Sigmoid"
   input: "hidden_propagation/Add_1"
   attr {
@@ -1101,7 +1101,7 @@ node {
 node {
   name: "logit_output/MatMul"
   op: "MatMul"
-  input: "hidden_propagation/Sigmoid"
+  input: "hidden_propagation/hidden_layer_propagation"
   input: "W_Out/read"
   attr {
     key: "T"
@@ -1146,20 +1146,9 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/labels_stop_gradient"
-  op: "StopGradient"
-  input: "placeholders/one_hot_labels_placeholder"
-  attr {
-    key: "T"
-    value {
-      type: DT_INT8
-    }
-  }
-}
-node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Cast"
+  name: "prediction_and_loss/Cast"
   op: "Cast"
-  input: "prediction_and_loss/sparse_softmax_loss_function/labels_stop_gradient"
+  input: "placeholders/one_hot_labels_placeholder"
   attr {
     key: "DstT"
     value {
@@ -1174,7 +1163,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Rank"
+  name: "prediction_and_loss/Rank"
   op: "Const"
   attr {
     key: "dtype"
@@ -1195,7 +1184,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Shape"
+  name: "prediction_and_loss/Shape"
   op: "Const"
   attr {
     key: "dtype"
@@ -1219,7 +1208,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Rank_1"
+  name: "prediction_and_loss/Rank_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -1240,7 +1229,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Shape_1"
+  name: "prediction_and_loss/Shape_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -1264,7 +1253,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Sub/y"
+  name: "prediction_and_loss/Sub/y"
   op: "Const"
   attr {
     key: "dtype"
@@ -1285,10 +1274,10 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Sub"
+  name: "prediction_and_loss/Sub"
   op: "Sub"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Rank_1"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Sub/y"
+  input: "prediction_and_loss/Rank_1"
+  input: "prediction_and_loss/Sub/y"
   attr {
     key: "T"
     value {
@@ -1297,9 +1286,9 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Slice/begin"
+  name: "prediction_and_loss/Slice/begin"
   op: "Pack"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Sub"
+  input: "prediction_and_loss/Sub"
   attr {
     key: "N"
     value {
@@ -1320,7 +1309,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Slice/size"
+  name: "prediction_and_loss/Slice/size"
   op: "Const"
   attr {
     key: "dtype"
@@ -1344,11 +1333,11 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Slice"
+  name: "prediction_and_loss/Slice"
   op: "Slice"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Shape_1"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Slice/begin"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Slice/size"
+  input: "prediction_and_loss/Shape_1"
+  input: "prediction_and_loss/Slice/begin"
+  input: "prediction_and_loss/Slice/size"
   attr {
     key: "Index"
     value {
@@ -1363,7 +1352,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/concat/values_0"
+  name: "prediction_and_loss/concat/values_0"
   op: "Const"
   attr {
     key: "dtype"
@@ -1387,7 +1376,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/concat/axis"
+  name: "prediction_and_loss/concat/axis"
   op: "Const"
   attr {
     key: "dtype"
@@ -1408,11 +1397,11 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/concat"
+  name: "prediction_and_loss/concat"
   op: "ConcatV2"
-  input: "prediction_and_loss/sparse_softmax_loss_function/concat/values_0"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Slice"
-  input: "prediction_and_loss/sparse_softmax_loss_function/concat/axis"
+  input: "prediction_and_loss/concat/values_0"
+  input: "prediction_and_loss/Slice"
+  input: "prediction_and_loss/concat/axis"
   attr {
     key: "N"
     value {
@@ -1433,10 +1422,10 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Reshape"
+  name: "prediction_and_loss/Reshape"
   op: "Reshape"
   input: "logit_output/Add"
-  input: "prediction_and_loss/sparse_softmax_loss_function/concat"
+  input: "prediction_and_loss/concat"
   attr {
     key: "T"
     value {
@@ -1451,7 +1440,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Rank_2"
+  name: "prediction_and_loss/Rank_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -1472,7 +1461,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Shape_2"
+  name: "prediction_and_loss/Shape_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -1496,7 +1485,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Sub_1/y"
+  name: "prediction_and_loss/Sub_1/y"
   op: "Const"
   attr {
     key: "dtype"
@@ -1517,10 +1506,10 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Sub_1"
+  name: "prediction_and_loss/Sub_1"
   op: "Sub"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Rank_2"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Sub_1/y"
+  input: "prediction_and_loss/Rank_2"
+  input: "prediction_and_loss/Sub_1/y"
   attr {
     key: "T"
     value {
@@ -1529,9 +1518,9 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Slice_1/begin"
+  name: "prediction_and_loss/Slice_1/begin"
   op: "Pack"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Sub_1"
+  input: "prediction_and_loss/Sub_1"
   attr {
     key: "N"
     value {
@@ -1552,7 +1541,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Slice_1/size"
+  name: "prediction_and_loss/Slice_1/size"
   op: "Const"
   attr {
     key: "dtype"
@@ -1576,11 +1565,11 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Slice_1"
+  name: "prediction_and_loss/Slice_1"
   op: "Slice"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Shape_2"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Slice_1/begin"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Slice_1/size"
+  input: "prediction_and_loss/Shape_2"
+  input: "prediction_and_loss/Slice_1/begin"
+  input: "prediction_and_loss/Slice_1/size"
   attr {
     key: "Index"
     value {
@@ -1595,7 +1584,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/concat_1/values_0"
+  name: "prediction_and_loss/concat_1/values_0"
   op: "Const"
   attr {
     key: "dtype"
@@ -1619,7 +1608,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/concat_1/axis"
+  name: "prediction_and_loss/concat_1/axis"
   op: "Const"
   attr {
     key: "dtype"
@@ -1640,11 +1629,11 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/concat_1"
+  name: "prediction_and_loss/concat_1"
   op: "ConcatV2"
-  input: "prediction_and_loss/sparse_softmax_loss_function/concat_1/values_0"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Slice_1"
-  input: "prediction_and_loss/sparse_softmax_loss_function/concat_1/axis"
+  input: "prediction_and_loss/concat_1/values_0"
+  input: "prediction_and_loss/Slice_1"
+  input: "prediction_and_loss/concat_1/axis"
   attr {
     key: "N"
     value {
@@ -1665,10 +1654,10 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Reshape_1"
+  name: "prediction_and_loss/Reshape_1"
   op: "Reshape"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Cast"
-  input: "prediction_and_loss/sparse_softmax_loss_function/concat_1"
+  input: "prediction_and_loss/Cast"
+  input: "prediction_and_loss/concat_1"
   attr {
     key: "T"
     value {
@@ -1685,8 +1674,8 @@ node {
 node {
   name: "prediction_and_loss/sparse_softmax_loss_function"
   op: "SoftmaxCrossEntropyWithLogits"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Reshape"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Reshape_1"
+  input: "prediction_and_loss/Reshape"
+  input: "prediction_and_loss/Reshape_1"
   attr {
     key: "T"
     value {
@@ -1695,7 +1684,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Sub_2/y"
+  name: "prediction_and_loss/Sub_2/y"
   op: "Const"
   attr {
     key: "dtype"
@@ -1716,10 +1705,10 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Sub_2"
+  name: "prediction_and_loss/Sub_2"
   op: "Sub"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Rank"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Sub_2/y"
+  input: "prediction_and_loss/Rank"
+  input: "prediction_and_loss/Sub_2/y"
   attr {
     key: "T"
     value {
@@ -1728,7 +1717,7 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Slice_2/begin"
+  name: "prediction_and_loss/Slice_2/begin"
   op: "Const"
   attr {
     key: "dtype"
@@ -1752,9 +1741,9 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Slice_2/size"
+  name: "prediction_and_loss/Slice_2/size"
   op: "Pack"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Sub_2"
+  input: "prediction_and_loss/Sub_2"
   attr {
     key: "N"
     value {
@@ -1775,11 +1764,11 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Slice_2"
+  name: "prediction_and_loss/Slice_2"
   op: "Slice"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Shape"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Slice_2/begin"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Slice_2/size"
+  input: "prediction_and_loss/Shape"
+  input: "prediction_and_loss/Slice_2/begin"
+  input: "prediction_and_loss/Slice_2/size"
   attr {
     key: "Index"
     value {
@@ -1794,10 +1783,10 @@ node {
   }
 }
 node {
-  name: "prediction_and_loss/sparse_softmax_loss_function/Reshape_2"
+  name: "prediction_and_loss/Reshape_2"
   op: "Reshape"
   input: "prediction_and_loss/sparse_softmax_loss_function"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Slice_2"
+  input: "prediction_and_loss/Slice_2"
   attr {
     key: "T"
     value {
@@ -1838,7 +1827,7 @@ node {
 node {
   name: "prediction_and_loss/Mean"
   op: "Mean"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Reshape_2"
+  input: "prediction_and_loss/Reshape_2"
   input: "prediction_and_loss/Const"
   attr {
     key: "T"
@@ -1882,7 +1871,7 @@ node {
   }
 }
 node {
-  name: "train/gradients/grad_ys_0"
+  name: "train/gradients/Const"
   op: "Const"
   attr {
     key: "dtype"
@@ -1906,7 +1895,7 @@ node {
   name: "train/gradients/Fill"
   op: "Fill"
   input: "train/gradients/Shape"
-  input: "train/gradients/grad_ys_0"
+  input: "train/gradients/Const"
   attr {
     key: "T"
     value {
@@ -1999,40 +1988,7 @@ node {
   }
 }
 node {
-  name: "train/gradients/prediction_and_loss/Mean_grad/Const"
-  op: "Const"
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-        }
-        float_val: 1.0
-      }
-    }
-  }
-}
-node {
-  name: "train/gradients/prediction_and_loss/Mean_grad/truediv"
-  op: "RealDiv"
-  input: "train/gradients/prediction_and_loss/Mean_grad/Tile"
-  input: "train/gradients/prediction_and_loss/Mean_grad/Const"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "train/gradients/prediction_and_loss/sparse_softmax_loss_function/Reshape_2_grad/Shape"
+  name: "train/gradients/prediction_and_loss/Mean_grad/Shape"
   op: "Const"
   attr {
     key: "dtype"
@@ -2056,10 +2012,282 @@ node {
   }
 }
 node {
-  name: "train/gradients/prediction_and_loss/sparse_softmax_loss_function/Reshape_2_grad/Reshape"
+  name: "train/gradients/prediction_and_loss/Mean_grad/Shape_1"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "train/gradients/prediction_and_loss/Mean_grad/Const"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@train/gradients/prediction_and_loss/Mean_grad/Shape"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 1
+          }
+        }
+        int_val: 0
+      }
+    }
+  }
+}
+node {
+  name: "train/gradients/prediction_and_loss/Mean_grad/Prod"
+  op: "Prod"
+  input: "train/gradients/prediction_and_loss/Mean_grad/Shape"
+  input: "train/gradients/prediction_and_loss/Mean_grad/Const"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@train/gradients/prediction_and_loss/Mean_grad/Shape"
+      }
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "train/gradients/prediction_and_loss/Mean_grad/Const_1"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@train/gradients/prediction_and_loss/Mean_grad/Shape"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 1
+          }
+        }
+        int_val: 0
+      }
+    }
+  }
+}
+node {
+  name: "train/gradients/prediction_and_loss/Mean_grad/Prod_1"
+  op: "Prod"
+  input: "train/gradients/prediction_and_loss/Mean_grad/Shape_1"
+  input: "train/gradients/prediction_and_loss/Mean_grad/Const_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@train/gradients/prediction_and_loss/Mean_grad/Shape"
+      }
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "train/gradients/prediction_and_loss/Mean_grad/Maximum/y"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@train/gradients/prediction_and_loss/Mean_grad/Shape"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+        }
+        int_val: 1
+      }
+    }
+  }
+}
+node {
+  name: "train/gradients/prediction_and_loss/Mean_grad/Maximum"
+  op: "Maximum"
+  input: "train/gradients/prediction_and_loss/Mean_grad/Prod_1"
+  input: "train/gradients/prediction_and_loss/Mean_grad/Maximum/y"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@train/gradients/prediction_and_loss/Mean_grad/Shape"
+      }
+    }
+  }
+}
+node {
+  name: "train/gradients/prediction_and_loss/Mean_grad/floordiv"
+  op: "FloorDiv"
+  input: "train/gradients/prediction_and_loss/Mean_grad/Prod"
+  input: "train/gradients/prediction_and_loss/Mean_grad/Maximum"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@train/gradients/prediction_and_loss/Mean_grad/Shape"
+      }
+    }
+  }
+}
+node {
+  name: "train/gradients/prediction_and_loss/Mean_grad/Cast"
+  op: "Cast"
+  input: "train/gradients/prediction_and_loss/Mean_grad/floordiv"
+  attr {
+    key: "DstT"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "SrcT"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "train/gradients/prediction_and_loss/Mean_grad/truediv"
+  op: "RealDiv"
+  input: "train/gradients/prediction_and_loss/Mean_grad/Tile"
+  input: "train/gradients/prediction_and_loss/Mean_grad/Cast"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "train/gradients/prediction_and_loss/Reshape_2_grad/Shape"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 1
+          }
+        }
+        int_val: 1
+      }
+    }
+  }
+}
+node {
+  name: "train/gradients/prediction_and_loss/Reshape_2_grad/Reshape"
   op: "Reshape"
   input: "train/gradients/prediction_and_loss/Mean_grad/truediv"
-  input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function/Reshape_2_grad/Shape"
+  input: "train/gradients/prediction_and_loss/Reshape_2_grad/Shape"
   attr {
     key: "T"
     value {
@@ -2108,7 +2336,7 @@ node {
 node {
   name: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/ExpandDims"
   op: "ExpandDims"
-  input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function/Reshape_2_grad/Reshape"
+  input: "train/gradients/prediction_and_loss/Reshape_2_grad/Reshape"
   input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/ExpandDims/dim"
   attr {
     key: "T"
@@ -2136,126 +2364,7 @@ node {
   }
 }
 node {
-  name: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/LogSoftmax"
-  op: "LogSoftmax"
-  input: "prediction_and_loss/sparse_softmax_loss_function/Reshape"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/Neg"
-  op: "Neg"
-  input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/LogSoftmax"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/ExpandDims_1/dim"
-  op: "Const"
-  attr {
-    key: "dtype"
-    value {
-      type: DT_INT32
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_INT32
-        tensor_shape {
-        }
-        int_val: -1
-      }
-    }
-  }
-}
-node {
-  name: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/ExpandDims_1"
-  op: "ExpandDims"
-  input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function/Reshape_2_grad/Reshape"
-  input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/ExpandDims_1/dim"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "Tdim"
-    value {
-      type: DT_INT32
-    }
-  }
-}
-node {
-  name: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/mul_1"
-  op: "Mul"
-  input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/ExpandDims_1"
-  input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/Neg"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/tuple/group_deps"
-  op: "NoOp"
-  input: "^train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/mul"
-  input: "^train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/mul_1"
-}
-node {
-  name: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/tuple/control_dependency"
-  op: "Identity"
-  input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/mul"
-  input: "^train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/tuple/group_deps"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/mul"
-      }
-    }
-  }
-}
-node {
-  name: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/tuple/control_dependency_1"
-  op: "Identity"
-  input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/mul_1"
-  input: "^train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/tuple/group_deps"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/mul_1"
-      }
-    }
-  }
-}
-node {
-  name: "train/gradients/prediction_and_loss/sparse_softmax_loss_function/Reshape_grad/Shape"
+  name: "train/gradients/prediction_and_loss/Reshape_grad/Shape"
   op: "Const"
   attr {
     key: "dtype"
@@ -2279,10 +2388,10 @@ node {
   }
 }
 node {
-  name: "train/gradients/prediction_and_loss/sparse_softmax_loss_function/Reshape_grad/Reshape"
+  name: "train/gradients/prediction_and_loss/Reshape_grad/Reshape"
   op: "Reshape"
-  input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/tuple/control_dependency"
-  input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function/Reshape_grad/Shape"
+  input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function_grad/mul"
+  input: "train/gradients/prediction_and_loss/Reshape_grad/Shape"
   attr {
     key: "T"
     value {
@@ -2359,7 +2468,7 @@ node {
 node {
   name: "train/gradients/logit_output/Add_grad/Sum"
   op: "Sum"
-  input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function/Reshape_grad/Reshape"
+  input: "train/gradients/prediction_and_loss/Reshape_grad/Reshape"
   input: "train/gradients/logit_output/Add_grad/BroadcastGradientArgs"
   attr {
     key: "T"
@@ -2401,7 +2510,7 @@ node {
 node {
   name: "train/gradients/logit_output/Add_grad/Sum_1"
   op: "Sum"
-  input: "train/gradients/prediction_and_loss/sparse_softmax_loss_function/Reshape_grad/Reshape"
+  input: "train/gradients/prediction_and_loss/Reshape_grad/Reshape"
   input: "train/gradients/logit_output/Add_grad/BroadcastGradientArgs:1"
   attr {
     key: "T"
@@ -2513,7 +2622,7 @@ node {
 node {
   name: "train/gradients/logit_output/MatMul_grad/MatMul_1"
   op: "MatMul"
-  input: "hidden_propagation/Sigmoid"
+  input: "hidden_propagation/hidden_layer_propagation"
   input: "train/gradients/logit_output/Add_grad/tuple/control_dependency"
   attr {
     key: "T"
@@ -2581,9 +2690,9 @@ node {
   }
 }
 node {
-  name: "train/gradients/hidden_propagation/Sigmoid_grad/SigmoidGrad"
+  name: "train/gradients/hidden_propagation/hidden_layer_propagation_grad/SigmoidGrad"
   op: "SigmoidGrad"
-  input: "hidden_propagation/Sigmoid"
+  input: "hidden_propagation/hidden_layer_propagation"
   input: "train/gradients/logit_output/MatMul_grad/tuple/control_dependency"
   attr {
     key: "T"
@@ -2593,14 +2702,159 @@ node {
   }
 }
 node {
+  name: "train/gradients/hidden_propagation/Add_1_grad/Shape"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "\001\000\000\000d\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "train/gradients/hidden_propagation/Add_1_grad/Shape_1"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "\001\000\000\000d\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "train/gradients/hidden_propagation/Add_1_grad/BroadcastGradientArgs"
+  op: "BroadcastGradientArgs"
+  input: "train/gradients/hidden_propagation/Add_1_grad/Shape"
+  input: "train/gradients/hidden_propagation/Add_1_grad/Shape_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "train/gradients/hidden_propagation/Add_1_grad/Sum"
+  op: "Sum"
+  input: "train/gradients/hidden_propagation/hidden_layer_propagation_grad/SigmoidGrad"
+  input: "train/gradients/hidden_propagation/Add_1_grad/BroadcastGradientArgs"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "train/gradients/hidden_propagation/Add_1_grad/Reshape"
+  op: "Reshape"
+  input: "train/gradients/hidden_propagation/Add_1_grad/Sum"
+  input: "train/gradients/hidden_propagation/Add_1_grad/Shape"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "train/gradients/hidden_propagation/Add_1_grad/Sum_1"
+  op: "Sum"
+  input: "train/gradients/hidden_propagation/hidden_layer_propagation_grad/SigmoidGrad"
+  input: "train/gradients/hidden_propagation/Add_1_grad/BroadcastGradientArgs:1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "train/gradients/hidden_propagation/Add_1_grad/Reshape_1"
+  op: "Reshape"
+  input: "train/gradients/hidden_propagation/Add_1_grad/Sum_1"
+  input: "train/gradients/hidden_propagation/Add_1_grad/Shape_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
   name: "train/gradients/hidden_propagation/Add_1_grad/tuple/group_deps"
   op: "NoOp"
-  input: "^train/gradients/hidden_propagation/Sigmoid_grad/SigmoidGrad"
+  input: "^train/gradients/hidden_propagation/Add_1_grad/Reshape"
+  input: "^train/gradients/hidden_propagation/Add_1_grad/Reshape_1"
 }
 node {
   name: "train/gradients/hidden_propagation/Add_1_grad/tuple/control_dependency"
   op: "Identity"
-  input: "train/gradients/hidden_propagation/Sigmoid_grad/SigmoidGrad"
+  input: "train/gradients/hidden_propagation/Add_1_grad/Reshape"
   input: "^train/gradients/hidden_propagation/Add_1_grad/tuple/group_deps"
   attr {
     key: "T"
@@ -2612,7 +2866,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@train/gradients/hidden_propagation/Sigmoid_grad/SigmoidGrad"
+        s: "loc:@train/gradients/hidden_propagation/Add_1_grad/Reshape"
       }
     }
   }
@@ -2620,7 +2874,7 @@ node {
 node {
   name: "train/gradients/hidden_propagation/Add_1_grad/tuple/control_dependency_1"
   op: "Identity"
-  input: "train/gradients/hidden_propagation/Sigmoid_grad/SigmoidGrad"
+  input: "train/gradients/hidden_propagation/Add_1_grad/Reshape_1"
   input: "^train/gradients/hidden_propagation/Add_1_grad/tuple/group_deps"
   attr {
     key: "T"
@@ -2632,7 +2886,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@train/gradients/hidden_propagation/Sigmoid_grad/SigmoidGrad"
+        s: "loc:@train/gradients/hidden_propagation/Add_1_grad/Reshape_1"
       }
     }
   }
@@ -5712,22 +5966,6 @@ node {
   input: "^summaries_and_saver/save/Assign_9"
   input: "^summaries_and_saver/save/Assign_10"
   input: "^summaries_and_saver/save/Assign_11"
-}
-node {
-  name: "init"
-  op: "NoOp"
-  input: "^W_In/Assign"
-  input: "^W_Hidd/Assign"
-  input: "^W_Out/Assign"
-  input: "^B_In/Assign"
-  input: "^B_Hidd/Assign"
-  input: "^B_Out/Assign"
-  input: "^W_In/Adagrad/Assign"
-  input: "^W_Hidd/Adagrad/Assign"
-  input: "^W_Out/Adagrad/Assign"
-  input: "^B_In/Adagrad/Assign"
-  input: "^B_Hidd/Adagrad/Assign"
-  input: "^B_Out/Adagrad/Assign"
 }
 versions {
   producer: 24

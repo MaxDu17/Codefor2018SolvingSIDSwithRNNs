@@ -2,14 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d071f3fc-a3dc-4aeb-87b8-28511cfdae02" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/traingraphv3.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/spacer.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/GRAPHS/graph.pbtxt" afterPath="$PROJECT_DIR$/GraphV2/GRAPHS/graph.pbtxt" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/GRAPHS/spacer.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/freeze_graph.py" afterPath="$PROJECT_DIR$/freeze_graph.py" />
-      <change beforePath="$PROJECT_DIR$/getpbtxt.py" afterPath="$PROJECT_DIR$/getpbtxt.py" />
+      <change beforePath="$PROJECT_DIR$/GraphV2/GRAPHS/loss graph.xlsx" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dataTEST/exhale/0.wav" afterPath="$PROJECT_DIR$/dataTEST/exhale/0.wav" />
+      <change beforePath="$PROJECT_DIR$/dataTEST/exhale/1.wav" afterPath="$PROJECT_DIR$/dataTEST/exhale/1.wav" />
+      <change beforePath="$PROJECT_DIR$/dataTEST/inhale/0.wav" afterPath="$PROJECT_DIR$/dataTEST/inhale/0.wav" />
+      <change beforePath="$PROJECT_DIR$/dataTEST/inhale/1.wav" afterPath="$PROJECT_DIR$/dataTEST/inhale/1.wav" />
+      <change beforePath="$PROJECT_DIR$/dataTEST/inhale/2.wav" afterPath="$PROJECT_DIR$/dataTEST/inhale/2.wav" />
       <change beforePath="$PROJECT_DIR$/run_frozen_net.py" afterPath="$PROJECT_DIR$/run_frozen_net.py" />
-      <change beforePath="$PROJECT_DIR$/traingraphv2.py" afterPath="$PROJECT_DIR$/traingraphv2.py" />
+      <change beforePath="$PROJECT_DIR$/run_stream_net.py" afterPath="$PROJECT_DIR$/run_stream_net.py" />
+      <change beforePath="$PROJECT_DIR$/stable_graph_feeder.py" afterPath="$PROJECT_DIR$/stable_graph_feeder.py" />
+      <change beforePath="$PROJECT_DIR$/streaming_data_maker.py" afterPath="$PROJECT_DIR$/streaming_data_maker.py" />
+      <change beforePath="$PROJECT_DIR$/streamtest/emulated.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/streamtest/ground_truth.csv" afterPath="$PROJECT_DIR$/streamtest/ground_truth.csv" />
+      <change beforePath="$PROJECT_DIR$/streamtest/ground_truth.xlsx" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/streamtest/justalongthing.wav" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/streamtest/peaks.csv" afterPath="$PROJECT_DIR$/streamtest/peaks.csv" />
+      <change beforePath="$PROJECT_DIR$/streamtest/peaks.xlsx" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/streamtest/predictions labels.xlsx" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/streamtest/predictions.csv" afterPath="$PROJECT_DIR$/streamtest/predictions.csv" />
+      <change beforePath="$PROJECT_DIR$/streamtest/predictions.xlsx" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/streamtest/real_time_report_silent.csv" afterPath="$PROJECT_DIR$/streamtest/real_time_report_silent.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,29 +46,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_stream_net.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run_stream_net.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-519">
-              <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <element signature="e#821#958#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="make_sets.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/make_sets.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="getpbtxt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getpbtxt.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -65,19 +56,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parse_data_spectro.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parse_data_spectro.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parse_data.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="parse_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parse_data.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="812">
@@ -91,7 +70,27 @@
         <entry file="file://$PROJECT_DIR$/traingraphv2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="309">
-              <caret line="83" column="58" lean-forward="true" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
+              <caret line="83" column="58" lean-forward="false" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="traingraphv3.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/traingraphv3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MakeUnknown.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../DatasetMaker/MakeUnknown.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="68" column="37" lean-forward="false" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -100,8 +99,41 @@
       <file leaf-file-name="run_frozen_net.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_frozen_net.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="406">
+              <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run_stream_net.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/run_stream_net.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="524">
+              <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#3986#4795#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="streaming_data_maker.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/streaming_data_maker.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stable_graph_feeder.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stable_graph_feeder.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1300">
+              <caret line="55" column="51" lean-forward="false" selection-start-line="55" selection-start-column="51" selection-end-line="55" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -130,6 +162,7 @@
       <find>outpu</find>
       <find>next_</find>
       <find>print</find>
+      <find>real</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,13 +197,9 @@
         <option value="$PROJECT_DIR$/../RNNscratch/RNNadd.py" />
         <option value="$PROJECT_DIR$/otherfreeze.py" />
         <option value="$PROJECT_DIR$/run_net_frozen.py" />
-        <option value="$PROJECT_DIR$/stable_graph_feeder.py" />
-        <option value="$PROJECT_DIR$/streaming_data_maker.py" />
         <option value="$PROJECT_DIR$/fromstreamwriteaudio.py" />
-        <option value="$PROJECT_DIR$/run_stream_net.py" />
         <option value="$PROJECT_DIR$/parsefileraw.py" />
         <option value="$PROJECT_DIR$/parse_data_spectro.py" />
-        <option value="$PROJECT_DIR$/../DatasetMaker/MakeUnknown.py" />
         <option value="$PROJECT_DIR$/iterativestresstest.py" />
         <option value="$PROJECT_DIR$/train.py" />
         <option value="$PROJECT_DIR$/parse_data.py" />
@@ -179,11 +208,16 @@
         <option value="$PROJECT_DIR$/freeze_graph.py" />
         <option value="$PROJECT_DIR$/traingraphv2.py" />
         <option value="$PROJECT_DIR$/getpbtxt.py" />
+        <option value="$PROJECT_DIR$/stable_graph_feeder.py" />
         <option value="$PROJECT_DIR$/run_frozen_net.py" />
+        <option value="$PROJECT_DIR$/traingraphv3.py" />
+        <option value="$PROJECT_DIR$/../DatasetMaker/MakeUnknown.py" />
+        <option value="$PROJECT_DIR$/streaming_data_maker.py" />
+        <option value="$PROJECT_DIR$/run_stream_net.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="y" value="1" />
     <option name="width" value="974" />
@@ -244,38 +278,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run_frozen_net">
-    <configuration name="freeze_graph" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.run_stream_net">
+    <configuration name="MakeUnknown" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../DatasetMaker" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="finalcode" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/freeze_graph.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="getpbtxt" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="finalcode" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/getpbtxt.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../DatasetMaker/MakeUnknown.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -299,7 +315,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="run_net_from_saver" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="run_stream_net" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -311,13 +327,13 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="finalcode" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_net_from_saver.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_stream_net.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="testingcsv" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="streaming_data_maker" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -329,26 +345,44 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="finalcode" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testingcsv.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/streaming_data_maker.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="testmaker" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../DatasetMaker" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="finalcode" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../DatasetMaker/testmaker.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.testingcsv" />
-      <item index="1" class="java.lang.String" itemvalue="Python.freeze_graph" />
-      <item index="2" class="java.lang.String" itemvalue="Python.run_frozen_net" />
-      <item index="3" class="java.lang.String" itemvalue="Python.getpbtxt" />
-      <item index="4" class="java.lang.String" itemvalue="Python.run_net_from_saver" />
+      <item index="0" class="java.lang.String" itemvalue="Python.run_frozen_net" />
+      <item index="1" class="java.lang.String" itemvalue="Python.testmaker" />
+      <item index="2" class="java.lang.String" itemvalue="Python.run_stream_net" />
+      <item index="3" class="java.lang.String" itemvalue="Python.MakeUnknown" />
+      <item index="4" class="java.lang.String" itemvalue="Python.streaming_data_maker" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.run_frozen_net" />
-        <item index="1" class="java.lang.String" itemvalue="Python.run_net_from_saver" />
-        <item index="2" class="java.lang.String" itemvalue="Python.freeze_graph" />
-        <item index="3" class="java.lang.String" itemvalue="Python.getpbtxt" />
-        <item index="4" class="java.lang.String" itemvalue="Python.testingcsv" />
+        <item index="0" class="java.lang.String" itemvalue="Python.run_stream_net" />
+        <item index="1" class="java.lang.String" itemvalue="Python.streaming_data_maker" />
+        <item index="2" class="java.lang.String" itemvalue="Python.MakeUnknown" />
+        <item index="3" class="java.lang.String" itemvalue="Python.run_frozen_net" />
+        <item index="4" class="java.lang.String" itemvalue="Python.testmaker" />
       </list>
     </recent_temporary>
   </component>
@@ -369,7 +403,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -377,7 +411,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47510824" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07359307" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -415,18 +449,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../DatasetMaker/deletechange.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testscratch.py" />
     <entry file="file://$PROJECT_DIR$/../DatasetMaker/speed changer.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -495,13 +522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1189">
           <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DatasetMaker/testmaker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -620,16 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/streaming_data_maker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="88" column="28" lean-forward="false" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fromstreamwriteaudio.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -648,16 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stable_graph_feeder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/iterativestresstest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
@@ -671,7 +671,7 @@
         <state relative-caret-position="216">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -691,14 +691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DatasetMaker/MakeUnknown.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="61" column="28" lean-forward="false" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -727,17 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_stream_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-519">
-          <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#821#958#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/getpbtxt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -756,29 +737,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/traingraphv2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="83" column="58" lean-forward="true" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run_frozen_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run_net_from_saver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../DatasetMaker/testmaker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -787,6 +760,65 @@
         <state relative-caret-position="812">
           <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_frozen_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/traingraphv2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="83" column="58" lean-forward="false" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/traingraphv3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../DatasetMaker/MakeUnknown.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="68" column="37" lean-forward="false" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stable_graph_feeder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1300">
+          <caret line="55" column="51" lean-forward="false" selection-start-line="55" selection-start-column="51" selection-end-line="55" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming_data_maker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_stream_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#3986#4795#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

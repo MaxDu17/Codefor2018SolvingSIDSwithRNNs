@@ -11,13 +11,14 @@ FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 4096
 
-TOTALPOINTS = 300
+TOTALPOINTS = 200
 TOTALINCLUSION = 50
 SKIP = 24576
 CHUNK = 4096
 RECORDTIME = 2
 total_list = list()
-big_list = [0]*819200
+big_list = list()
+#big_list = [0]*819200
 
 class Source:
     class Current:
@@ -33,8 +34,17 @@ class Source:
         EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/exhale/"
         UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/unknown/"
 
-
+def create_beginning():
+    global big_list
+    wav_file = wave.open("streamtest/ambience.wav", 'r')
+    data = wav_file.readframes(819200)
+    print(len(data))
+    data = struct.unpack('{n}h'.format(n=819200), data)
+    print(len(data))
+    big_list[0:0] = data
+    print(len(big_list))
 def create_set():
+    create_beginning()
     for i in range(TOTALPOINTS):
         total_list.append(i)
 
@@ -61,8 +71,7 @@ def create_set():
             parse_iter = ['exhale',((k+1)*SKIP)-8192,(((k+1)*SKIP))/4096]
             writer.writerow(parse_iter)
         else:
-            open_name = Source.Current.UNKNOWN_DIR + str(k) + ".wav"
-
+            print("insert unknown")
         wav_file = wave.open(open_name, 'r')
         data = wav_file.readframes(RECORDTIME * CHUNK)
         wav_file.close()
@@ -74,9 +83,10 @@ def create_set():
 
     print(len(big_list))
 
-    wf = wave.open("streamtest/5minsampl.wav", 'wb')
+    wf = wave.open("streamtest/five_minutes.wav", 'wb')
 
     wf.setparams(wav_file.getparams())
+    print(big_list)
     for sample in big_list:
         value = struct.pack('h', sample)
         wf.writeframesraw(value)
@@ -94,4 +104,4 @@ def create_blank():
 
     wf.close()
 
-create_blank()
+create_set()

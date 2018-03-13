@@ -16,7 +16,7 @@ class WholeGraph:
 
     def make_prediction(self, data):
         HYP = self.Hyperparameters()
-        pbfilename = "Best/frozenmodel3418.pb"
+        pbfilename = "GraphV2/GRAPHS/GraphV2_frozen.pb"
         with tf.gfile.GFile(pbfilename, "rb") as f:
             graph_def = tf.GraphDef()
             graph_def.ParseFromString(f.read())

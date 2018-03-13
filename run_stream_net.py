@@ -24,7 +24,7 @@ CHUNK = 8192
 OFFSET = 512
 TIMEOUT = 2048
 TIMEOUTSECS = TIMEOUT/FRAMERATE
-ALPHALEVEL = 0.995
+ALPHALEVEL = 0.90
 FORMAT = pyaudio.paInt16
 timex = time.clock()
 time_zero =time.clock()
@@ -39,7 +39,7 @@ def test_implementation():
     print(prediction)
 
 def test_from_file():
-    file = "streamtest/5minsampl.wav"
+    file = "streamtest/five_minutes.wav"
     f = open("streamtest/peaks.csv","w")
     k = open("streamtest/predictions.csv","w")
     writer_log = csv.writer(k,lineterminator="\n")
@@ -58,6 +58,7 @@ def test_from_file():
         writer.writerow(prediction[0])
         x = np.argmax(prediction[0])
         time = i*OFFSET
+        print(prediction[0])
         if x != 2:
             if prediction[0][x] > ALPHALEVEL:
                 last_x = x
@@ -67,6 +68,7 @@ def test_from_file():
                 if time-time_last>TIMEOUT:
                     carrier = [prediction_dictionary[last_x], i / 8]
                     writer_log.writerow(carrier)
+                    print(prediction_dictionary[last_x])
                     last_x = x
             else:
                 last_x = x
@@ -82,6 +84,7 @@ def feed_and_output(data):
     global time_zero
     prediction = RunGraph.make_prediction(data)
     x = np.argmax(prediction[0])
+    #print(prediction)
     writer_log_raw.writerow(prediction[0])
     if x != 2:
         if prediction[0][x] > ALPHALEVEL:
@@ -150,5 +153,4 @@ def emulate_stream():
             parsed_data = ParseData.bins_from_stream(frames)
             feed_and_output(parsed_data)
 
-
-emulate_stream()
+real_time_now()

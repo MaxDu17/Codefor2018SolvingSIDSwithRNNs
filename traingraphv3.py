@@ -16,7 +16,7 @@ class Hyperparameters:
     OUTPUT_LAYER = 3
     NUM_EPOCHS = 5001
     #NUM_EPOCHS = 1
-    BATCH_NUMBER = 340
+    BATCH_NUMBER = 300
     LEARNING_RATE = 0.08
     VALIDATION_NUMBER = 30
     TEST_NUMBER = 30

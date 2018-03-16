@@ -32,13 +32,16 @@ class DataParse:
     def normalize(self,data):
         if np.max(data) == 0:
             data_out = data + 0.01
-            '''
-        elif np.max(data) < THRESHOLDVALUE:
-            data_out = np.zeros([16,43])
-            print("truncation happening")''' #we remove this for training
         else:
             data_out = (data-np.min(data))/(np.max(data)-np.min(data))
         return data_out
+
+    def truncate_lower(self,data):
+        new_data = list()
+        for sample in data:
+            new_data.append(sample[3:43])
+        return new_data
+
     def load_fourier(self,data):
 
         fourier_output = np.abs(np.fft.fft(data))
@@ -71,6 +74,7 @@ class DataParse:
             output_bins = self.bin(output)
             data_list.append(output_bins)
         data_list = self.normalize(data_list)
+        data_list = self.truncate_lower(data_list)
         return data_list
 
     def bins_from_stream(self,data):
@@ -82,6 +86,7 @@ class DataParse:
             output_bins = self.bin(output)
             data_list.append(output_bins)
         data_list = self.normalize(data_list)
+        data_list = self.truncate_lower(data_list)
         return data_list
 
 

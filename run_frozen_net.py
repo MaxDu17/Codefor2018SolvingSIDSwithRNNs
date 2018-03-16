@@ -4,7 +4,7 @@ import numpy as np
 from make_sets import Setmaker as SM
 class Hyperparameters:
     INPUT_LAYER = 43
-    HIDDEN_LAYER = 100 #Modify??
+    HIDDEN_LAYER = 50 #Modify??
     OUTPUT_LAYER = 3
     NUM_EPOCHS = 10000
     #NUM_EPOCHS = 1
@@ -14,8 +14,8 @@ class Hyperparameters:
     TEST_NUMBER = 30
 HYP = Hyperparameters()
 set_maker = SM()
-pbfilename = "GraphV2/GRAPHS/GraphV2_frozen.pb"
-file_name = "dataTEST/kl/exhale5.wav"
+pbfilename = "GraphV3/GRAPHS/GraphV3_frozen.pb"
+file_name = "dataTEST/kl/unknown3.wav"
 prediction_dictionary = {0:"inhale", 1:"exhale", 2:"unknown"}
 
 with tf.gfile.GFile(pbfilename, "rb") as f:
@@ -49,7 +49,7 @@ with tf.Session(graph=graph) as sess:
         else:
             if (first):
                 prev_hidd_layer_ = np.zeros(shape=HYP.HIDDEN_LAYER)
-                prev_hidd_layer_ = np.reshape(prev_hidd_layer_, [1, 100])
+                prev_hidd_layer_ = np.reshape(prev_hidd_layer_, [1, HYP.HIDDEN_LAYER])
                 first = False
 
             next_hidd_layer_ = sess.run(next_hidd_layer, feed_dict=

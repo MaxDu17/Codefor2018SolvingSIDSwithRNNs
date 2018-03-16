@@ -192,5 +192,7 @@ def test_library():
     print("This is how long the train set is: ",len(maker.train_list))
     print("This is how long the validation set is: ", len(maker.validation_list))
     print("This is what the validation label is: ",label_valid)
+    print("This is the length of array: ", len(valid))
+    print("this is how many frequency bins ther are: ",len(valid[0]))
 
-test_library()
+#test_library()

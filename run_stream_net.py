@@ -4,7 +4,7 @@ import time
 import numpy as np
 import wave
 import struct
-from stable_graph_feeder import WholeGraph as WG
+from stable_graph_feeder50 import WholeGraph as WG
 from make_sets import Setmaker as SM
 from parse_data import DataParse as DP
 import csv
@@ -39,7 +39,7 @@ def test_implementation():
     print(prediction)
 
 def test_from_file():
-    file = "streamtest/testlong.wav"
+    file = "streamtest/five_minutes.wav"
     f = open("streamtest/peaks.csv","w")
     k = open("streamtest/predictions10000.csv","w")
     writer_log = csv.writer(k,lineterminator="\n")
@@ -84,8 +84,13 @@ def feed_and_output(data):
     global time_zero
     prediction = RunGraph.make_prediction(data)
     x = np.argmax(prediction[0])
+    print(prediction)
     #print(prediction)
     writer_log_raw.writerow(prediction[0])
+    if x != 2:
+        #print(prediction_dictionary[x])
+        pass
+    '''
     if x != 2:
         if prediction[0][x] > ALPHALEVEL:
             last_x = x
@@ -100,6 +105,8 @@ def feed_and_output(data):
         else:
             last_x = x
             pass
+            
+            '''
 def real_time_now():
     recorder = pyaudio.PyAudio()
     stream = recorder.open(format = FORMAT, channels = 1, rate = FRAMERATE,input = True, frames_per_buffer = FRAMERATE)
@@ -153,4 +160,4 @@ def emulate_stream():
             parsed_data = ParseData.bins_from_stream(frames)
             feed_and_output(parsed_data)
 
-test_from_file()
+real_time_now()

@@ -84,14 +84,14 @@ with tf.name_scope("summaries_and_saver"):
     saver = tf.train.Saver()
 
 with tf.Session() as sess:
-    log_loss = open("GraphV3/GRAPHS/LOSS.csv", "w")
+    log_loss = open("GraphV4/GRAPHS/LOSS.csv", "w")
     logger = csv.writer(log_loss, lineterminator="\n")
     '''ckpt = tf.train.get_checkpoint_state(os.path.dirname('GRAPHCHECKPOINTS/'))
     if ckpt and ckpt.model_checkpoint_path:
         saver.restore(sess, ckpt.model_checkpoint_path)'''
     sess.run(tf.global_variables_initializer())
-    tf.train.write_graph(sess.graph_def, 'GraphV3/GRAPHS/', 'graph.pbtxt')
-    writer = tf.summary.FileWriter("GraphV3/GRAPHS/",sess.graph)
+    tf.train.write_graph(sess.graph_def, 'GraphV4/GRAPHS/', 'graph.pbtxt')
+    writer = tf.summary.FileWriter("GraphV4/GRAPHS/",sess.graph)
     set_maker.get_test_set()
     total_loss_ = 0
 
@@ -157,7 +157,7 @@ with tf.Session() as sess:
             print("real class: ", label)
 
         if epoch%500 ==0:
-            saver.save(sess, "GraphV3/CHECKPOINTS/GraphV3",global_step = epoch)
+            saver.save(sess, "GraphV4/CHECKPOINTS/GraphV4",global_step = epoch)
 
         if epoch%50 == 0:
             one_hot_label = []

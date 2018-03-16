@@ -12,8 +12,8 @@ decreased training epochs to 5000
 decreased frequency bins to 40 
 '''
 class Hyperparameters:
-    INPUT_LAYER = 43
-    HIDDEN_LAYER = 50 #Modify??
+    INPUT_LAYER = 40
+    HIDDEN_LAYER = 75 #Modify??
     OUTPUT_LAYER = 3
     NUM_EPOCHS = 5001
     #NUM_EPOCHS = 1
@@ -23,9 +23,9 @@ class Hyperparameters:
     TEST_NUMBER = 30
 
 class Information:
-    INPUT_DIMENSIONS = 43
+    INPUT_DIMENSIONS = 40
     INPUT_TIME_DIV = 0.125
-    INPUT_SECTORS = 8
+    INPUT_SECTORS = 16
     SAMPLE_RATE = 4096
 
 set_maker = SM()
@@ -111,7 +111,7 @@ with tf.Session() as sess:
             first = True
             for slice in input_array:
 
-                slice = np.reshape(slice,[1,43])
+                slice = np.reshape(slice,[1,HYP.INPUT_LAYER])
 
                 if counter == 15:
 
@@ -170,7 +170,7 @@ with tf.Session() as sess:
                 counter = 0
                 first = True
                 for slice in input_array:
-                    slice = np.reshape(slice, [1, 43])
+                    slice = np.reshape(slice, [1, HYP.INPUT_LAYER])
 
                     if counter == 15:
 
@@ -215,7 +215,7 @@ with tf.Session() as sess:
         counter = 0
         first = True
         for slice in input_array:
-            slice = np.reshape(slice, [1, 43])
+            slice = np.reshape(slice, [1, HYP.INPUT_LAYER])
 
             if counter == 15:
 

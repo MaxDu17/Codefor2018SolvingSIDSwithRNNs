@@ -102,7 +102,7 @@ class Setmaker:
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
-        elif batch_index >=200 and batch_index < 399:
+        elif batch_index >=200 and batch_index < 400:
             label = 'exhale'
             file_name = Source.Current.EXHALE_DIR + str(batch_index-200) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
@@ -123,7 +123,7 @@ class Setmaker:
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
-        elif batch_index >=200 and batch_index < 399:
+        elif batch_index >=200 and batch_index < 400:
             label = 'exhale'
             file_name = Source.Current.EXHALE_DIR + str(batch_index-200) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
@@ -146,7 +146,7 @@ class Setmaker:
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
-        elif batch_index >=200 and batch_index < 399:
+        elif batch_index >=200 and batch_index < 400:
             label = 'exhale'
             file_name = Source.Current.EXHALE_DIR + str(batch_index-200) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)

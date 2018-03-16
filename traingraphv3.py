@@ -130,7 +130,7 @@ with tf.Session() as sess:
                 else:
                     if(first):
                         prev_hidd_layer_ = np.zeros(shape = HYP.HIDDEN_LAYER)
-                        prev_hidd_layer_ = np.reshape(prev_hidd_layer_,[1,100])
+                        prev_hidd_layer_ = np.reshape(prev_hidd_layer_,[1,HYP.HIDDEN_LAYER])
                         first = False
 
                     next_hidd_layer_ = sess.run(next_hidd_layer,feed_dict =
@@ -189,7 +189,7 @@ with tf.Session() as sess:
                     else:
                         if (first):
                             prev_hidd_layer_ = np.zeros(shape=HYP.HIDDEN_LAYER)
-                            prev_hidd_layer_ = np.reshape(prev_hidd_layer_, [1, 100])
+                            prev_hidd_layer_ = np.reshape(prev_hidd_layer_, [1, HYP.HIDDEN_LAYER])
                             first = False
 
                         next_hidd_layer_ = sess.run(next_hidd_layer, feed_dict=
@@ -234,7 +234,7 @@ with tf.Session() as sess:
             else:
                 if (first):
                     prev_hidd_layer_ = np.zeros(shape=HYP.HIDDEN_LAYER)
-                    prev_hidd_layer_ = np.reshape(prev_hidd_layer_, [1, 100])
+                    prev_hidd_layer_ = np.reshape(prev_hidd_layer_, [1, HYP.HIDDEN_LAYER])
                     first = False
 
                 next_hidd_layer_ = sess.run(next_hidd_layer, feed_dict=

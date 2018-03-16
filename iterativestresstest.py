@@ -10,21 +10,21 @@ class Source:
         UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
 dataprocess = dp()
 
-for i in range(100):
+for i in range(200):
     name = Source.Native.INHALE_DIR + str(i) + ".wav"
     try:
         dataprocess.load_wav_file(name)
     except:
         print("oops... check file: ", name)
 
-for i in range(200):
+for i in range(350):
     name = Source.Native.UNKNOWN_DIR + str(i) + ".wav"
     try:
         dataprocess.load_wav_file(name)
     except:
         print("oops... check file: ", name)
 
-for i in range(100):
+for i in range(200):
     name = Source.Native.EXHALE_DIR + str(i) + ".wav"
     try:
         dataprocess.load_wav_file(name)

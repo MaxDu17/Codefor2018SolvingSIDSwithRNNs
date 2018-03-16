@@ -4,11 +4,17 @@ import random
 import os
 from make_sets import Setmaker as SM
 import csv
+
+'''changes made in version 3:
+decreased learing rate from 0.1 to 0.08
+decreased neurons to 50
+decreased training epochs to 5000
+'''
 class Hyperparameters:
     INPUT_LAYER = 43
-    HIDDEN_LAYER = 100 #Modify??
+    HIDDEN_LAYER = 50 #Modify??
     OUTPUT_LAYER = 3
-    NUM_EPOCHS = 10001
+    NUM_EPOCHS = 5001
     #NUM_EPOCHS = 1
     BATCH_NUMBER = 340
     LEARNING_RATE = 0.08
@@ -77,14 +83,14 @@ with tf.name_scope("summaries_and_saver"):
     saver = tf.train.Saver()
 
 with tf.Session() as sess:
-    log_loss = open("GraphV2/GRAPHS/LOSS.csv", "w")
+    log_loss = open("GraphV3/GRAPHS/LOSS.csv", "w")
     logger = csv.writer(log_loss, lineterminator="\n")
     '''ckpt = tf.train.get_checkpoint_state(os.path.dirname('GRAPHCHECKPOINTS/'))
     if ckpt and ckpt.model_checkpoint_path:
         saver.restore(sess, ckpt.model_checkpoint_path)'''
     sess.run(tf.global_variables_initializer())
-    tf.train.write_graph(sess.graph_def, 'GraphV2/GRAPHS/', 'graph.pbtxt')
-    writer = tf.summary.FileWriter("GraphV2/GRAPHS/",sess.graph)
+    tf.train.write_graph(sess.graph_def, 'GraphV3/GRAPHS/', 'graph.pbtxt')
+    writer = tf.summary.FileWriter("GraphV3/GRAPHS/",sess.graph)
     set_maker.get_test_set()
     total_loss_ = 0
 
@@ -150,7 +156,7 @@ with tf.Session() as sess:
             print("real class: ", label)
 
         if epoch%500 ==0:
-            saver.save(sess, "GraphV2/CHECKPOINTS/GraphV2",global_step = epoch)
+            saver.save(sess, "GraphV3/CHECKPOINTS/GraphV3",global_step = epoch)
 
         if epoch%50 == 0:
             one_hot_label = []

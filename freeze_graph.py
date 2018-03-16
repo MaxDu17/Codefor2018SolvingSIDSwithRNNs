@@ -1,11 +1,11 @@
 import tensorflow as tf
 from tensorflow.python.tools import freeze_graph
-MODEL_NAME = 'GraphV2_frozen'
+MODEL_NAME = 'GraphV2_frozen5000'
 
 # Freeze the graph
 
 input_graph_path = "GraphV2/GRAPHS/graph.pbtxt"
-checkpoint_path = "GraphV2/CHECKPOINTS/GraphV2-10000"
+checkpoint_path = "GraphV2/CHECKPOINTS/GraphV2-8000"
 input_saver_def_path = ""
 input_binary = False
 output_node_names = "prediction_and_loss/output"

@@ -31,7 +31,7 @@ class DataParse:
 
     def normalize(self,data):
         if np.max(data) == 0:
-            data_out = data
+            data_out = data + 0.01
             '''
         elif np.max(data) < THRESHOLDVALUE:
             data_out = np.zeros([16,43])

@@ -6,9 +6,9 @@ import random
 
 class Source:
     class Current:
-        INHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
-        EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/exhale/"
-        UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/unknown/"
+        INHALE_DIR = "dataSPLIT/inhale/"
+        EXHALE_DIR = "dataSPLIT/exhale/"
+        UNKNOWN_DIR= "dataSPLIT/unknown/"
     class Native:
         INHALE_DIR = "dataSPLIT/inhale/"
         EXHALE_DIR = "dataSPLIT/exhale/"
@@ -18,10 +18,11 @@ class Source:
         EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/exhale/"
         UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/unknown/"
 class Setmaker:
-    TOTAL = 400
+    TOTAL = 750
     TEST = 30
     VALID = 30
-    TRAIN = 340
+    TRAIN = 690
+    TRAIN_BATCH = 300
 
     file_maker = dp()
     exempt_set = list()  # this is for the test
@@ -31,29 +32,24 @@ class Setmaker:
 
     def pick_train(self):
         big_set = list()
-        real_set = list()
-
         for i in range(self.TOTAL):
             big_set.append(i)
         leftover_set = [k for k in big_set if k not in self.exempt_set]
-        real_set = random.sample(leftover_set,self.TRAIN)
+        real_set = random.sample(leftover_set,self.TRAIN_BATCH)
         return real_set
 
 
     def pick_valid(self,train_set):
         big_set = list()
-        real_set = list()
-
-
         for i in range(self.TOTAL):
             big_set.append(i)
         leftover_set = [k for k in big_set if k not in train_set and k not in self.exempt_set]
-        return leftover_set
+        real_set = random.sample(leftover_set, self.VALID)
+        return real_set
 
 
     def pick_test(self):
         big_set = list()
-        real_set = list()
         for i in range(self.TOTAL):
             big_set.append(i)
         test_set = random.sample(big_set,self.TEST)
@@ -100,20 +96,20 @@ class Setmaker:
         if batch_number > self.TEST-1:
             print("you have exceeded the batch! Try again! This is the test round")
         batch_index = self.test_list[batch_number]
-        if batch_index < 100:
+        if batch_index <200:
             label = 'inhale'
             file_name = Source.Current.INHALE_DIR + str(batch_index) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
-        elif batch_index >= 100 and batch_index < 200:
+        elif batch_index >=200 and batch_index < 399:
             label = 'exhale'
-            file_name = Source.Current.EXHALE_DIR + str(batch_index - 100) + ".wav"
+            file_name = Source.Current.EXHALE_DIR + str(batch_index-200) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
         else:
             label = 'unknown'
-            file_name = Source.Current.UNKNOWN_DIR + str(batch_index - 200) + ".wav"
+            file_name = Source.Current.UNKNOWN_DIR + str(batch_index - 400) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
@@ -121,20 +117,20 @@ class Setmaker:
         if batch_number > self.VALID-1:
             print("you have exceeded the batch! Try again! This is the validation round")
         batch_index = self.validation_list[batch_number]
-        if batch_index < 100:
+        if batch_index <200:
             label = 'inhale'
             file_name = Source.Current.INHALE_DIR + str(batch_index) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
-        elif batch_index >= 100 and batch_index < 200:
+        elif batch_index >=200 and batch_index < 399:
             label = 'exhale'
-            file_name = Source.Current.EXHALE_DIR + str(batch_index - 100) + ".wav"
+            file_name = Source.Current.EXHALE_DIR + str(batch_index-200) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
         else:
             label = 'unknown'
-            file_name = Source.Current.UNKNOWN_DIR + str(batch_index - 200) + ".wav"
+            file_name = Source.Current.UNKNOWN_DIR + str(batch_index - 400) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
@@ -144,20 +140,20 @@ class Setmaker:
         if batch_number >self.TRAIN-1:
             print("you have exceeded the batch! Try again!")
         batch_index = self.train_list[batch_number]
-        if batch_index <100:
+        if batch_index <200:
             label = 'inhale'
             file_name = Source.Current.INHALE_DIR + str(batch_index) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
-        elif batch_index >=100 and batch_index < 200:
+        elif batch_index >=200 and batch_index < 399:
             label = 'exhale'
-            file_name = Source.Current.EXHALE_DIR + str(batch_index-100) + ".wav"
+            file_name = Source.Current.EXHALE_DIR + str(batch_index-200) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
         else:
             label = 'unknown'
-            file_name = Source.Current.UNKNOWN_DIR + str(batch_index - 200) + ".wav"
+            file_name = Source.Current.UNKNOWN_DIR + str(batch_index - 400) + ".wav"
             data_list = self.file_maker.prepare_data(file_name)
             return data_list, label
 
@@ -197,4 +193,4 @@ def test_library():
     print("This is how long the validation set is: ", len(maker.validation_list))
     print("This is what the validation label is: ",label_valid)
 
-#test_library()
+test_library()

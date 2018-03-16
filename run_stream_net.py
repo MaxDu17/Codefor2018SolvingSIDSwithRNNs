@@ -22,7 +22,7 @@ JUMPTIME = 2
 FRAMERATE = 4096
 CHUNK = 8192
 OFFSET = 512
-TIMEOUT = 2048
+TIMEOUT = 4096
 TIMEOUTSECS = TIMEOUT/FRAMERATE
 ALPHALEVEL = 0.90
 FORMAT = pyaudio.paInt16
@@ -39,9 +39,9 @@ def test_implementation():
     print(prediction)
 
 def test_from_file():
-    file = "streamtest/five_minutes.wav"
+    file = "streamtest/testlong.wav"
     f = open("streamtest/peaks.csv","w")
-    k = open("streamtest/predictions.csv","w")
+    k = open("streamtest/predictions10000.csv","w")
     writer_log = csv.writer(k,lineterminator="\n")
     writer = csv.writer(f, lineterminator="\n")
     wav_file = wave.open(file, 'r')
@@ -153,4 +153,4 @@ def emulate_stream():
             parsed_data = ParseData.bins_from_stream(frames)
             feed_and_output(parsed_data)
 
-real_time_now()
+test_from_file()

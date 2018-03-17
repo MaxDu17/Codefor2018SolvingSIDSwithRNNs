@@ -1,0 +1,6 @@
+model_checkpoint_path: "GraphV4-5000"
+all_model_checkpoint_paths: "GraphV4-3000"
+all_model_checkpoint_paths: "GraphV4-3500"
+all_model_checkpoint_paths: "GraphV4-4000"
+all_model_checkpoint_paths: "GraphV4-4500"
+all_model_checkpoint_paths: "GraphV4-5000"

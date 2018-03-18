@@ -3,7 +3,7 @@ import os
 import numpy as np
 from make_sets import Setmaker as SM
 class Hyperparameters:
-    INPUT_LAYER = 40
+    INPUT_LAYER = 43
     HIDDEN_LAYER = 75 #Modify??
     OUTPUT_LAYER = 3
     NUM_EPOCHS = 10000
@@ -14,8 +14,8 @@ class Hyperparameters:
     TEST_NUMBER = 30
 HYP = Hyperparameters()
 set_maker = SM()
-pbfilename = "GraphV4/GRAPHS/GraphV4_frozen.pb"
-file_name = "dataTEST/kl/unknown3.wav"
+pbfilename = "GraphV5/GRAPHS/GraphV5_frozen.pb"
+file_name = "streamtest/ambience.wav"
 prediction_dictionary = {0:"inhale", 1:"exhale", 2:"unknown"}
 
 with tf.gfile.GFile(pbfilename, "rb") as f:

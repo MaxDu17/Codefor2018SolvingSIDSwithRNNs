@@ -4,16 +4,17 @@ import time
 import numpy as np
 import wave
 import struct
-from stable_graph_feeder50 import WholeGraph as WG
+from stable_graph_feederv5 import WholeGraph as WG
 from make_sets import Setmaker as SM
 from parse_data import DataParse as DP
 import csv
 import pyaudio
-
+'''
 k = open("streamtest/real_time.csv", "w")
 writer_log = csv.writer(k, lineterminator="\n")
 p = open("streamtest/real_time_report_silent.csv", "w")
 writer_log_raw = csv.writer(p, lineterminator="\n")
+'''
 
 ParseData = DP()
 RunGraph = WG()
@@ -24,7 +25,7 @@ CHUNK = 8192
 OFFSET = 512
 TIMEOUT = 4096
 TIMEOUTSECS = TIMEOUT/FRAMERATE
-ALPHALEVEL = 0.90
+ALPHALEVEL = 0.995
 FORMAT = pyaudio.paInt16
 timex = time.clock()
 time_zero =time.clock()
@@ -41,14 +42,14 @@ def test_implementation():
 def test_from_file():
     file = "streamtest/five_minutes.wav"
     f = open("streamtest/peaks.csv","w")
-    k = open("streamtest/predictions10000.csv","w")
+    k = open("streamtest/predictionsv5.csv","w")
     writer_log = csv.writer(k,lineterminator="\n")
     writer = csv.writer(f, lineterminator="\n")
     wav_file = wave.open(file, 'r')
     x = -1
     last_x = -1
     time_diff = 99999
-    for i in range(2399):
+    for i in range(2384):
         data = wav_file.readframes(CHUNK)
         wav_file.setpos((i+1)*OFFSET)
         data = struct.unpack('{n}h'.format(n=CHUNK), data)
@@ -160,4 +161,4 @@ def emulate_stream():
             parsed_data = ParseData.bins_from_stream(frames)
             feed_and_output(parsed_data)
 
-real_time_now()
+test_from_file()

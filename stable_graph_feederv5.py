@@ -16,7 +16,7 @@ class WholeGraph:
 
     def make_prediction(self, data):
         HYP = self.Hyperparameters()
-        pbfilename = "GraphV2/GRAPHS/GraphV2_frozen.pb"
+        pbfilename = "GraphV5/GRAPHS/GraphV5_frozen.pb"
         with tf.gfile.GFile(pbfilename, "rb") as f:
             graph_def = tf.GraphDef()
             graph_def.ParseFromString(f.read())
@@ -37,7 +37,7 @@ class WholeGraph:
             first = True
             input_array=data
             for slice in input_array:
-                slice = np.reshape(slice, [1, 43])
+                slice = np.reshape(slice, [1, HYP.INPUT_LAYER])
                 if counter == 15:
                      output_prediction_ = sess.run(output, feed_dict=
                     {
@@ -47,7 +47,7 @@ class WholeGraph:
                 else:
                     if (first):
                         prev_hidd_layer_ = np.zeros(shape=HYP.HIDDEN_LAYER)
-                        prev_hidd_layer_ = np.reshape(prev_hidd_layer_, [1, 100])
+                        prev_hidd_layer_ = np.reshape(prev_hidd_layer_, [1, HYP.HIDDEN_LAYER])
                         first = False
 
                     next_hidd_layer_ = sess.run(next_hidd_layer, feed_dict=

@@ -22,17 +22,17 @@ big_list = list()
 
 class Source:
     class Current:
-        INHALE_DIR = "dataSPLIT/inhale/"
-        EXHALE_DIR = "dataSPLIT/exhale/"
+        INHALE_DIR = "sen_data/inhale/"
+        EXHALE_DIR = "sen_data/exhale/"
         UNKNOWN_DIR= "dataSPLIT/unknown/"
     class Native:
-        INHALE_DIR = "dataSPLIT/inhale/"
-        EXHALE_DIR = "dataSPLIT/exhale/"
-        UNKNOWN_DIR= "dataSPLIT/unknown/"
+        INHALE_DIR = "sen_data/inhale/"
+        EXHALE_DIR = "sen_data/exhale/"
+        UNKNOWN_DIR= "sen_data/unknown/"
     class Server:
-        INHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
-        EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/exhale/"
-        UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/unknown/"
+        INHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/sen_data/inhale/"
+        EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/sen_data/exhale/"
+        UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/sen_data/unknown/"
 
 def create_beginning():
     global big_list

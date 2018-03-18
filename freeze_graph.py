@@ -1,17 +1,17 @@
 import tensorflow as tf
 from tensorflow.python.tools import freeze_graph
-MODEL_NAME = 'GraphV4_frozen'
+MODEL_NAME = 'GraphV5_frozen'
 
 # Freeze the graph
 
-input_graph_path = "GraphV4/GRAPHS/graph.pbtxt"
-checkpoint_path = "GraphV4/CHECKPOINTS/GraphV4-5000"
+input_graph_path = "GraphV5/GRAPHS/graph.pbtxt"
+checkpoint_path = "GraphV5/CHECKPOINTS/GraphV5-5000"
 input_saver_def_path = ""
 input_binary = False
 output_node_names = "prediction_and_loss/output"
 restore_op_name = "save/restore_all"
 filename_tensor_name = "save/Const:0"
-output_frozen_graph_name = 'GraphV4/GRAPHS/'+MODEL_NAME+'.pb'
+output_frozen_graph_name = 'GraphV5/GRAPHS/'+MODEL_NAME+'.pb'
 
 clear_devices = True
 

@@ -195,4 +195,4 @@ def test_library():
     print("This is the length of array: ", len(valid))
     print("this is how many frequency bins ther are: ",len(valid[0]))
 
-test_library()
+#test_library()

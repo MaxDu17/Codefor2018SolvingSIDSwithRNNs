@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d071f3fc-a3dc-4aeb-87b8-28511cfdae02" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/checkstats.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/significancetest.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/postprocesslen.py" afterPath="$PROJECT_DIR$/postprocesslen.py" />
-      <change beforePath="$PROJECT_DIR$/run_stream_net.py" afterPath="$PROJECT_DIR$/run_stream_net.py" />
-      <change beforePath="$PROJECT_DIR$/streamtest/predictionsv5.csv" afterPath="$PROJECT_DIR$/streamtest/predictionsv5.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,16 +36,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parse_data.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parse_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1512">
-              <caret line="66" column="59" lean-forward="false" selection-start-line="66" selection-start-column="59" selection-end-line="66" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="run_frozen_net.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_frozen_net.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_stream_net.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="run_stream_net.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_stream_net.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -75,11 +65,33 @@
       <file leaf-file-name="postprocesslen.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/postprocesslen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="29">
+              <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="significancetest.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/significancetest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="24" column="56" lean-forward="false" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkstats.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/checkstats.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -157,8 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../DatasetMaker/record length.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/testscratch.py" />
         <option value="$PROJECT_DIR$/../DatasetMaker/speed changer.py" />
         <option value="$PROJECT_DIR$/../DatasetMaker/ChangeSpeedBest.py" />
@@ -208,6 +218,8 @@
         <option value="$PROJECT_DIR$/postprocessav.py" />
         <option value="$PROJECT_DIR$/run_stream_net.py" />
         <option value="$PROJECT_DIR$/postprocesslen.py" />
+        <option value="$PROJECT_DIR$/checkstats.py" />
+        <option value="$PROJECT_DIR$/significancetest.py" />
       </list>
     </option>
   </component>
@@ -272,8 +284,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run_stream_net">
-    <configuration name="freeze_graph" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.significancetest">
+    <configuration name="checkstats" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -285,25 +297,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="finalcode" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/freeze_graph.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="iterativevalidation" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="finalcode" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iterativevalidation.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/checkstats.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -345,6 +339,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="significancetest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="finalcode" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/significancetest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="streaming_data_maker" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -364,19 +376,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.freeze_graph" />
-      <item index="1" class="java.lang.String" itemvalue="Python.run_frozen_net" />
-      <item index="2" class="java.lang.String" itemvalue="Python.iterativevalidation" />
-      <item index="3" class="java.lang.String" itemvalue="Python.streaming_data_maker" />
-      <item index="4" class="java.lang.String" itemvalue="Python.run_stream_net" />
+      <item index="0" class="java.lang.String" itemvalue="Python.run_frozen_net" />
+      <item index="1" class="java.lang.String" itemvalue="Python.streaming_data_maker" />
+      <item index="2" class="java.lang.String" itemvalue="Python.run_stream_net" />
+      <item index="3" class="java.lang.String" itemvalue="Python.checkstats" />
+      <item index="4" class="java.lang.String" itemvalue="Python.significancetest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.run_stream_net" />
-        <item index="1" class="java.lang.String" itemvalue="Python.run_frozen_net" />
-        <item index="2" class="java.lang.String" itemvalue="Python.streaming_data_maker" />
-        <item index="3" class="java.lang.String" itemvalue="Python.iterativevalidation" />
-        <item index="4" class="java.lang.String" itemvalue="Python.freeze_graph" />
+        <item index="0" class="java.lang.String" itemvalue="Python.significancetest" />
+        <item index="1" class="java.lang.String" itemvalue="Python.checkstats" />
+        <item index="2" class="java.lang.String" itemvalue="Python.run_stream_net" />
+        <item index="3" class="java.lang.String" itemvalue="Python.run_frozen_net" />
+        <item index="4" class="java.lang.String" itemvalue="Python.streaming_data_maker" />
       </list>
     </recent_temporary>
   </component>
@@ -406,7 +418,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6017316" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43506494" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -443,25 +455,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../tensorflowspeechtes/train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1385">
-          <caret line="35" column="15" lean-forward="false" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../tensorflowspeechtes/freeze.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="834">
-          <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../tensorflowspeechtes/label_wav.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-658">
@@ -768,16 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/postprocesslen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run_stream_net.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -786,6 +774,34 @@
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#955#1092#0" expanded="false" />
             <element signature="e#2883#3692#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/postprocesslen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checkstats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/significancetest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="24" column="56" lean-forward="false" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

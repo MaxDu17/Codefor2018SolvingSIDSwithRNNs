@@ -7,8 +7,8 @@ class Processor:
         p = open(file_name, "w")
         self.writer_object = csv.writer(p,lineterminator="\n")
         self.last_k = -1
-        self.ALPHA = 0.95
-        self.LENGTH = 6
+        self.ALPHA = 0.98
+        self.LENGTH = 5
         self.prediction_dictionary = {0: "inhale", 1: "exhale", 2: "unknown"}
         self.counter = 0
         self.time = 0

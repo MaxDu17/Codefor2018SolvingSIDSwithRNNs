@@ -16,7 +16,7 @@ writer_log = csv.writer(k, lineterminator="\n")
 p = open("streamtest/real_time_report_silent.csv", "w")
 writer_log_raw = csv.writer(p, lineterminator="\n")
 
-filter = Processor()
+filter = Processor(file_name = "streamtest/real_time_record.csv")
 ParseData = DP()
 RunGraph = WG()
 SetMaker = SM()
@@ -54,7 +54,6 @@ def test_from_file():
         parsed_data = ParseData.bins_from_stream(data)
         prediction = RunGraph.make_prediction(parsed_data)
         writer.writerow(prediction[0])
-        x = np.argmax(prediction[0])
         filter.process_data(prediction[0])
 
     wav_file.close()
@@ -67,8 +66,7 @@ def feed_and_output(data):
     global time_last
     global time_zero
     prediction = RunGraph.make_prediction(data)
-    x = np.argmax(prediction[0])
-    print(prediction)
+    filter.process_data(prediction[0])
 
 def run_real_time():
     recorder = pyaudio.PyAudio()
@@ -122,5 +120,5 @@ def emulate_stream():
                 del(frames[0])
             parsed_data = ParseData.bins_from_stream(frames)
             feed_and_output(parsed_data)
-#run_real_time()
-test_from_file()
+run_real_time()
+#test_from_file()

@@ -3,8 +3,8 @@ import os
 import numpy as np
 from make_sets import Setmaker as SM
 class Hyperparameters:
-    INPUT_LAYER = 43
-    HIDDEN_LAYER = 50 #Modify??
+    INPUT_LAYER = 40
+    HIDDEN_LAYER = 75 #Modify??
     OUTPUT_LAYER = 3
     NUM_EPOCHS = 10000
     #NUM_EPOCHS = 1
@@ -14,7 +14,7 @@ class Hyperparameters:
     TEST_NUMBER = 30
 HYP = Hyperparameters()
 set_maker = SM()
-pbfilename = "GraphV3/GRAPHS/GraphV3_frozen.pb"
+pbfilename = "GraphV4/GRAPHS/GraphV4_frozen.pb"
 file_name = "dataTEST/kl/unknown3.wav"
 prediction_dictionary = {0:"inhale", 1:"exhale", 2:"unknown"}
 
@@ -39,7 +39,7 @@ with tf.Session(graph=graph) as sess:
     first = True
     input_array= set_maker.load_blind(name = file_name)
     for slice in input_array:
-        slice = np.reshape(slice, [1, 43])
+        slice = np.reshape(slice, [1, HYP.INPUT_LAYER])
         if counter == 15:
              output_prediction_ = sess.run(output, feed_dict=
             {

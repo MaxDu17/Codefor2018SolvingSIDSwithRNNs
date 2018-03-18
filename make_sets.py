@@ -6,22 +6,22 @@ import random
 
 class Source:
     class Current:
-        INHALE_DIR = "dataSPLIT/inhale/"
-        EXHALE_DIR = "dataSPLIT/exhale/"
-        UNKNOWN_DIR= "dataSPLIT/unknown/"
+        INHALE_DIR = "sen_data/inhale/"
+        EXHALE_DIR = "sen_data/exhale/"
+        UNKNOWN_DIR= "sen_data/unknown/"
     class Native:
-        INHALE_DIR = "dataSPLIT/inhale/"
-        EXHALE_DIR = "dataSPLIT/exhale/"
-        UNKNOWN_DIR= "dataSPLIT/unknown/"
+        INHALE_DIR = "sen_data/inhale/"
+        EXHALE_DIR = "sen_data/exhale/"
+        UNKNOWN_DIR= "sen_data/unknown/"
     class Server:
         INHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
         EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/exhale/"
         UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/unknown/"
 class Setmaker:
-    TOTAL = 750
+    TOTAL = 800
     TEST = 30
     VALID = 30
-    TRAIN = 690
+    TRAIN = 740
     TRAIN_BATCH = 300
 
     file_maker = dp()
@@ -195,4 +195,4 @@ def test_library():
     print("This is the length of array: ", len(valid))
     print("this is how many frequency bins ther are: ",len(valid[0]))
 
-#test_library()
+test_library()

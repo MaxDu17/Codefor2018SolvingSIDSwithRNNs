@@ -5,9 +5,9 @@ from make_sets import Source as SS
 
 source_dir = SS()
 dataparser = pd()
-BINS = 40
+BINS = 43
 
-name = source_dir.Native.INHALE_DIR + "50" +".wav"
+name = "sen_data/inhale/" + "31" +".wav"
 
 matrix = dataparser.prepare_data(name)
 numbers = np.linspace(0,15,16)
@@ -19,7 +19,7 @@ plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,
            ncol=10, mode="expand", borderaxespad=0.)
 
 
-name = "dataTEST/kl/" + "unknown3" +".wav"
+name = "sen_data/unknown/" + "320" +".wav"
 matrix = dataparser.prepare_data(name)
 numbers = np.linspace(0,15,16)
 new_matrix =np.transpose(matrix)
@@ -29,7 +29,7 @@ for i in range(BINS):
 plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,
            ncol=10, mode="expand", borderaxespad=0.)
 
-name = source_dir.Native.EXHALE_DIR + "68" +".wav"
+name = "sen_data/exhale/" + "99" +".wav"
 
 matrix = dataparser.prepare_data(name)
 numbers = np.linspace(0,15,16)

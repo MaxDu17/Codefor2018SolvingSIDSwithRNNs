@@ -46,12 +46,6 @@ class DataParse:
 
         fourier_output = np.abs(np.fft.fft(data))
         fourier_output = fourier_output[1:int(CHUNK/16)]#truncates according to nyquist limit
-        '''
-        if np.max(fourier_output) == 0:
-            fourier_output_norm = fourier_output
-        else:
-            fourier_output_norm = (fourier_output - np.min(fourier_output)) / (np.max(fourier_output) - np.min(fourier_output))
-            '''
         frequency_division = np.linspace(1,CHUNK/2, int((CHUNK/16)-1))
         return fourier_output, frequency_division
 
@@ -74,7 +68,7 @@ class DataParse:
             output_bins = self.bin(output)
             data_list.append(output_bins)
         data_list = self.normalize(data_list)
-        data_list = self.truncate_lower(data_list)
+       # data_list = self.truncate_lower(data_list)
         return data_list
 
     def bins_from_stream(self,data):
@@ -86,7 +80,7 @@ class DataParse:
             output_bins = self.bin(output)
             data_list.append(output_bins)
         data_list = self.normalize(data_list)
-        data_list = self.truncate_lower(data_list)
+       # data_list = self.truncate_lower(data_list)
         return data_list
 
 

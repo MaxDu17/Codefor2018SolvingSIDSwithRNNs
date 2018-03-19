@@ -9,7 +9,7 @@ class Trendtest:
         self.time_counter = list()
         self.lower_bound = 5
         self.counter = 0
-        self.alpha = 0.05
+        self.alpha = 0.15
 
     def significance(self, number):
         self.big_list.append(number)
@@ -34,7 +34,7 @@ class Trendtest:
 
     def test_library(self):
         list = [10,12,10,14,13,12,15,16,17,18,19,20]
-        alternate_list = [10,10.045,10.1537154,10.2543424,10.3753543,10.2753543,10.27532,10.3753,10.5212345,10.97535,11.040,11.1427,11.247852]
+        alternate_list = [10,11,10,9,10,10,10,10,11,10,9,9,0]
         for i in range(12):
             self.significance(alternate_list[i])
 

@@ -6,9 +6,9 @@ class Source:
         EXHALE_DIR = "sen_data/exhale/"
         UNKNOWN_DIR= "sen_data/unknown/"
     class Server:
-        INHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
-        EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
-        UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
+        INHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/sen_data/inhale/"
+        EXHALE_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/sen_data/inhale/"
+        UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/sen_data/inhale/"
 dataprocess = dp()
 
 for i in range(200):

@@ -44,5 +44,5 @@ class Trendtest:
         del self.time_counter[:]
         self.counter = 0
 
-test = Trendtest()
-test.test_library()
+#test = Trendtest()
+#test.test_library()

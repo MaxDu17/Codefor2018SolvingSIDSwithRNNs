@@ -37,9 +37,9 @@ class Source:
 def create_beginning():
     global big_list
     wav_file = wave.open("streamtest/ambience.wav", 'r')
-    data = wav_file.readframes(819200)
+    data = wav_file.readframes(1024000)
     print(len(data))
-    data = struct.unpack('{n}h'.format(n=819200), data)
+    data = struct.unpack('{n}h'.format(n=1024000), data)
     print(len(data))
     big_list[0:0] = data
     print(len(big_list))

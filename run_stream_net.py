@@ -60,8 +60,8 @@ def test_from_file():
             counter += 1
         if i%120 == 0:
             print(i/8)
-            #print(counter)
-            #sigtest.significance(counter)
+            print(counter)
+            sigtest.significance(counter)
             counter = 0
     wav_file.close()
 def feed_and_output(data):

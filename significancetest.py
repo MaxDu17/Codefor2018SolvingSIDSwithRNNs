@@ -10,8 +10,7 @@ class Trendtest:
         self.time_counter = list()
         self.lower_bound = 3
         self.counter = 0
-        self.alpha = 0.05
-
+        self.alpha = 0.15
         plt.figure(num="graph")
         plt.ion()
 
@@ -38,7 +37,10 @@ class Trendtest:
             print("upper bound: ", big)
             print("lower bound: ", small)
             self.plot(big, small, slope)
-            if 0 > big or 0 < small:
+            if number == 0:
+                print("alarm from zeros")
+
+            if 0 > big:
                 print("ALARM ALARM ALARM ALARM")
 
     def test_library(self):
@@ -50,7 +52,7 @@ class Trendtest:
         print("test")
         axes = plt.gca()
         axes.set_xlim(0, 1)
-        axes.set_ylim(-0.2, 0.2)
+        axes.set_ylim(-0.2, 0.5)
         plt.bar(0.1, upper_bound, width = 0.2, color = "0.5")
         plt.bar(0.3, lower_bound,width = 0.2, color="0.1")
         plt.bar(0.7, slope, width=0.2, color=(0,0,1))

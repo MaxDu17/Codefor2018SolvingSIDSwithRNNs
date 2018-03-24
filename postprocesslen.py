@@ -9,8 +9,8 @@ class Processor:
         self.writer_object = csv.writer(p,lineterminator="\n")
         self.last_k = -1
         self.ALPHA = 0.90
-        self.LENGTH = 5
-        self.TIMEOUT = 6
+        self.LENGTH = 4
+        self.TIMEOUT = 8
         self.TIMEOUTREAL = self.TIMEOUT/8
         self.prediction_dictionary = {0: "inhale", 1: "exhale", 2: "unknown"}
         self.counter = 0

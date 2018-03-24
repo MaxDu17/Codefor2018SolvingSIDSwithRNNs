@@ -8,9 +8,9 @@ class Trendtest:
     def __init__(self):
         self.big_list = list()
         self.time_counter = list()
-        self.lower_bound = 5
+        self.lower_bound = 3
         self.counter = 0
-        self.alpha = 0.15
+        self.alpha = 0.05
 
         plt.figure(num="graph")
         plt.ion()
@@ -47,19 +47,17 @@ class Trendtest:
         for i in range(12):
             self.significance(alternate_list[i])
     def plot(self, upper_bound, lower_bound, slope):
+        print("test")
         axes = plt.gca()
         axes.set_xlim(0, 1)
         axes.set_ylim(-0.2, 0.2)
         plt.bar(0.1, upper_bound, width = 0.2, color = "0.5")
         plt.bar(0.3, lower_bound,width = 0.2, color="0.1")
         plt.bar(0.7, slope, width=0.2, color=(0,0,1))
-        plt.pause(1)
+        plt.pause(0.125)
         plt.cla()
 
     def flush(self):
         del self.big_list[:]
         del self.time_counter[:]
         self.counter = 0
-
-test = Trendtest()
-test.test_library()

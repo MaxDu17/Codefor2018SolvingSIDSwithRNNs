@@ -16,7 +16,7 @@ writer_log = csv.writer(k, lineterminator="\n")
 p = open("streamtest/real_time_report_silent.csv", "w")
 writer_log_raw = csv.writer(p, lineterminator="\n")
 
-filter = Processor(file_name = "streamtest/real_time_record.csv")
+filter = Processor(file_name = "streamtest/predict_sig.csv")
 ParseData = DP()
 RunGraph = WG()
 SetMaker = SM()
@@ -43,7 +43,7 @@ def test_implementation():
 
 def test_from_file():
     counter = 0
-    file = "streamtest/five_minutes.wav"
+    file = "streamtest/five_minutes_test.wav"
     f = open("streamtest/peaks.csv","w")
     writer = csv.writer(f, lineterminator="\n")
     wav_file = wave.open(file, 'r')
@@ -58,8 +58,10 @@ def test_from_file():
         status = filter.process_data(prediction[0])
         if status:
             counter += 1
-        if i%120:
-            sigtest.significance(counter)
+        if i%120 == 0:
+            print(i/8)
+            #print(counter)
+            #sigtest.significance(counter)
             counter = 0
     wav_file.close()
 def feed_and_output(data):
@@ -125,5 +127,5 @@ def emulate_stream():
                 del(frames[0])
             parsed_data = ParseData.bins_from_stream(frames)
             feed_and_output(parsed_data)
-run_real_time()
-#test_from_file()
+#run_real_time()
+test_from_file()

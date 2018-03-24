@@ -7,7 +7,7 @@ source_dir = SS()
 dataparser = pd()
 BINS = 43
 
-name = "sen_data/inhale/" + "31" +".wav"
+name = "sen_data/inhale/" + "3" +".wav"
 
 matrix = dataparser.prepare_data(name)
 numbers = np.linspace(0,15,16)
@@ -19,7 +19,7 @@ plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,
            ncol=10, mode="expand", borderaxespad=0.)
 
 
-name = "sen_data/unknown/" + "320" +".wav"
+name = "sen_data/unknown/" + "25" +".wav"
 matrix = dataparser.prepare_data(name)
 numbers = np.linspace(0,15,16)
 new_matrix =np.transpose(matrix)
@@ -29,7 +29,7 @@ for i in range(BINS):
 plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,
            ncol=10, mode="expand", borderaxespad=0.)
 
-name = "sen_data/exhale/" + "99" +".wav"
+name = "sen_data/exhale/" + "5" +".wav"
 
 matrix = dataparser.prepare_data(name)
 numbers = np.linspace(0,15,16)

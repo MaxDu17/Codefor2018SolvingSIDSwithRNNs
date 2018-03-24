@@ -1,5 +1,3 @@
-import tensorflow as tf
-import sys
 import time
 import numpy as np
 import wave
@@ -10,6 +8,8 @@ from parse_data import DataParse as DP
 from postprocesslen import Processor
 import csv
 import pyaudio
+from significancetest import Trendtest as Tt
+sigtest = Tt()
 
 k = open("streamtest/real_time.csv", "w")
 writer_log = csv.writer(k, lineterminator="\n")
@@ -42,6 +42,7 @@ def test_implementation():
     print(prediction)
 
 def test_from_file():
+    counter = 0
     file = "streamtest/five_minutes.wav"
     f = open("streamtest/peaks.csv","w")
     writer = csv.writer(f, lineterminator="\n")
@@ -54,8 +55,12 @@ def test_from_file():
         parsed_data = ParseData.bins_from_stream(data)
         prediction = RunGraph.make_prediction(parsed_data)
         writer.writerow(prediction[0])
-        filter.process_data(prediction[0])
-
+        status = filter.process_data(prediction[0])
+        if status:
+            counter += 1
+        if i%120:
+            sigtest.significance(counter)
+            counter = 0
     wav_file.close()
 def feed_and_output(data):
     global writer_log

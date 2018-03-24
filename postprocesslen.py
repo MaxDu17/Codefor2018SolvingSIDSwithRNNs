@@ -12,9 +12,11 @@ class Processor:
         self.prediction_dictionary = {0: "inhale", 1: "exhale", 2: "unknown"}
         self.counter = 0
         self.time = 0
+        self.peak = False
 
 
     def process_data(self, data):
+        self.peak = False
         self.time +=1
         k = np.argmax(data)
         z = data[k]
@@ -24,12 +26,14 @@ class Processor:
                 if self.counter >= self.LENGTH:
                     print(self.prediction_dictionary[k])
                     carrier = [self.prediction_dictionary[k], self.time/8 ]
+                    self.peak = True
                     self.writer_object.writerow(carrier)
                     self.counter = 0
             else:
                 self.counter = 0
 
         self.last_k = k
+        return self.peak
 
 
 

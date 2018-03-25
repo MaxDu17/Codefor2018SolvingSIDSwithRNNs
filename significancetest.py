@@ -39,7 +39,7 @@ class Trendtest:
             self.plot(big, small, slope)
 
             if 0 > big:
-                print("ALARM ALARM ALARM ALARM")
+                print("alarm from significance test")
                 return True
             if number == 0:
                 print("alarm from zeros")

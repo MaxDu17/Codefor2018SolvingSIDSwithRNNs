@@ -58,10 +58,12 @@ def test_from_file():
         status = filter.process_data(prediction[0])
         if status:
             counter += 1
-        if i%120 == 0:
+        if i%80 == 0:
             print(i/8)
             print(counter)
-            sigtest.significance(counter)
+            status = sigtest.significance(counter)
+            if status:
+                print("Error was detected at: ", i/8, "seconds")
             counter = 0
     wav_file.close()
 def feed_and_output(data):

@@ -12,7 +12,7 @@ CHANNELS = 1
 RATE = 4096
 
 TOTALPOINTS = 200
-TOTALINCLUSION = 50
+TOTALINCLUSION = 35
 SKIP = 24576
 CHUNK = 4096
 RECORDTIME = 2
@@ -37,13 +37,14 @@ class Source:
 def create_beginning():
     global big_list
     wav_file = wave.open("streamtest/ambience.wav", 'r')
-    data = wav_file.readframes(819200)
-    print(len(data))
-    data = struct.unpack('{n}h'.format(n=819200), data)
-    print(len(data))
+    data = wav_file.readframes(1228800)
+    #print(len(data))
+    data = struct.unpack('{n}h'.format(n=1228800), data)
+    #print(len(data))
     big_list[0:0] = data
-    print(len(big_list))
+    #print(len(big_list))
 def create_set():
+    global SKIP
     create_beginning()
     for i in range(TOTALPOINTS):
         total_list.append(i)
@@ -51,24 +52,29 @@ def create_set():
     audio_select_list = random.sample(total_list, TOTALINCLUSION)
 
     try:
-        f = open('streamtest/ground_truth.csv','w')
+        f = open('streamtest/ground_truth_slope.csv','w')
     except:
         print("pls close files")
         sys.exit()
     writer = csv.writer(f,lineterminator="\n")
 
 
-
     for k in range(TOTALINCLUSION):
+        index_number = (k+1)*SKIP
+        if k >25:
+            SKIP +=4096
+            index_number = 26* 24576 + (k - 25) * SKIP
+
+        print(SKIP)
         if audio_select_list[k] >299:
             raise Exception("Out of bounds! Sorry!")
         if audio_select_list[k] <100:
             open_name = Source.Current.INHALE_DIR + str(k) + ".wav"
-            parse_iter = ['inhale',audio_select_list[k],(((k+1)*SKIP))/4096]
+            parse_iter = ['inhale',index_number-8192,index_number/4096]
             writer.writerow(parse_iter)
         elif audio_select_list[k] >=100 and audio_select_list[k] <200:
             open_name = Source.Current.EXHALE_DIR + str(k) + ".wav"
-            parse_iter = ['exhale',audio_select_list[k],(((k+1)*SKIP))/4096]
+            parse_iter = ['exhale',index_number,index_number/4096]
             writer.writerow(parse_iter)
         else:
             print("insert unknown")
@@ -78,30 +84,22 @@ def create_set():
 
         data = struct.unpack('{n}h'.format(n=RECORDTIME * CHUNK), data)
         data = np.array(data)
-        big_list[(k+1)*SKIP:(k+1)*SKIP] = data
+
+        big_list[index_number:index_number+8192] = data
 
 
-    print(len(big_list))
 
-    wf = wave.open("streamtest/five_minutes.wav", 'wb')
 
-    wf.setparams(wav_file.getparams())
-    print(big_list)
-    for sample in big_list:
-        value = struct.pack('h', sample)
-        wf.writeframesraw(value)
+    #print(len(big_list))
 
-    wf.close()
+    wf = wave.open("streamtest/five_minutes_test.wav", 'wb')
 
-def create_blank():
-    wav_file = wave.open(Source.Current.UNKNOWN_DIR + str(5) + ".wav", 'r')
-    wf = wave.open("streamtest/5minsblank.wav", 'wb')
-    big_list = [0] * 1228800
     wf.setparams(wav_file.getparams())
     for sample in big_list:
         value = struct.pack('h', sample)
         wf.writeframesraw(value)
 
     wf.close()
+
 
 create_set()

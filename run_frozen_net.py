@@ -15,7 +15,7 @@ class Hyperparameters:
 HYP = Hyperparameters()
 set_maker = SM()
 pbfilename = "GraphV5/GRAPHS/GraphV5_frozen.pb"
-file_name = "streamtest/ambience.wav"
+file_name = "sen_data/inhale/61.wav"
 prediction_dictionary = {0:"inhale", 1:"exhale", 2:"unknown"}
 
 with tf.gfile.GFile(pbfilename, "rb") as f:

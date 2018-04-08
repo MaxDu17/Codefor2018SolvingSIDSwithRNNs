@@ -9,7 +9,6 @@ THRESHOLDVALUE = 500
 
 
 class DataParse:
-
     def load_wav_file(self,name):
         #print(name)
         wav_file = wave.open(name, 'r')
@@ -18,6 +17,7 @@ class DataParse:
         data = struct.unpack('{n}h'.format(n=RECORDTIME*CHUNK), data)
         data = np.array(data)
         return data
+
 
 
     def split_file(self,data):

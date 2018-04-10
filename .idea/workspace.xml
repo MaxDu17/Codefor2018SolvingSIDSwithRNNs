@@ -2,123 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d071f3fc-a3dc-4aeb-87b8-28511cfdae02" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/noisereduction.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/Best/checkpoint" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/Best/frozenmodel3418.pb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/Best/graph.pbtxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/Best/rough_run-9500.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/Best/rough_run-9500.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/Best/rough_run-9500.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/checkpoint" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-7500.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-7500.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-7500.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-8000.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-8000.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-8000.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-8500.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-8500.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-8500.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-9000.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-9000.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-9000.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-9500.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-9500.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHCHECKPOINTS/rough_run-9500.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHS/events.out.tfevents.1519796552.NN-XPS-8920" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHS_run/events.out.tfevents.1520130850.LCS-SYR-WEDU" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHS_tiny/events.out.tfevents.1519792342.NN-XPS-8920" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHS_tiny/events.out.tfevents.1519792463.NN-XPS-8920" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHS_tiny/events.out.tfevents.1519792591.NN-XPS-8920" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/GRAPHS_tiny/events.out.tfevents.1519792937.NN-XPS-8920" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV1/parse_data.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-10000.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-10000.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-10000.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-8000.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-8000.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-8000.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-8500.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-8500.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-8500.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-9000.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-9000.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-9000.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-9500.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-9500.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/GraphV2-9500.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/CHECKPOINTS/checkpoint" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/GRAPHS/GraphV2_frozen.pb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/GRAPHS/GraphV2_frozen5000.pb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/GRAPHS/LOSS.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/GRAPHS/events.out.tfevents.1520787432.NN-XPS-8920" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV2/GRAPHS/graph.pbtxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-3000.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-3000.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-3000.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-3500.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-3500.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-3500.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-4000.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-4000.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-4000.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-4500.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-4500.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-4500.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-5000.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-5000.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/GraphV3-5000.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/CHECKPOINTS/checkpoint" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/GRAPHS/GraphV3_frozen.pb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/GRAPHS/LOSS.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/GRAPHS/events.out.tfevents.1521176431.NN-XPS-8920" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/GRAPHS/graph.pbtxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV3/stable_graph_feeder50.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-3000.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-3000.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-3000.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-3500.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-3500.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-3500.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-4000.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-4000.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-4000.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-4500.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-4500.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-4500.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-5000.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-5000.index" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/GraphV4-5000.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/asdf.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/CHECKPOINTS/checkpoint" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/GRAPHS/GraphV4_frozen.pb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/GRAPHS/LOSS.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/GRAPHS/asdf.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/GRAPHS/events.out.tfevents.1521218000.NN-XPS-8920" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/GraphV4/GRAPHS/graph.pbtxt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bar test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/confusionmatrix test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data_tiny/exhale/0.wav" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data_tiny/exhale/1.wav" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data_tiny/exhale/2.wav" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data_tiny/inhale/0.wav" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data_tiny/inhale/1.wav" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data_tiny/inhale/2.wav" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data_tiny/unknown/0.wav" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data_tiny/unknown/1.wav" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data_tiny/unknown/2.wav" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/fromstreamwriteaudio.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/make_sets_tiny.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/parse_data.py" afterPath="$PROJECT_DIR$/parse_data.py" />
-      <change beforePath="$PROJECT_DIR$/stable_graph_feeder.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/stable_graph_feederv4.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/streamtest/ground_truth.csv" afterPath="$PROJECT_DIR$/streamtest/ground_truth.csv" />
-      <change beforePath="$PROJECT_DIR$/testingcsv.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/traingraphv2.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/traingraphv3.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/traingraphv4.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/xxy.wav" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/noisereduction.py" afterPath="$PROJECT_DIR$/noisereduction.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -197,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/run_stream_net.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+              <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#975#1112#0" expanded="false" />
@@ -212,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/parse_data.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="731">
-              <caret line="46" column="49" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="49" />
+              <caret line="46" column="49" lean-forward="false" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -221,8 +105,8 @@
       <file leaf-file-name="noisereduction.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/noisereduction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="382">
+              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -234,7 +118,7 @@
         <entry file="file://$PROJECT_DIR$/streaming_data_maker.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="337">
-              <caret line="88" column="19" lean-forward="true" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
+              <caret line="88" column="19" lean-forward="false" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -340,7 +224,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="y" value="1" />
     <option name="width" value="974" />
@@ -530,7 +414,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1935" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1935" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -538,7 +422,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2564935" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24567099" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -866,7 +750,7 @@
     <entry file="file://$PROJECT_DIR$/run_stream_net.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#975#1112#0" expanded="false" />
@@ -879,7 +763,7 @@
     <entry file="file://$PROJECT_DIR$/streaming_data_maker.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
-          <caret line="88" column="19" lean-forward="true" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
+          <caret line="88" column="19" lean-forward="false" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -887,15 +771,15 @@
     <entry file="file://$PROJECT_DIR$/parse_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
-          <caret line="46" column="49" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="49" />
+          <caret line="46" column="49" lean-forward="false" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/noisereduction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="382">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

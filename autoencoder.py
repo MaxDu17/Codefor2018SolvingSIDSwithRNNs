@@ -76,13 +76,13 @@ with tf.name_scope("summaries_and_saver"):
 with tf.Session() as sess:
 
     sess.run(tf.global_variables_initializer())
-    tf.train.write_graph(sess.graph_def, '/', 'autoencoder.pbtxt')
+    tf.train.write_graph(sess.graph_def, 'GraphV6/', 'autoencoder.pbtxt')
     writer = tf.summary.FileWriter("GraphV6/GRAPHS/",sess.graph)
-    loss = 0
+    loss_ = 0
     big_list = [i for i in range(HYP.TOTAL)]
     for i in range(HYP.EPOCHS):
         training_list = random.sample(big_list, HYP.BATCH_NUMBER)
-        
+
         for batch_index in training_list:
             if batch_index <200:
                 file_name = Source.Current.INHALE_DIR + str(batch_index) + ".wav"
@@ -93,6 +93,13 @@ with tf.Session() as sess:
                 file_name = Source.Current.UNKNOWN_DIR + str(batch_index - 400) + ".wav"
 
             loaded_fouriers = Parser.prepare_data_autoencoder(file_name)
+            print(len(loaded_fouriers[1]))
             for sample in loaded_fouriers:
-                output_layer_, loss_, _ = sess.run([output_layer,loss,optimizer], feed_dict = {X:sample})
+                sample = np.reshape(sample, [1,HYP.input])
+                output_layer_, loss_, _ = sess.run([output_layer, loss ,optimizer], feed_dict = {X:sample})
 
+        if i%200==0:
+            saver.save(sess, "GraphV6/CHECKPOINTS_AUTO/GraphV6", global_step=i)
+
+        if i%50==0:
+            print("this is the current loss: ", loss_)

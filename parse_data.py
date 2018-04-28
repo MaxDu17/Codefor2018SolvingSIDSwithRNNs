@@ -49,6 +49,10 @@ class DataParse:
         frequency_division = np.linspace(1,CHUNK/2, int((CHUNK/16)-1))
         return fourier_output, frequency_division
 
+    def load_raw_fourier(self,data):
+        fourier_output = np.abs(np.fft.fft(data))
+        return fourier_output
+
     def bin(self,output):
         output_bins = [None]*43
 
@@ -76,7 +80,7 @@ class DataParse:
         data = self.load_wav_file(name)
         time_split = self.split_file(data)
         for time_slice in time_split:
-            output, frq_div = self.load_fourier(time_slice)
+            output = self.load_raw_fourier(time_slice)
             data_list.append(output)
         data_list = self.normalize(data_list)
         return data_list

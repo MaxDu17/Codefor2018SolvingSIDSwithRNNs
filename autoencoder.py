@@ -79,6 +79,7 @@ with tf.Session() as sess:
     tf.train.write_graph(sess.graph_def, 'GraphV6/', 'autoencoder.pbtxt')
     writer = tf.summary.FileWriter("GraphV6/GRAPHS/",sess.graph)
     loss_ = 0
+    total_loss = 0
     big_list = [i for i in range(HYP.TOTAL)]
     for i in range(HYP.EPOCHS):
         training_list = random.sample(big_list, HYP.BATCH_NUMBER)
@@ -97,7 +98,10 @@ with tf.Session() as sess:
             for sample in loaded_fouriers:
                 sample = np.reshape(sample, [1,HYP.input])
                 output_layer_, loss_, _ = sess.run([output_layer, loss ,optimizer], feed_dict = {X:sample})
-
+                total_loss += loss_
+        print("I have finished epoch ", i, " out of ", HYP.EPOCHS)
+        print("here is the summed loss: ", total_loss)
+        total_loss = 0
         if i%200==0:
             saver.save(sess, "GraphV6/CHECKPOINTS_AUTO/GraphV6", global_step=i)
 

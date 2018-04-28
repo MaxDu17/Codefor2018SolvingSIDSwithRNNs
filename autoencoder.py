@@ -93,7 +93,7 @@ with tf.Session() as sess:
                 file_name = Source.Current.UNKNOWN_DIR + str(batch_index - 400) + ".wav"
 
             loaded_fouriers = Parser.prepare_data_autoencoder(file_name)
-            print(len(loaded_fouriers[1]))
+
             for sample in loaded_fouriers:
                 sample = np.reshape(sample, [1,HYP.input])
                 output_layer_, loss_, _ = sess.run([output_layer, loss ,optimizer], feed_dict = {X:sample})

@@ -10,12 +10,13 @@ RECORDTIME = 10
 
 rate, data_empty = scipy.io.wavfile.read('noisereduction/blank.wav')
 
-rate_, data_filled = scipy.io.wavfile.read('noisereduction/filled.wav')
+rate_, data_filled = scipy.io.wavfile.read('noisereduction/2seconds.wav')
 print(rate_)
 
-#blank = np.fft.fft(data_empty)
+blank = np.fft.fft(data_empty)
 full = np.fft.fft(data_filled)
 carrier = full
+print(blank)
 print(len(full))
 
 transformed = np.fft.ifft(carrier)

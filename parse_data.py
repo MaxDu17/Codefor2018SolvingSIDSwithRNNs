@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import struct
 import wave
 
-CHUNK = 4096
+CHUNK = 4096 #to be changed
 RECORDTIME = 2
 THRESHOLDVALUE = 500
 
@@ -69,6 +69,16 @@ class DataParse:
             data_list.append(output_bins)
         data_list = self.normalize(data_list)
        # data_list = self.truncate_lower(data_list)
+        return data_list
+
+    def prepare_data_autoencoder(self,name):
+        data_list = list()
+        data = self.load_wav_file(name)
+        time_split = self.split_file(data)
+        for time_slice in time_split:
+            output, frq_div = self.load_fourier(time_slice)
+            data_list.append(output)
+        data_list = self.normalize(data_list)
         return data_list
 
     def bins_from_stream(self,data):

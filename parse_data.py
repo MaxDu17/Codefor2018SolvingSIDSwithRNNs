@@ -84,6 +84,14 @@ class DataParse:
             data_list.append(output)
         data_list = self.normalize(data_list)
         return data_list
+    def prepare_data_autoencoder_from_raw(self,data):
+        data_list = list()
+        time_split = self.split_file(data)
+        for time_slice in time_split:
+            output = self.load_raw_fourier(time_slice)
+            data_list.append(output)
+        data_list = self.normalize(data_list)
+        return data_list
 
     def bins_from_stream(self,data):
         data_list = list()

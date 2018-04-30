@@ -1,6 +1,6 @@
 import tensorflow as tf
 from tensorflow.python.tools import freeze_graph
-MODEL_NAME = 'Audoencoder_frozen'
+MODEL_NAME = 'Autoencoder_frozen'
 
 # Freeze the graph
 

@@ -104,6 +104,3 @@ with tf.Session() as sess:
         total_loss = 0
         if i%200==0:
             saver.save(sess, "GraphV6/CHECKPOINTS_AUTO/GraphV6", global_step=i)
-
-        if i%50==0:
-            print("this is the current loss: ", loss_)

@@ -2,15 +2,13 @@ import tensorflow as tf
 import numpy as np
 import random
 import os
-from make_sets import Setmaker as SM
+from make_sets_auto import Setmaker as SM
 import csv
 
-'''changes made in version 5:
-
-increased neurons to 75
-decreased training epochs to 5000
-put back to 43 frequency bins
 '''
+changes in version 6:
+autoencoder implementation
+50 input nodes'''
 class Hyperparameters:
     INPUT_LAYER = 50
     HIDDEN_LAYER = 75 #Modify??

@@ -4,7 +4,7 @@ import random
 import os
 from make_sets_auto import Setmaker as SM
 import csv
-
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 '''
 changes in version 6:
 autoencoder implementation
@@ -29,7 +29,7 @@ class Information:
 set_maker = SM()
 HYP = Hyperparameters()
 prediction_dictionary = {0:"inhale", 1:"exhale", 2:"unknown"}
-tf.logging.set_verbosity(tf.logging.ERROR)
+
 W_In = tf.Variable(tf.random_normal(shape = [HYP.INPUT_LAYER,HYP.HIDDEN_LAYER], stddev = 0.1, mean = 0 ),name = "W_In")#note: this used to have a mean of zero, so check that
 W_Hidd =tf.Variable(tf.random_normal(shape = [HYP.HIDDEN_LAYER,HYP.HIDDEN_LAYER], stddev = 0.1, mean =0  ),name = "W_Hidd")
 W_Out =tf.Variable(tf.random_normal(shape = [HYP.HIDDEN_LAYER,HYP.OUTPUT_LAYER], stddev = 0.1, mean = 0),name = "W_Out")

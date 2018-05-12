@@ -82,8 +82,6 @@ with tf.name_scope("summaries_and_saver"):
     saver = tf.train.Saver()
 
 with tf.Session() as sess:
-    log_loss = open("GraphV6/GRAPHS_TRAIN/LOSS.csv", "w")
-    logger = csv.writer(log_loss, lineterminator="\n")
     '''ckpt = tf.train.get_checkpoint_state(os.path.dirname('GRAPHCHECKPOINTS/'))
     if ckpt and ckpt.model_checkpoint_path:
         saver.restore(sess, ckpt.model_checkpoint_path)'''
@@ -140,7 +138,6 @@ with tf.Session() as sess:
                     prev_hidd_layer_ = next_hidd_layer_
                     counter+= 1
         carrier = [summed_loss]
-        logger.writerow(carrier)
         print("I have finished epoch ",epoch, " out of ", HYP.NUM_EPOCHS)
         print("the total loss of the last sample in this batch is ", total_loss_)
         print("here is the large sum of losses through the entire epoch: ", summed_loss)

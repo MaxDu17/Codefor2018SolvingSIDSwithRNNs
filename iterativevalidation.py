@@ -1,4 +1,4 @@
-from stable_graph_feederv5 import WholeGraph as WG
+from stable_graph_feederv6 import WholeGraph as WG
 import csv
 import numpy as np
 WholeGraph = WG()
@@ -15,12 +15,12 @@ class Source:
         UNKNOWN_DIR = "/home/wedu/Desktop/VolatileRepos/DatasetMaker/dataSPLIT/inhale/"
 
 dataprocess = dp()
-k = open("debugging/v5check.csv", "w")
+k = open("debugging/v6check.csv", "w")
 writer_log = csv.writer(k, lineterminator="\n")
 for i in range(200):
     name = Source.Native.INHALE_DIR + str(i) + ".wav"
 
-    data = dataprocess.prepare_data(name)
+    data = dataprocess.load_wav_file(name)
 
     prediction = WholeGraph.make_prediction(data)
     if(np.argmax(prediction) != 0):
@@ -32,7 +32,7 @@ for i in range(200):
 for i in range(400):
     name = Source.Native.UNKNOWN_DIR + str(i) + ".wav"
 
-    data = dataprocess.prepare_data(name)
+    data = dataprocess.load_wav_file(name)
     prediction = WholeGraph.make_prediction(data)
     if(np.argmax(prediction) != 2):
         carrier = [i,"unknown", prediction_dictionary[np.argmax(prediction)], prediction]
@@ -42,7 +42,7 @@ for i in range(400):
 
 for i in range(200):
     name = Source.Native.EXHALE_DIR + str(i) + ".wav"
-    data = dataprocess.prepare_data(name)
+    data = dataprocess.load_wav_file(name)
     prediction = WholeGraph.make_prediction(data)
     if(np.argmax(prediction) != 1):
         carrier = [i,"exhale", prediction_dictionary[np.argmax(prediction)], prediction]

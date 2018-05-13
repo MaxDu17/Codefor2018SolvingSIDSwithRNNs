@@ -1,10 +1,13 @@
 import tensorflow as tf
 import os
 import numpy as np
-from make_sets import Setmaker as SM
+from autoencoder_feeder_lib import WholeGraph as WG
+
+
 class WholeGraph:
+    coder = WG()
     class Hyperparameters:
-        INPUT_LAYER = 43
+        INPUT_LAYER = 50
         HIDDEN_LAYER = 75 #Modify??
         OUTPUT_LAYER = 3
         NUM_EPOCHS = 10000
@@ -14,9 +17,10 @@ class WholeGraph:
         VALIDATION_NUMBER = 30
         TEST_NUMBER = 30
 
-    def make_prediction(self, data):
+    def make_prediction(self, raw_data):
+        data = self.coder.make_matrix_from_data(raw_data)
         HYP = self.Hyperparameters()
-        pbfilename = "GraphV5/GRAPHS/GraphV5_frozen.pb"
+        pbfilename = "GraphV6/GRAPHS_TRAIN/GraphV6_frozen.pb"
         with tf.gfile.GFile(pbfilename, "rb") as f:
             graph_def = tf.GraphDef()
             graph_def.ParseFromString(f.read())
